@@ -1,0 +1,60 @@
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://bqkjbl73pj63w"]
+
+[ext_resource type="Texture2D" uid="uid://cd8tuel5gyu8h" path="res://assets/ui/baisc_ui_sprites.png" id="1_tge16"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7y81l"]
+load_path = "res://.godot/imported/baisc_ui_sprites.png-9d0b1a66bc9a9feb635dcd2cce036e01.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xk8t2"]
+atlas = SubResource("CompressedTexture2D_7y81l")
+region = Rect2(59, 107, 26, 26)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tge16"]
+texture = SubResource("AtlasTexture_xk8t2")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_61pev"]
+atlas = ExtResource("1_tge16")
+region = Rect2(59, 155, 26, 26)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7dy07"]
+texture = SubResource("AtlasTexture_61pev")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7koft"]
+texture = SubResource("AtlasTexture_xk8t2")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ar5a6"]
+atlas = ExtResource("1_tge16")
+region = Rect2(259, 180, 90, 25)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tg4st"]
+texture = SubResource("AtlasTexture_ar5a6")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[resource]
+Button/styles/hover = SubResource("StyleBoxTexture_tge16")
+Button/styles/normal = SubResource("StyleBoxTexture_7dy07")
+Button/styles/pressed = SubResource("StyleBoxTexture_7koft")
+CharacterNameText/base_type = &"RichTextLabel"
+CharacterNameText/font_sizes/normal_font_size = 14
+DialogueText/base_type = &"RichTextLabel"
+DialogueText/font_sizes/normal_font_size = 12
+MarginContainer/constants/margin_bottom = 10
+MarginContainer/constants/margin_left = 10
+MarginContainer/constants/margin_right = 10
+MarginContainer/constants/margin_top = 10
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_tg4st")
