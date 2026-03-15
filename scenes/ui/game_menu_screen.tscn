@@ -1,10 +1,115 @@
-[gd_scene load_steps=6 format=3 uid="uid://lbu5loesr2ao"]
+[gd_scene load_steps=36 format=3 uid="uid://lbu5loesr2ao"]
 
 [ext_resource type="Theme" uid="uid://ljcck66th0xd" path="res://scenes/ui/game_ui_theme.tres" id="1_5slcd"]
 [ext_resource type="PackedScene" uid="uid://d11jd3b88wqgy" path="res://scenes/ui/game_menu_screen_background.tscn" id="1_arotu"]
 [ext_resource type="Script" uid="uid://dd5mp5eosqk8m" path="res://scenes/ui/game_menu_screen.gd" id="1_l5nq4"]
 [ext_resource type="PackedScene" uid="uid://duydlmwxcwuwx" path="res://scenes/components/mouse_cursor_component.tscn" id="2_vrg0q"]
 [ext_resource type="Texture2D" uid="uid://dp56w8u0qmk14" path="res://assets/ui/mouse_icon.png" id="3_ecc0l"]
+[ext_resource type="Texture2D" uid="uid://cd8tuel5gyu8h" path="res://assets/ui/baisc_ui_sprites.png" id="6_16g87"]
+[ext_resource type="FontFile" uid="uid://2pfwl33qn5vf" path="res://assets/ui/fonts/pixelFont-7-8x14-sproutLands.ttf" id="7_16g87"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dl6il"]
+texture = ExtResource("6_16g87")
+region_rect = Rect2(163, 210, 90, 27)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_t2wrn"]
+load_path = "res://.godot/imported/baisc_ui_sprites.png-9d0b1a66bc9a9feb635dcd2cce036e01.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0j0ta"]
+texture = SubResource("CompressedTexture2D_t2wrn")
+region_rect = Rect2(259, 212, 90, 25)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jj26a"]
+load_path = "res://.godot/imported/baisc_ui_sprites.png-9d0b1a66bc9a9feb635dcd2cce036e01.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vjtmu"]
+texture = SubResource("CompressedTexture2D_jj26a")
+region_rect = Rect2(259, 212, 90, 25)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_16g87"]
+load_path = "res://.godot/imported/baisc_ui_sprites.png-9d0b1a66bc9a9feb635dcd2cce036e01.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t2wrn"]
+texture = SubResource("CompressedTexture2D_16g87")
+region_rect = Rect2(163, 178, 90, 27)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0j0ta"]
+load_path = "res://.godot/imported/baisc_ui_sprites.png-9d0b1a66bc9a9feb635dcd2cce036e01.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jj26a"]
+texture = SubResource("CompressedTexture2D_0j0ta")
+region_rect = Rect2(259, 180, 90, 25)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vjtmu"]
+load_path = "res://.godot/imported/baisc_ui_sprites.png-9d0b1a66bc9a9feb635dcd2cce036e01.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pyl5b"]
+texture = SubResource("CompressedTexture2D_vjtmu")
+region_rect = Rect2(259, 180, 90, 25)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_16g87"]
+texture = ExtResource("6_16g87")
+region_rect = Rect2(163, 178, 90, 27)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dl6il"]
+load_path = "res://.godot/imported/baisc_ui_sprites.png-9d0b1a66bc9a9feb635dcd2cce036e01.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2v24w"]
+texture = SubResource("CompressedTexture2D_dl6il")
+region_rect = Rect2(259, 180, 90, 25)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ur8yp"]
+load_path = "res://.godot/imported/baisc_ui_sprites.png-9d0b1a66bc9a9feb635dcd2cce036e01.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_je4jw"]
+texture = SubResource("CompressedTexture2D_ur8yp")
+region_rect = Rect2(259, 180, 90, 25)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ur8yp"]
+texture = ExtResource("6_16g87")
+region_rect = Rect2(645, 68, 22, 24)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_je4jw"]
+load_path = "res://.godot/imported/baisc_ui_sprites.png-9d0b1a66bc9a9feb635dcd2cce036e01.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0ny3p"]
+texture = SubResource("CompressedTexture2D_je4jw")
+region_rect = Rect2(677, 70, 22, 22)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5t088"]
+load_path = "res://.godot/imported/baisc_ui_sprites.png-9d0b1a66bc9a9feb635dcd2cce036e01.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rhrw5"]
+texture = SubResource("CompressedTexture2D_5t088")
+region_rect = Rect2(677, 70, 22, 22)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5t088"]
+texture = ExtResource("6_16g87")
+region_rect = Rect2(709, 164, 22, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wsynd"]
+texture = ExtResource("6_16g87")
+region_rect = Rect2(741, 166, 22, 22)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d5y73"]
+texture = ExtResource("6_16g87")
+region_rect = Rect2(709, 132, 22, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_devfs"]
+texture = ExtResource("6_16g87")
+region_rect = Rect2(740, 134, 23, 22)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ecc0l"]
+texture = ExtResource("6_16g87")
+region_rect = Rect2(745, 42, 14, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gx1w1"]
+texture = ExtResource("6_16g87")
+region_rect = Rect2(837, 100, 22, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3uqxn"]
+texture = ExtResource("6_16g87")
+region_rect = Rect2(869, 102, 22, 22)
 
 [node name="GameMenuScreen" type="CanvasLayer"]
 script = ExtResource("1_l5nq4")
@@ -22,43 +127,353 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_5slcd")
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 
-[node name="Label" type="Label" parent="MarginContainer/MarginContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.5647059, 0.38431373, 0.3647059, 1)
-theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
-theme_override_constants/shadow_offset_x = 2
-theme_override_constants/shadow_offset_y = 2
-theme_override_font_sizes/font_size = 54
-text = "RABBIT LAND"
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 4
-
 [node name="StartGameButton" type="Button" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(100, 29)
 layout_mode = 2
-theme_type_variation = &"GameMenuButton"
-text = "START"
+size_flags_vertical = 8
+theme_override_styles/normal = SubResource("StyleBoxTexture_dl6il")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0j0ta")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vjtmu")
 
 [node name="SaveGameButton" type="Button" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(100, 29)
 layout_mode = 2
 theme_type_variation = &"GameMenuButton"
+theme_override_colors/font_color = Color(0.76862746, 0.6039216, 0.42352942, 1)
+theme_override_colors/font_pressed_color = Color(0.76862746, 0.6039216, 0.42352942, 1)
+theme_override_colors/font_hover_color = Color(0.76862746, 0.6039216, 0.42352942, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_t2wrn")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_jj26a")
+theme_override_styles/hover = SubResource("StyleBoxTexture_pyl5b")
 text = "SAVE"
 
 [node name="ExitGameButton" type="Button" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(100, 29)
 layout_mode = 2
 theme_type_variation = &"GameMenuButton"
+theme_override_colors/font_color = Color(0.76862746, 0.6039216, 0.42352942, 1)
+theme_override_colors/font_pressed_color = Color(0.76862746, 0.6039216, 0.42352942, 1)
+theme_override_colors/font_hover_color = Color(0.76862746, 0.6039216, 0.42352942, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_16g87")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_2v24w")
+theme_override_styles/hover = SubResource("StyleBoxTexture_je4jw")
 text = "EXIT"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="SettingButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_ur8yp")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0ny3p")
+theme_override_styles/hover = SubResource("StyleBoxTexture_rhrw5")
+
+[node name="HelpButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_5t088")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_wsynd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_wsynd")
+
+[node name="AboutButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_d5y73")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_devfs")
+theme_override_styles/hover = SubResource("StyleBoxTexture_devfs")
+
+[node name="SettingPopup" type="CanvasLayer" parent="."]
+layer = 10
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="SettingPopup"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5647059)
+
+[node name="Control" type="Control" parent="SettingPopup"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="SettingPopup/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -127.0
+offset_top = -100.0
+offset_right = 127.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_ecc0l")
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingPopup/Control/PanelContainer"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingPopup/Control/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingPopup/Control/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingPopup/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.76862746, 0.6039216, 0.42352942, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_fonts/font = ExtResource("7_16g87")
+theme_override_font_sizes/font_size = 35
+text = "SETTING"
+horizontal_alignment = 1
+
+[node name="MusicRow" type="HBoxContainer" parent="SettingPopup/Control/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Music" type="Label" parent="SettingPopup/Control/PanelContainer/MarginContainer/VBoxContainer/MusicRow"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.77254903, 0.60784316, 0.42745098, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_fonts/font = ExtResource("7_16g87")
+theme_override_font_sizes/font_size = 18
+text = "Music"
+
+[node name="MusicSlider" type="HSlider" parent="SettingPopup/Control/PanelContainer/MarginContainer/VBoxContainer/MusicRow"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.1
+value = 0.5
+
+[node name="SFXRow" type="HBoxContainer" parent="SettingPopup/Control/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="SFX" type="Label" parent="SettingPopup/Control/PanelContainer/MarginContainer/VBoxContainer/SFXRow"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.77254903, 0.60784316, 0.42745098, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_fonts/font = ExtResource("7_16g87")
+theme_override_font_sizes/font_size = 18
+text = "SFX"
+
+[node name="SFXSlider" type="HSlider" parent="SettingPopup/Control/PanelContainer/MarginContainer/VBoxContainer/SFXRow"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.1
+value = 0.5
+
+[node name="CloseSetting" type="Button" parent="SettingPopup/Control"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 0
+offset_left = 204.0
+offset_top = -10.0
+offset_right = 234.0
+offset_bottom = 20.0
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_gx1w1")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3uqxn")
+theme_override_styles/hover = SubResource("StyleBoxTexture_3uqxn")
+
+[node name="HelpPopup" type="CanvasLayer" parent="."]
+layer = 10
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="HelpPopup"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5647059)
+
+[node name="Control" type="Control" parent="HelpPopup"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="HelpPopup/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -127.0
+offset_top = -100.0
+offset_right = 127.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_ecc0l")
+
+[node name="MarginContainer" type="MarginContainer" parent="HelpPopup/Control/PanelContainer"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HelpPopup/Control/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="TITLE" type="Label" parent="HelpPopup/Control/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.76862746, 0.6039216, 0.42352942, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_fonts/font = ExtResource("7_16g87")
+theme_override_font_sizes/font_size = 35
+text = "HOW TO PLAY"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="HelpPopup/Control/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "MOVE  WADS"
+
+[node name="Label" type="Label" parent="HelpPopup/Control/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "INTERACT E"
+
+[node name="Label3" type="Label" parent="HelpPopup/Control/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "PAUSE ESC"
+
+[node name="Label4" type="Label" parent="HelpPopup/Control/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "CLICK MOUSE LEFT"
+
+[node name="CloseHelp" type="Button" parent="HelpPopup/Control"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 0
+offset_left = 204.0
+offset_top = -10.0
+offset_right = 234.0
+offset_bottom = 20.0
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_gx1w1")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3uqxn")
+theme_override_styles/hover = SubResource("StyleBoxTexture_3uqxn")
+
+[node name="AboutPopup" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="ColorRect" type="ColorRect" parent="AboutPopup"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5647059)
+
+[node name="Control" type="Control" parent="AboutPopup"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="AboutPopup/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -127.0
+offset_top = -100.0
+offset_right = 127.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_ecc0l")
+
+[node name="MarginContainer" type="MarginContainer" parent="AboutPopup/Control/PanelContainer"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AboutPopup/Control/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="TITLE" type="Label" parent="AboutPopup/Control/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.76862746, 0.6039216, 0.42352942, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_fonts/font = ExtResource("7_16g87")
+theme_override_font_sizes/font_size = 35
+text = "about rabbit"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="AboutPopup/Control/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Made with love using Godot Engine"
+
+[node name="Label3" type="Label" parent="AboutPopup/Control/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "❤️Developed by txinh (@lilsea.7)"
+
+[node name="CloseAbout" type="Button" parent="AboutPopup/Control"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 0
+offset_left = 204.0
+offset_top = -10.0
+offset_right = 234.0
+offset_bottom = 20.0
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_gx1w1")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3uqxn")
+theme_override_styles/hover = SubResource("StyleBoxTexture_3uqxn")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/SaveGameButton" to="." method="_on_save_game_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ExitGameButton" to="." method="_on_exit_game_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/SettingButton" to="." method="_on_setting_button_pressed"]
+[connection signal="value_changed" from="SettingPopup/Control/PanelContainer/MarginContainer/VBoxContainer/MusicRow/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="SettingPopup/Control/PanelContainer/MarginContainer/VBoxContainer/SFXRow/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="pressed" from="SettingPopup/Control/CloseSetting" to="." method="_on_close_button_pressed"]

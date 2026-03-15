@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c1viodru0jm70" path="res://scenes/object/rocks/stone.tscn" id="4_pc8mn"]
 [ext_resource type="PackedScene" uid="uid://18g72aohcbxq" path="res://scenes/object/trees/log.tscn" id="5_2nity"]
 [ext_resource type="PackedScene" uid="uid://dkptibkus3e5i" path="res://scenes/object/milk.tscn" id="6_4toaq"]
-[ext_resource type="PackedScene" uid="uid://l6ick0i6iorr" path="res://scenes/object/plants/corn_harverst.tscn" id="7_ucgsq"]
+[ext_resource type="PackedScene" uid="uid://l6ick0i6iorr" path="res://scenes/object/plants/wheat_harverst.tscn" id="7_ucgsq"]
 [ext_resource type="PackedScene" uid="uid://deca22dslbiiw" path="res://scenes/object/plants/tomato_harvest.tscn" id="8_65vpo"]
 [ext_resource type="PackedScene" uid="uid://d0dhtip02w7f6" path="res://scenes/ui/game_screen.tscn" id="9_43ror"]
 

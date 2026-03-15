@@ -30,6 +30,6 @@ metadata/_edit_group_ = true
 [node name="Camera2D" type="Camera2D" parent="GameRoot/Player"]
 
 [node name="Guide" parent="GameRoot" instance=ExtResource("4_gubc5")]
-position = Vector2(119, 138)
+position = Vector2(213, 106)
 
 [node name="GameScreen" parent="." instance=ExtResource("2_7ykc4")]

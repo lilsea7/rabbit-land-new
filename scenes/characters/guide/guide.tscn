@@ -1,9 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://cqawq4fpa5tt6"]
+[gd_scene load_steps=20 format=3 uid="uid://cqawq4fpa5tt6"]
 
 [ext_resource type="Script" uid="uid://b0kpcudfqf7u3" path="res://scenes/characters/guide/guide.gd" id="1_pdv8u"]
 [ext_resource type="Shader" uid="uid://cuyu3uy4pvf5w" path="res://scenes/characters/guide/replace_color.gdshader" id="1_rl4q2"]
-[ext_resource type="Texture2D" uid="uid://bmarq4qqx6143" path="res://assets/game/characters/basic_character_spritesheet.png" id="2_g6y3g"]
 [ext_resource type="PackedScene" uid="uid://basw62h85rk21" path="res://scenes/components/interactable_component.tscn" id="3_g6y3g"]
+[ext_resource type="Texture2D" uid="uid://5vx3lvnvspd4" path="res://assets/game/characters/free_character_spritesheet_by-cupnooble.png" id="3_pdv8u"]
 [ext_resource type="PackedScene" uid="uid://bbkvroxuk3ta" path="res://scenes/components/interactable_label_component.tscn" id="5_qnx84"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yvxhl"]
@@ -13,25 +13,103 @@ shader_parameter/original_1 = Color(0.4627451, 0.42745098, 0.6666667, 1)
 shader_parameter/replace_0 = Color(0, 0, 0, 1)
 shader_parameter/replace_1 = Color(0.09066733, 0.49082422, 0.3722385, 1)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pdv8u"]
-atlas = ExtResource("2_g6y3g")
-region = Rect2(0, 0, 48, 48)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_qnx84"]
-atlas = ExtResource("2_g6y3g")
-region = Rect2(48, 0, 48, 48)
+atlas = ExtResource("3_pdv8u")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xo3ut"]
+atlas = ExtResource("3_pdv8u")
+region = Rect2(0, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7sry"]
+atlas = ExtResource("3_pdv8u")
+region = Rect2(0, 64, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vv70q"]
+atlas = ExtResource("3_pdv8u")
+region = Rect2(64, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdkl4"]
+atlas = ExtResource("3_pdv8u")
+region = Rect2(64, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tq85q"]
+atlas = ExtResource("3_pdv8u")
+region = Rect2(64, 64, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l3cl1"]
+atlas = ExtResource("3_pdv8u")
+region = Rect2(80, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_temh0"]
+atlas = ExtResource("3_pdv8u")
+region = Rect2(80, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6tcs3"]
+atlas = ExtResource("3_pdv8u")
+region = Rect2(80, 64, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6im1j"]
+atlas = ExtResource("3_pdv8u")
+region = Rect2(32, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wgatv"]
+atlas = ExtResource("3_pdv8u")
+region = Rect2(32, 64, 16, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xo3ut"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pdv8u")
+"texture": SubResource("AtlasTexture_qnx84")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qnx84")
+"texture": SubResource("AtlasTexture_xo3ut")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d7sry")
+}],
+"loop": true,
+"name": &"behind",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vv70q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rdkl4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tq85q")
 }],
 "loop": true,
 "name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l3cl1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_temh0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6tcs3")
+}],
+"loop": true,
+"name": &"left",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6im1j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wgatv")
+}],
+"loop": true,
+"name": &"right",
 "speed": 3.0
 }]
 
@@ -43,12 +121,11 @@ script = ExtResource("1_pdv8u")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_yvxhl")
-position = Vector2(0, -8)
+position = Vector2(0, -14)
 sprite_frames = SubResource("SpriteFrames_xo3ut")
 animation = &"idle"
 autoplay = "idle"
-frame = 1
-frame_progress = 0.77301985
+frame_progress = 0.75855374
 
 [node name="InteractableComponent" parent="." instance=ExtResource("3_g6y3g")]
 position = Vector2(0, -9)

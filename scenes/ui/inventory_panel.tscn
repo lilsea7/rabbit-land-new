@@ -83,18 +83,18 @@ theme_type_variation = &"InventoryLabel"
 text = "0"
 horizontal_alignment = 1
 
-[node name="Corn" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+[node name="Wheat" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(26, 32)
 layout_mode = 2
 theme_type_variation = &"InventoryItemPanel"
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Corn"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Wheat"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 texture = SubResource("AtlasTexture_b11k6")
 
-[node name="CornLabel" type="Label" parent="MarginContainer/VBoxContainer/Corn"]
+[node name="WheatLabel" type="Label" parent="MarginContainer/VBoxContainer/Wheat"]
 layout_mode = 2
 size_flags_vertical = 8
 theme_type_variation = &"InventoryLabel"

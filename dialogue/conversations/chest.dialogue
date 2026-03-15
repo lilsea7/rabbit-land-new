@@ -1,21 +1,21 @@
 ~ start_cow_pasture_box
 
-Pasture Box: [[Hi|Hello|Howdy]], your animals are hungry.
-Pasture Box: Would you like to feed your cows?
-- Yes
-	Marlow: Yeah! Lets feed my cows.
+Pasture Box: [Chào | Xin chào | Chào bạn] những chú bò của bạn đang đói.
+Pasture Box: Bạn có muốn cho chúng ăn không?
+- Có
+	txinh: Tuyệt! Hãy cho chúng ăn đi.
 	do GameDialogueManager.action_feed_the_animals()
-- No
-	Marlow: No, I don't need to feed them. I have enough milk.
+- Không 
+	Marlow: Không, tôi không cần cho chúng ăn. Tôi có đủ sữa rồi.
 => END
 
 ~ start_chicken_pasture_box
 
-Pasture Box: [[Hi|Hello|Howdy]], your animals are hungry.
-Pasture Box: Would you like to feed your chickens?
-- Yes
-	Marlow: Yeah! Lets feed my chickens.
+Pasture Box: [Chào | Xin chào | Chào bạn] những chú gà của bạn đang đói
+Pasture Box: Bạn có muốn cho chúng ăn không?
+- Có
+	Marlow: Tuyệt! Hãy cho chúng ăn đi.
 	do GameDialogueManager.action_feed_the_animals()
-- No
-	Marlow: No, I don't need to feed them. I have enough eggs.
+- Không 
+	Marlow: Không, tôi không cần cho chúng ăn. Tôi có đủ sữa rồi.
 => END

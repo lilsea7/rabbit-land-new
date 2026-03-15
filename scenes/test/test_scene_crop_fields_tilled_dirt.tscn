@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://436x8ci0f2ti"]
+[gd_scene load_steps=14 format=4 uid="uid://436x8ci0f2ti"]
 
 [ext_resource type="PackedScene" uid="uid://6jlbsxeiqvss" path="res://scenes/components/day_night_cycle_component.tscn" id="1_mapoa"]
 [ext_resource type="PackedScene" uid="uid://bjc3c3g538d24" path="res://scenes/components/test_scene_save_data_manager_component.tscn" id="1_nk4dp"]
@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://ch0ildoohd3bq" path="res://scenes/components/save_data_component.tscn" id="6_dxoer"]
 [ext_resource type="Resource" uid="uid://c6afvty025wqw" path="res://resources/tilemap_layer_data_resource.tres" id="7_t4lsr"]
 [ext_resource type="PackedScene" uid="uid://bfcgk355eabgj" path="res://scenes/components/save_lavel_data_component.tscn" id="9_w2jyg"]
-[ext_resource type="Script" uid="uid://c175dhdm4k2rn" path="res://scenes/components/save_lavel_data_component.gd" id="10_nk4dp"]
 
 [node name="TestSceneCropFieldsTilledDirt" type="Node2D"]
 
@@ -22,7 +21,6 @@
 [node name="TestSceneEnableToolButtonsComponent" parent="." instance=ExtResource("2_t4lsr")]
 
 [node name="SaveLavelDataComponent" parent="." instance=ExtResource("9_w2jyg")]
-script = ExtResource("10_nk4dp")
 
 [node name="DayNightCycleComponent" parent="." instance=ExtResource("1_mapoa")]
 

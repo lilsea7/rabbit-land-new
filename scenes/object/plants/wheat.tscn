@@ -1,0 +1,41 @@
+[gd_scene load_steps=10 format=3 uid="uid://lb38axvrk4rh"]
+
+[ext_resource type="Script" uid="uid://brdh38hhh0rev" path="res://scenes/object/plants/wheat.gd" id="1_x26rd"]
+[ext_resource type="Texture2D" uid="uid://ces4og4p3j8lw" path="res://assets/game/objects/basic_plants.png" id="2_omcsw"]
+[ext_resource type="PackedScene" uid="uid://eilo0sk473j5" path="res://scenes/object/plants/watering_particles.tscn" id="3_2nxsi"]
+[ext_resource type="PackedScene" uid="uid://bm0lxqoms1rpt" path="res://scenes/object/plants/flowering_particles.tscn" id="4_fh3fn"]
+[ext_resource type="PackedScene" uid="uid://cp5v32esn6wry" path="res://scenes/object/plants/growth_cycle_component.tscn" id="5_kvf0e"]
+[ext_resource type="PackedScene" uid="uid://iw6ss4ln5i0p" path="res://scenes/components/hurt_component.tscn" id="6_v34ls"]
+[ext_resource type="PackedScene" uid="uid://ch0ildoohd3bq" path="res://scenes/components/save_data_component.tscn" id="7_sbdq6"]
+[ext_resource type="Resource" uid="uid://46mgcsfeq3te" path="res://resources/scene_data_resource.tres" id="8_gf41o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_in7oj"]
+size = Vector2(14.445332, 9.028482)
+
+[node name="Wheat" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_x26rd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_omcsw")
+offset = Vector2(0, -4)
+hframes = 6
+vframes = 2
+frame = 1
+
+[node name="WateringParticles" parent="." instance=ExtResource("3_2nxsi")]
+
+[node name="FloweringParticles" parent="." instance=ExtResource("4_fh3fn")]
+
+[node name="GrowthCycleComponent" parent="." instance=ExtResource("5_kvf0e")]
+
+[node name="HurtComponent" parent="." instance=ExtResource("6_v34ls")]
+position = Vector2(0, -1)
+tool = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtComponent"]
+position = Vector2(-0.3540523, 0)
+shape = SubResource("RectangleShape2D_in7oj")
+
+[node name="SaveDataComponent" parent="." instance=ExtResource("7_sbdq6")]
+save_data_resource = ExtResource("8_gf41o")
