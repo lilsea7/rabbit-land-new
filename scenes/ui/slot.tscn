@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://qoat72jghx1p"]
+
+[ext_resource type="Texture2D" uid="uid://cd8tuel5gyu8h" path="res://assets/ui/baisc_ui_sprites.png" id="1_jkamp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sad2q"]
+atlas = ExtResource("1_jkamp")
+region = Rect2(59, 59, 26, 26)
+
+[node name="Slot" type="PanelContainer"]
+offset_right = 26.0
+offset_bottom = 26.0
+
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 2
+texture = SubResource("AtlasTexture_sad2q")
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 2

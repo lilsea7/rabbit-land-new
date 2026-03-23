@@ -1,12 +1,12 @@
 ~ start_cow_pasture_box
 
-Pasture Box: [Chào | Xin chào | Chào bạn] những chú bò của bạn đang đói.
+Pasture Box: [Chào] những chú bò của bạn đang đói.
 Pasture Box: Bạn có muốn cho chúng ăn không?
 - Có
 	txinh: Tuyệt! Hãy cho chúng ăn đi.
 	do GameDialogueManager.action_feed_the_animals()
 - Không 
-	Marlow: Không, tôi không cần cho chúng ăn. Tôi có đủ sữa rồi.
+	Temmo: Không, tôi không cần cho chúng ăn. Tôi có đủ sữa rồi.
 => END
 
 ~ start_chicken_pasture_box
@@ -14,8 +14,8 @@ Pasture Box: Bạn có muốn cho chúng ăn không?
 Pasture Box: [Chào | Xin chào | Chào bạn] những chú gà của bạn đang đói
 Pasture Box: Bạn có muốn cho chúng ăn không?
 - Có
-	Marlow: Tuyệt! Hãy cho chúng ăn đi.
+	Temmo: Tuyệt! Hãy cho chúng ăn đi.
 	do GameDialogueManager.action_feed_the_animals()
 - Không 
-	Marlow: Không, tôi không cần cho chúng ăn. Tôi có đủ sữa rồi.
+	Temmo: Không, tôi không cần cho chúng ăn. Tôi có đủ sữa rồi.
 => END

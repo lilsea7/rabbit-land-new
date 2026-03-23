@@ -1,10 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://d0dhtip02w7f6"]
+[gd_scene load_steps=11 format=3 uid="uid://d0dhtip02w7f6"]
 
 [ext_resource type="Theme" uid="uid://ljcck66th0xd" path="res://scenes/ui/game_ui_theme.tres" id="1_e2vrk"]
 [ext_resource type="PackedScene" uid="uid://8f4petbcqx7d" path="res://scenes/ui/emotes_panel.tscn" id="2_0kkfd"]
 [ext_resource type="PackedScene" uid="uid://icj1aql0pt0v" path="res://scenes/ui/tools_panel.tscn" id="2_gusqm"]
 [ext_resource type="PackedScene" uid="uid://bgmw1fpqtt87o" path="res://scenes/ui/inventory_panel.tscn" id="3_gusqm"]
+[ext_resource type="Texture2D" uid="uid://cd8tuel5gyu8h" path="res://assets/ui/baisc_ui_sprites.png" id="3_nwa5a"]
 [ext_resource type="PackedScene" uid="uid://8qpho0ri8727" path="res://scenes/ui/day_and_night_panel.tscn" id="4_gkbp4"]
+[ext_resource type="PackedScene" uid="uid://dofq617k0q8ck" path="res://scenes/ui/plants_ui.tscn" id="7_ooiym"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ooiym"]
+texture = ExtResource("3_nwa5a")
+region_rect = Rect2(600, 131, 35, 41)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ce4rh"]
+texture = ExtResource("3_nwa5a")
+region_rect = Rect2(259, 180, 90, 25)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r1vnj"]
+texture = ExtResource("3_nwa5a")
+region_rect = Rect2(531, 68, 10, 8)
 
 [node name="GameScreen" type="CanvasLayer"]
 
@@ -16,19 +30,58 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_e2vrk")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
-[node name="EmotesPanel" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_0kkfd")]
+[node name="EmotesPanel" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("2_0kkfd")]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="InventoryPanel" parent="MarginContainer/VBoxContainer" instance=ExtResource("3_gusqm")]
+[node name="Panel" type="Panel" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ooiym")
+
+[node name="InventoryPanel" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("3_gusqm")]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+
+[node name="Panel" type="Panel" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(80, 30)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_ce4rh")
+
+[node name="level" type="Label" parent="MarginContainer/HBoxContainer/Panel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 4.0
+offset_right = 68.0
+offset_bottom = 17.0
+text = "LEVEL 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="MarginContainer/HBoxContainer/Panel"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 20.0
+offset_right = 76.0
+offset_bottom = 24.0
+
+[node name="Panel2" type="Panel" parent="MarginContainer/HBoxContainer/Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 18.0
+offset_right = 25.0
+offset_bottom = 25.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_r1vnj")
 
 [node name="ToolsPanel" parent="MarginContainer" instance=ExtResource("2_gusqm")]
 layout_mode = 2
@@ -39,3 +92,5 @@ size_flags_vertical = 8
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
+
+[node name="PlantsUI" parent="." instance=ExtResource("7_ooiym")]

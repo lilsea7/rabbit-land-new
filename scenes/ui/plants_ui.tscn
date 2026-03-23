@@ -1,0 +1,517 @@
+[gd_scene load_steps=50 format=3 uid="uid://dofq617k0q8ck"]
+
+[ext_resource type="Script" uid="uid://c6cuajkpeonul" path="res://scenes/ui/plants_ui.gd" id="1_hvx5b"]
+[ext_resource type="Texture2D" uid="uid://btoiwj8p1b4qg" path="res://assets/ui/setting_menu.png" id="1_qclpl"]
+[ext_resource type="Texture2D" uid="uid://cd8tuel5gyu8h" path="res://assets/ui/baisc_ui_sprites.png" id="2_qr0oe"]
+[ext_resource type="FontFile" uid="uid://2pfwl33qn5vf" path="res://assets/ui/fonts/pixelFont-7-8x14-sproutLands.ttf" id="3_hvx5b"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2hncm"]
+texture = ExtResource("2_qr0oe")
+region_rect = Rect2(11, 59, 26, 28)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hvx5b"]
+load_path = "res://.godot/imported/baisc_ui_sprites.png-9d0b1a66bc9a9feb635dcd2cce036e01.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yppo8"]
+texture = SubResource("CompressedTexture2D_hvx5b")
+region_rect = Rect2(11, 155, 26, 28)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rv8mr"]
+load_path = "res://.godot/imported/baisc_ui_sprites.png-9d0b1a66bc9a9feb635dcd2cce036e01.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k8o6f"]
+texture = SubResource("CompressedTexture2D_rv8mr")
+region_rect = Rect2(11, 155, 26, 28)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4mwub"]
+load_path = "res://.godot/imported/farming_plants_items_v2.png-d1a3f2c1171165262a5cece513072c33.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hncm"]
+atlas = SubResource("CompressedTexture2D_4mwub")
+region = Rect2(0, 112, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0yhcs"]
+texture = ExtResource("2_qr0oe")
+region_rect = Rect2(11, 59, 26, 28)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yppo8"]
+load_path = "res://.godot/imported/baisc_ui_sprites.png-9d0b1a66bc9a9feb635dcd2cce036e01.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3bmbd"]
+texture = SubResource("CompressedTexture2D_yppo8")
+region_rect = Rect2(11, 155, 26, 28)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0yhcs"]
+load_path = "res://.godot/imported/baisc_ui_sprites.png-9d0b1a66bc9a9feb635dcd2cce036e01.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m4g4k"]
+texture = SubResource("CompressedTexture2D_0yhcs")
+region_rect = Rect2(11, 155, 26, 28)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6insi"]
+load_path = "res://.godot/imported/farming_plants_items_v2.png-d1a3f2c1171165262a5cece513072c33.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yppo8"]
+atlas = SubResource("CompressedTexture2D_6insi")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6pwdr"]
+texture = ExtResource("2_qr0oe")
+region_rect = Rect2(11, 59, 26, 28)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1kkhc"]
+load_path = "res://.godot/imported/baisc_ui_sprites.png-9d0b1a66bc9a9feb635dcd2cce036e01.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rxlu3"]
+texture = SubResource("CompressedTexture2D_1kkhc")
+region_rect = Rect2(11, 155, 26, 28)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pp2q5"]
+load_path = "res://.godot/imported/baisc_ui_sprites.png-9d0b1a66bc9a9feb635dcd2cce036e01.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_83yfs"]
+texture = SubResource("CompressedTexture2D_pp2q5")
+region_rect = Rect2(11, 155, 26, 28)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3bmbd"]
+load_path = "res://.godot/imported/farming_plants_items_v2.png-d1a3f2c1171165262a5cece513072c33.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rv8mr"]
+atlas = SubResource("CompressedTexture2D_3bmbd")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1qbbs"]
+texture = ExtResource("2_qr0oe")
+region_rect = Rect2(11, 59, 26, 28)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gcn2d"]
+load_path = "res://.godot/imported/baisc_ui_sprites.png-9d0b1a66bc9a9feb635dcd2cce036e01.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1rqpi"]
+texture = SubResource("CompressedTexture2D_gcn2d")
+region_rect = Rect2(11, 155, 26, 28)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0up18"]
+load_path = "res://.godot/imported/baisc_ui_sprites.png-9d0b1a66bc9a9feb635dcd2cce036e01.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a78lu"]
+texture = SubResource("CompressedTexture2D_0up18")
+region_rect = Rect2(11, 155, 26, 28)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_k8o6f"]
+load_path = "res://.godot/imported/farming_plants_items_v2.png-d1a3f2c1171165262a5cece513072c33.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0yhcs"]
+atlas = SubResource("CompressedTexture2D_k8o6f")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4wbjf"]
+texture = ExtResource("2_qr0oe")
+region_rect = Rect2(11, 59, 26, 28)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_a3cbh"]
+load_path = "res://.godot/imported/baisc_ui_sprites.png-9d0b1a66bc9a9feb635dcd2cce036e01.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_po0gi"]
+texture = SubResource("CompressedTexture2D_a3cbh")
+region_rect = Rect2(11, 155, 26, 28)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_m4g4k"]
+load_path = "res://.godot/imported/farming_plants_items_v2.png-d1a3f2c1171165262a5cece513072c33.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6pwdr"]
+atlas = SubResource("CompressedTexture2D_m4g4k")
+region = Rect2(0, 160, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ekxl3"]
+texture = ExtResource("2_qr0oe")
+region_rect = Rect2(11, 59, 26, 28)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_802q8"]
+load_path = "res://.godot/imported/baisc_ui_sprites.png-9d0b1a66bc9a9feb635dcd2cce036e01.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nriit"]
+texture = SubResource("CompressedTexture2D_802q8")
+region_rect = Rect2(11, 155, 26, 28)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u0067"]
+load_path = "res://.godot/imported/baisc_ui_sprites.png-9d0b1a66bc9a9feb635dcd2cce036e01.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_30e1d"]
+texture = SubResource("CompressedTexture2D_u0067")
+region_rect = Rect2(11, 155, 26, 28)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qexr3"]
+load_path = "res://.godot/imported/farming_plants_items_v2.png-d1a3f2c1171165262a5cece513072c33.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kkhc"]
+atlas = SubResource("CompressedTexture2D_qexr3")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hvx5b"]
+texture = ExtResource("2_qr0oe")
+region_rect = Rect2(837, 100, 22, 24)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bw5vv"]
+load_path = "res://.godot/imported/baisc_ui_sprites.png-9d0b1a66bc9a9feb635dcd2cce036e01.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4mwub"]
+texture = SubResource("CompressedTexture2D_bw5vv")
+region_rect = Rect2(869, 102, 22, 22)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2hncm"]
+load_path = "res://.godot/imported/baisc_ui_sprites.png-9d0b1a66bc9a9feb635dcd2cce036e01.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6insi"]
+texture = SubResource("CompressedTexture2D_2hncm")
+region_rect = Rect2(869, 102, 22, 22)
+
+[node name="PlantsUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hvx5b")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.5
+offset_top = -45.0
+offset_right = 59.5
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_qclpl")
+region_rect = Rect2(139, 12, 106, 122)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 10
+patch_margin_bottom = 9
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.0
+offset_top = -28.0
+offset_right = 43.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 3
+
+[node name="SlotWheat" type="Button" parent="NinePatchRect/GridContainer"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_2hncm")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yppo8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_k8o6f")
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect/GridContainer/SlotWheat"]
+layout_mode = 0
+offset_right = 30.0
+offset_bottom = 30.0
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 9
+theme_override_constants/margin_bottom = 7
+
+[node name="Icon" type="TextureRect" parent="NinePatchRect/GridContainer/SlotWheat/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("AtlasTexture_2hncm")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="NinePatchRect/GridContainer/SlotWheat"]
+layout_mode = 0
+offset_right = 30.0
+offset_bottom = 30.0
+
+[node name="QuantityLabel" type="Label" parent="NinePatchRect/GridContainer/SlotWheat/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -9.0
+offset_top = -13.0
+offset_right = -4.0
+offset_bottom = -6.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("3_hvx5b")
+theme_override_font_sizes/font_size = 9
+text = "0"
+vertical_alignment = 3
+
+[node name="SlotTomato" type="Button" parent="NinePatchRect/GridContainer"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_0yhcs")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3bmbd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_m4g4k")
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect/GridContainer/SlotTomato"]
+layout_mode = 0
+offset_right = 30.0
+offset_bottom = 30.0
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 9
+theme_override_constants/margin_bottom = 7
+
+[node name="Icon" type="TextureRect" parent="NinePatchRect/GridContainer/SlotTomato/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("AtlasTexture_yppo8")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="NinePatchRect/GridContainer/SlotTomato"]
+layout_mode = 0
+offset_right = 30.0
+offset_bottom = 30.0
+
+[node name="QuantityLabel" type="Label" parent="NinePatchRect/GridContainer/SlotTomato/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -9.0
+offset_top = -13.0
+offset_right = -4.0
+offset_bottom = -6.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("3_hvx5b")
+theme_override_font_sizes/font_size = 9
+text = "0"
+vertical_alignment = 3
+
+[node name="SlotCarrot" type="Button" parent="NinePatchRect/GridContainer"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_6pwdr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rxlu3")
+theme_override_styles/hover = SubResource("StyleBoxTexture_83yfs")
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect/GridContainer/SlotCarrot"]
+layout_mode = 0
+offset_right = 30.0
+offset_bottom = 30.0
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 9
+theme_override_constants/margin_bottom = 7
+
+[node name="Icon" type="TextureRect" parent="NinePatchRect/GridContainer/SlotCarrot/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("AtlasTexture_rv8mr")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="NinePatchRect/GridContainer/SlotCarrot"]
+layout_mode = 0
+offset_right = 30.0
+offset_bottom = 30.0
+
+[node name="QuantityLabel" type="Label" parent="NinePatchRect/GridContainer/SlotCarrot/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -9.0
+offset_top = -13.0
+offset_right = -4.0
+offset_bottom = -6.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("3_hvx5b")
+theme_override_font_sizes/font_size = 9
+text = "0"
+vertical_alignment = 3
+
+[node name="SlotCorn" type="Button" parent="NinePatchRect/GridContainer"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_1qbbs")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_1rqpi")
+theme_override_styles/hover = SubResource("StyleBoxTexture_a78lu")
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect/GridContainer/SlotCorn"]
+layout_mode = 0
+offset_right = 30.0
+offset_bottom = 30.0
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 9
+theme_override_constants/margin_bottom = 7
+
+[node name="Icon" type="TextureRect" parent="NinePatchRect/GridContainer/SlotCorn/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("AtlasTexture_0yhcs")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="NinePatchRect/GridContainer/SlotCorn"]
+layout_mode = 0
+offset_right = 30.0
+offset_bottom = 30.0
+
+[node name="QuantityLabel" type="Label" parent="NinePatchRect/GridContainer/SlotCorn/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -9.0
+offset_top = -13.0
+offset_right = -4.0
+offset_bottom = -6.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("3_hvx5b")
+theme_override_font_sizes/font_size = 9
+text = "0"
+vertical_alignment = 3
+
+[node name="SlotRose" type="Button" parent="NinePatchRect/GridContainer"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_4wbjf")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_po0gi")
+theme_override_styles/hover = SubResource("StyleBoxTexture_po0gi")
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect/GridContainer/SlotRose"]
+layout_mode = 0
+offset_right = 30.0
+offset_bottom = 30.0
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 9
+theme_override_constants/margin_bottom = 7
+
+[node name="Icon" type="TextureRect" parent="NinePatchRect/GridContainer/SlotRose/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("AtlasTexture_6pwdr")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="NinePatchRect/GridContainer/SlotRose"]
+layout_mode = 0
+offset_right = 30.0
+offset_bottom = 30.0
+
+[node name="QuantityLabel" type="Label" parent="NinePatchRect/GridContainer/SlotRose/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -9.0
+offset_top = -13.0
+offset_right = -4.0
+offset_bottom = -6.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("3_hvx5b")
+theme_override_font_sizes/font_size = 9
+text = "0"
+vertical_alignment = 3
+
+[node name="SlotSunflower" type="Button" parent="NinePatchRect/GridContainer"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_ekxl3")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nriit")
+theme_override_styles/hover = SubResource("StyleBoxTexture_30e1d")
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect/GridContainer/SlotSunflower"]
+layout_mode = 0
+offset_right = 30.0
+offset_bottom = 30.0
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 9
+theme_override_constants/margin_bottom = 7
+
+[node name="Icon" type="TextureRect" parent="NinePatchRect/GridContainer/SlotSunflower/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("AtlasTexture_1kkhc")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="NinePatchRect/GridContainer/SlotSunflower"]
+layout_mode = 0
+offset_right = 30.0
+offset_bottom = 30.0
+
+[node name="QuantityLabel" type="Label" parent="NinePatchRect/GridContainer/SlotSunflower/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -9.0
+offset_top = -13.0
+offset_right = -4.0
+offset_bottom = -6.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("3_hvx5b")
+theme_override_font_sizes/font_size = 9
+text = "0"
+vertical_alignment = 3
+
+[node name="NinePatchRect" type="NinePatchRect" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="ClosePlantUI" type="Button" parent="NinePatchRect/NinePatchRect"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -11.5
+offset_top = -12.0
+offset_right = 13.5
+offset_bottom = 13.0
+grow_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_hvx5b")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_4mwub")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6insi")
