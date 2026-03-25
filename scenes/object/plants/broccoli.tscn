@@ -1,0 +1,75 @@
+[gd_scene load_steps=14 format=3 uid="uid://beh8d8iwciy6n"]
+
+[ext_resource type="Texture2D" uid="uid://cq2t0eoav07v1" path="res://assets/game/objects/farming_plants_v2.png" id="1_2nlov"]
+[ext_resource type="Script" uid="uid://qe85h458dmdt" path="res://scenes/object/plants/broccoli.gd" id="1_ts1yu"]
+[ext_resource type="PackedScene" uid="uid://eilo0sk473j5" path="res://scenes/object/plants/watering_particles.tscn" id="2_5e8hw"]
+[ext_resource type="PackedScene" uid="uid://bm0lxqoms1rpt" path="res://scenes/object/plants/flowering_particles.tscn" id="3_2t8tt"]
+[ext_resource type="PackedScene" uid="uid://cp5v32esn6wry" path="res://scenes/object/plants/growth_cycle_component.tscn" id="4_2t8tt"]
+[ext_resource type="PackedScene" uid="uid://iw6ss4ln5i0p" path="res://scenes/components/hurt_component.tscn" id="4_ts1yu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ts1yu"]
+atlas = ExtResource("1_2nlov")
+region = Rect2(16, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_858qg"]
+atlas = ExtResource("1_2nlov")
+region = Rect2(32, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1mv66"]
+atlas = ExtResource("1_2nlov")
+region = Rect2(48, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dsc73"]
+atlas = ExtResource("1_2nlov")
+region = Rect2(64, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vm6yr"]
+atlas = ExtResource("1_2nlov")
+region = Rect2(80, 112, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yn4j4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ts1yu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_858qg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1mv66")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dsc73")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vm6yr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_858qg"]
+size = Vector2(15, 10.5)
+
+[node name="Broccoli" type="Node2D"]
+script = ExtResource("1_ts1yu")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -6)
+sprite_frames = SubResource("SpriteFrames_yn4j4")
+frame_progress = 0.12384275
+
+[node name="WateringParticles" parent="." instance=ExtResource("2_5e8hw")]
+
+[node name="FloweringParticles" parent="." instance=ExtResource("3_2t8tt")]
+
+[node name="GrowthCycleComponent" parent="." instance=ExtResource("4_2t8tt")]
+
+[node name="HurtComponent" parent="." instance=ExtResource("4_ts1yu")]
+tool = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtComponent"]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_858qg")

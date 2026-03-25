@@ -1,0 +1,75 @@
+[gd_scene load_steps=14 format=3 uid="uid://tmgf707mlndl"]
+
+[ext_resource type="Script" uid="uid://cn5rngfj4g4nn" path="res://scenes/object/plants/rose.gd" id="1_08ydb"]
+[ext_resource type="Texture2D" uid="uid://cq2t0eoav07v1" path="res://assets/game/objects/farming_plants_v2.png" id="1_ffich"]
+[ext_resource type="PackedScene" uid="uid://eilo0sk473j5" path="res://scenes/object/plants/watering_particles.tscn" id="2_3t3iy"]
+[ext_resource type="PackedScene" uid="uid://bm0lxqoms1rpt" path="res://scenes/object/plants/flowering_particles.tscn" id="3_08ydb"]
+[ext_resource type="PackedScene" uid="uid://iw6ss4ln5i0p" path="res://scenes/components/hurt_component.tscn" id="4_qb4f6"]
+[ext_resource type="PackedScene" uid="uid://cp5v32esn6wry" path="res://scenes/object/plants/growth_cycle_component.tscn" id="5_qb4f6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ti117"]
+atlas = ExtResource("1_ffich")
+region = Rect2(16, 176, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7n4i2"]
+atlas = ExtResource("1_ffich")
+region = Rect2(32, 176, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vqyv5"]
+atlas = ExtResource("1_ffich")
+region = Rect2(48, 176, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lbyra"]
+atlas = ExtResource("1_ffich")
+region = Rect2(64, 176, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwalu"]
+atlas = ExtResource("1_ffich")
+region = Rect2(80, 176, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7ptj5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ti117")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7n4i2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vqyv5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lbyra")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jwalu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ti117"]
+size = Vector2(16, 10)
+
+[node name="Rose" type="Node2D"]
+script = ExtResource("1_08ydb")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -5)
+sprite_frames = SubResource("SpriteFrames_7ptj5")
+
+[node name="WateringParticles" parent="." instance=ExtResource("2_3t3iy")]
+
+[node name="FloweringParticles" parent="." instance=ExtResource("3_08ydb")]
+
+[node name="GrowthCycleComponent" parent="." instance=ExtResource("5_qb4f6")]
+
+[node name="HurtComponent" parent="." instance=ExtResource("4_qb4f6")]
+position = Vector2(0, -1)
+tool = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtComponent"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_ti117")

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dnna8fv1gsx6x"]
+
+[ext_resource type="Texture2D" uid="uid://du8rbultoaffr" path="res://assets/game/objects/farming_plants_items_v2.png" id="1_gp3ya"]
+[ext_resource type="PackedScene" uid="uid://bos4u6mri0agg" path="res://scenes/components/collectable_component.tscn" id="2_dmlni"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i4sc8"]
+radius = 9.0
+
+[node name="CarrotHarvest" type="Sprite2D"]
+texture = ExtResource("1_gp3ya")
+hframes = 5
+vframes = 14
+frame = 6
+
+[node name="CollectableComponent" parent="." instance=ExtResource("2_dmlni")]
+collactable_name = "carrot"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
+shape = SubResource("CircleShape2D_i4sc8")

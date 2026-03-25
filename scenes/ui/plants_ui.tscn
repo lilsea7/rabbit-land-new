@@ -146,7 +146,7 @@ load_path = "res://.godot/imported/farming_plants_items_v2.png-d1a3f2c1171165262
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1kkhc"]
 atlas = SubResource("CompressedTexture2D_qexr3")
-region = Rect2(32, 0, 16, 16)
+region = Rect2(1, 97, 14, 15)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hvx5b"]
 texture = ExtResource("2_qr0oe")
@@ -445,14 +445,14 @@ theme_override_font_sizes/font_size = 9
 text = "0"
 vertical_alignment = 3
 
-[node name="SlotSunflower" type="Button" parent="NinePatchRect/GridContainer"]
+[node name="SlotBroccoli" type="Button" parent="NinePatchRect/GridContainer"]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_ekxl3")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_nriit")
 theme_override_styles/hover = SubResource("StyleBoxTexture_30e1d")
 
-[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect/GridContainer/SlotSunflower"]
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect/GridContainer/SlotBroccoli"]
 layout_mode = 0
 offset_right = 30.0
 offset_bottom = 30.0
@@ -461,18 +461,18 @@ theme_override_constants/margin_top = 2
 theme_override_constants/margin_right = 9
 theme_override_constants/margin_bottom = 7
 
-[node name="Icon" type="TextureRect" parent="NinePatchRect/GridContainer/SlotSunflower/MarginContainer"]
+[node name="Icon" type="TextureRect" parent="NinePatchRect/GridContainer/SlotBroccoli/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = SubResource("AtlasTexture_1kkhc")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="NinePatchRect/GridContainer/SlotSunflower"]
+[node name="NinePatchRect" type="NinePatchRect" parent="NinePatchRect/GridContainer/SlotBroccoli"]
 layout_mode = 0
 offset_right = 30.0
 offset_bottom = 30.0
 
-[node name="QuantityLabel" type="Label" parent="NinePatchRect/GridContainer/SlotSunflower/NinePatchRect"]
+[node name="QuantityLabel" type="Label" parent="NinePatchRect/GridContainer/SlotBroccoli/NinePatchRect"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0

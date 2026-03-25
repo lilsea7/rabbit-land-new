@@ -1,0 +1,75 @@
+[gd_scene load_steps=14 format=3 uid="uid://di7g6fhamipeh"]
+
+[ext_resource type="Texture2D" uid="uid://cq2t0eoav07v1" path="res://assets/game/objects/farming_plants_v2.png" id="1_1b2o8"]
+[ext_resource type="Script" uid="uid://b7lctif03tnyt" path="res://scenes/object/plants/corn.gd" id="1_hmplj"]
+[ext_resource type="PackedScene" uid="uid://eilo0sk473j5" path="res://scenes/object/plants/watering_particles.tscn" id="2_hmplj"]
+[ext_resource type="PackedScene" uid="uid://bm0lxqoms1rpt" path="res://scenes/object/plants/flowering_particles.tscn" id="3_in7oj"]
+[ext_resource type="PackedScene" uid="uid://cp5v32esn6wry" path="res://scenes/object/plants/growth_cycle_component.tscn" id="4_jgmsp"]
+[ext_resource type="PackedScene" uid="uid://iw6ss4ln5i0p" path="res://scenes/components/hurt_component.tscn" id="5_jbag2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7s42n"]
+atlas = ExtResource("1_1b2o8")
+region = Rect2(16, 0, 16, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_42tmw"]
+atlas = ExtResource("1_1b2o8")
+region = Rect2(48, 0, 16, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_quoo7"]
+atlas = ExtResource("1_1b2o8")
+region = Rect2(64, 0, 16, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jbmf1"]
+atlas = ExtResource("1_1b2o8")
+region = Rect2(80, 0, 16, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s5e1f"]
+atlas = ExtResource("1_1b2o8")
+region = Rect2(96, 0, 16, 31)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4qnmg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7s42n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_42tmw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_quoo7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jbmf1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s5e1f")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y0tqk"]
+size = Vector2(18, 14)
+
+[node name="Corn" type="Node2D"]
+script = ExtResource("1_hmplj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -15)
+sprite_frames = SubResource("SpriteFrames_4qnmg")
+frame = 4
+frame_progress = 1.0
+
+[node name="WateringParticles" parent="." instance=ExtResource("2_hmplj")]
+
+[node name="FloweringParticles" parent="." instance=ExtResource("3_in7oj")]
+
+[node name="GrowthCycleComponent" parent="." instance=ExtResource("4_jgmsp")]
+
+[node name="HurtComponent" parent="." instance=ExtResource("5_jbag2")]
+tool = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtComponent"]
+shape = SubResource("RectangleShape2D_y0tqk")

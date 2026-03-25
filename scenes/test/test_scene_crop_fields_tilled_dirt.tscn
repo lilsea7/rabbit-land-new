@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://436x8ci0f2ti"]
+[gd_scene load_steps=20 format=4 uid="uid://436x8ci0f2ti"]
 
 [ext_resource type="PackedScene" uid="uid://6jlbsxeiqvss" path="res://scenes/components/day_night_cycle_component.tscn" id="1_mapoa"]
 [ext_resource type="PackedScene" uid="uid://bjc3c3g538d24" path="res://scenes/components/test_scene_save_data_manager_component.tscn" id="1_nk4dp"]
@@ -13,6 +13,12 @@
 [ext_resource type="PackedScene" uid="uid://ch0ildoohd3bq" path="res://scenes/components/save_data_component.tscn" id="6_dxoer"]
 [ext_resource type="Resource" uid="uid://c6afvty025wqw" path="res://resources/tilemap_layer_data_resource.tres" id="7_t4lsr"]
 [ext_resource type="PackedScene" uid="uid://bfcgk355eabgj" path="res://scenes/components/save_lavel_data_component.tscn" id="9_w2jyg"]
+[ext_resource type="PackedScene" uid="uid://lb38axvrk4rh" path="res://scenes/object/plants/wheat.tscn" id="10_6tog0"]
+[ext_resource type="PackedScene" uid="uid://bkaul74ko1i0f" path="res://scenes/object/plants/tomato.tscn" id="11_1c8ek"]
+[ext_resource type="PackedScene" uid="uid://d38nsf68yhk7r" path="res://scenes/object/plants/carrot.tscn" id="12_csa4y"]
+[ext_resource type="PackedScene" uid="uid://di7g6fhamipeh" path="res://scenes/object/plants/corn.tscn" id="13_jk07x"]
+[ext_resource type="PackedScene" uid="uid://tmgf707mlndl" path="res://scenes/object/plants/rose.tscn" id="14_rrqmo"]
+[ext_resource type="PackedScene" uid="uid://beh8d8iwciy6n" path="res://scenes/object/plants/broccoli.tscn" id="15_bfbpq"]
 
 [node name="TestSceneCropFieldsTilledDirt" type="Node2D"]
 
@@ -46,6 +52,12 @@ save_data_resource = ExtResource("7_t4lsr")
 script = ExtResource("4_ff0kp")
 grass_tilemap_layer = NodePath("../GameTileMap/Grass")
 tilled_soil_tilemap_layer = NodePath("../GameTileMap/TilledSoil")
+wheat_plant_scene = ExtResource("10_6tog0")
+tomato_plant_scene = ExtResource("11_1c8ek")
+carrot_plant_scene = ExtResource("12_csa4y")
+corn_plant_scene = ExtResource("13_jk07x")
+rose_plant_scene = ExtResource("14_rrqmo")
+sunflower_plant_scene = ExtResource("15_bfbpq")
 
 [node name="CropsCursorComponent" parent="." node_paths=PackedStringArray("tilled_siol_tilemap_layer") instance=ExtResource("5_aolun")]
 script = ExtResource("6_bb1mf")

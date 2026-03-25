@@ -1,0 +1,77 @@
+[gd_scene load_steps=14 format=3 uid="uid://d38nsf68yhk7r"]
+
+[ext_resource type="Script" uid="uid://dhb1u7kj4kmpt" path="res://scenes/object/plants/carrot.gd" id="1_0tqj8"]
+[ext_resource type="Texture2D" uid="uid://cq2t0eoav07v1" path="res://assets/game/objects/farming_plants_v2.png" id="1_2h8p4"]
+[ext_resource type="PackedScene" uid="uid://eilo0sk473j5" path="res://scenes/object/plants/watering_particles.tscn" id="2_whg35"]
+[ext_resource type="PackedScene" uid="uid://bm0lxqoms1rpt" path="res://scenes/object/plants/flowering_particles.tscn" id="3_7siex"]
+[ext_resource type="PackedScene" uid="uid://iw6ss4ln5i0p" path="res://scenes/components/hurt_component.tscn" id="4_0tqj8"]
+[ext_resource type="PackedScene" uid="uid://cp5v32esn6wry" path="res://scenes/object/plants/growth_cycle_component.tscn" id="5_8up1c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_35anl"]
+atlas = ExtResource("1_2h8p4")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0tqj8"]
+atlas = ExtResource("1_2h8p4")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8up1c"]
+atlas = ExtResource("1_2h8p4")
+region = Rect2(48, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4pmc5"]
+atlas = ExtResource("1_2h8p4")
+region = Rect2(64, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_livej"]
+atlas = ExtResource("1_2h8p4")
+region = Rect2(80, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d7kqs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_35anl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0tqj8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8up1c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4pmc5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_livej")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8up1c"]
+size = Vector2(12, 9)
+
+[node name="Carrot" type="Node2D"]
+script = ExtResource("1_0tqj8")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -3)
+sprite_frames = SubResource("SpriteFrames_d7kqs")
+frame = 1
+frame_progress = 0.75231934
+
+[node name="WateringParticles" parent="." instance=ExtResource("2_whg35")]
+position = Vector2(0, -1)
+
+[node name="FloweringParticles" parent="." instance=ExtResource("3_7siex")]
+
+[node name="GrowthCycleComponent" parent="." instance=ExtResource("5_8up1c")]
+
+[node name="HurtComponent" parent="." instance=ExtResource("4_0tqj8")]
+tool = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtComponent"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_8up1c")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://dkiltxkvxhdtd"]
+[gd_scene load_steps=10 format=4 uid="uid://dkiltxkvxhdtd"]
 
 [ext_resource type="PackedScene" uid="uid://6jlbsxeiqvss" path="res://scenes/components/day_night_cycle_component.tscn" id="1_17gaa"]
 [ext_resource type="TileSet" uid="uid://knxfvhe807ul" path="res://Tilesets/game_tile_set.tres" id="2_eku4r"]
@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://d0dhtip02w7f6" path="res://scenes/ui/game_screen.tscn" id="4_f40v7"]
 [ext_resource type="PackedScene" uid="uid://lb38axvrk4rh" path="res://scenes/object/plants/wheat.tscn" id="5_eku4r"]
 [ext_resource type="PackedScene" uid="uid://bkaul74ko1i0f" path="res://scenes/object/plants/tomato.tscn" id="6_s5uu4"]
+[ext_resource type="PackedScene" uid="uid://d38nsf68yhk7r" path="res://scenes/object/plants/carrot.tscn" id="7_f40v7"]
+[ext_resource type="PackedScene" uid="uid://tmgf707mlndl" path="res://scenes/object/plants/rose.tscn" id="8_5ko52"]
+[ext_resource type="PackedScene" uid="uid://beh8d8iwciy6n" path="res://scenes/object/plants/broccoli.tscn" id="9_av17k"]
 
 [node name="TestSceneCrops" type="Node2D"]
 
@@ -26,9 +29,19 @@ tile_set = ExtResource("2_eku4r")
 position = Vector2(230, 196)
 
 [node name="GameScreen" parent="." instance=ExtResource("4_f40v7")]
+visible = false
 
 [node name="Wheat" parent="." instance=ExtResource("5_eku4r")]
 position = Vector2(191.98726, 126.25168)
 
 [node name="Tomato" parent="." instance=ExtResource("6_s5uu4")]
 position = Vector2(245.52408, 131.78598)
+
+[node name="Carrot" parent="." instance=ExtResource("7_f40v7")]
+position = Vector2(207, 142)
+
+[node name="Rose" parent="." instance=ExtResource("8_5ko52")]
+position = Vector2(168, 154)
+
+[node name="SunFlower" parent="." instance=ExtResource("9_av17k")]
+position = Vector2(201, 163)

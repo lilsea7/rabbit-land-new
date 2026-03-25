@@ -5,9 +5,16 @@ enum Tools {
 	AxeWood,
 	TillGround,
 	WaterCrops,
+	
+	# === CÁC HÀNH ĐỘNG TRỒNG CÂY ===
 	PlantWheat,
 	PlantTomato,
-	Plants
+	PlantCarrot,
+	PlantCorn,
+	PlantRose,
+	PlantBroccoli,
+	
+	Plants          # Dùng để mở PlantsUI
 }
 
 enum ColisonLayer {
