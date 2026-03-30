@@ -12,7 +12,8 @@ vframes = 14
 frame = 51
 
 [node name="CollectableComponent" parent="." instance=ExtResource("2_as10x")]
-collactable_name = "rose"
+collectable_name = "rose"
+quantity = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
 shape = SubResource("CircleShape2D_r4h2o")

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://c2wp8b1m0o48h"]
+
+[ext_resource type="Texture2D" uid="uid://o2nrs4lxpydc" path="res://assets/game/objects/basic_grass_biom_things.png" id="1_m6rk0"]
+[ext_resource type="Script" uid="uid://txnored4j7y7" path="res://scenes/ui/Item.gd" id="2_7sorj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0mq1"]
+atlas = ExtResource("1_m6rk0")
+region = Rect2(80, 32, 16, 16)
+
+[resource]
+script = ExtResource("2_7sorj")
+title = "Log"
+icon = SubResource("AtlasTexture_h0mq1")
+description = "Basic wood material obtained by chopping or interacting with trees.
+Used for crafting, building, and construction purposes."
+metadata/_custom_type_script = "uid://txnored4j7y7"

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://v8qm72x7s0wf"]
+
+[ext_resource type="Texture2D" uid="uid://dkywr8fa4iiu4" path="res://assets/game/objects/simple_milk_and_grass_item.png" id="1_u7568"]
+[ext_resource type="Script" uid="uid://txnored4j7y7" path="res://scenes/ui/Item.gd" id="2_rjshn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4r42b"]
+atlas = ExtResource("1_u7568")
+region = Rect2(32, 0, 16, 16)
+
+[resource]
+script = ExtResource("2_rjshn")
+title = "Milk"
+icon = SubResource("AtlasTexture_4r42b")
+description = "A livestock product collected from cows after being well-fed.
+Used in food processing or for trading."
+metadata/_custom_type_script = "uid://txnored4j7y7"

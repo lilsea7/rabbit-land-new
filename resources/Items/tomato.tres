@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://bmt1r68j68yvm"]
+
+[ext_resource type="Texture2D" uid="uid://du8rbultoaffr" path="res://assets/game/objects/farming_plants_items_v2.png" id="1_76joc"]
+[ext_resource type="Script" uid="uid://txnored4j7y7" path="res://scenes/ui/Item.gd" id="2_2y5x4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ynfe6"]
+atlas = ExtResource("1_76joc")
+region = Rect2(16, 48, 16, 16)
+
+[resource]
+script = ExtResource("2_2y5x4")
+title = "Tomato"
+icon = SubResource("AtlasTexture_ynfe6")
+description = "A crop harvested from tomato plants after the growth process.
+Can be used for cooking or trading."
+metadata/_custom_type_script = "uid://txnored4j7y7"

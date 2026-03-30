@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://cor13gvvx07cc"]
+
+[ext_resource type="Texture2D" uid="uid://du8rbultoaffr" path="res://assets/game/objects/farming_plants_items_v2.png" id="1_ix5uj"]
+[ext_resource type="Script" uid="uid://txnored4j7y7" path="res://scenes/ui/Item.gd" id="2_5hpob"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0kohe"]
+atlas = ExtResource("1_ix5uj")
+region = Rect2(16, 16, 16, 16)
+
+[resource]
+script = ExtResource("2_5hpob")
+title = "Carrot"
+icon = SubResource("AtlasTexture_0kohe")
+description = "A common root vegetable grown and harvested after reaching full maturity.
+Used for cooking or trading."
+metadata/_custom_type_script = "uid://txnored4j7y7"

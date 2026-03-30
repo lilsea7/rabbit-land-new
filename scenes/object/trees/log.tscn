@@ -15,7 +15,7 @@ y_sort_enabled = true
 texture = SubResource("AtlasTexture_778xq")
 
 [node name="CollectableComponent" parent="." instance=ExtResource("2_778xq")]
-collactable_name = "log"
+collectable_name = "log"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
 shape = SubResource("CircleShape2D_778xq")

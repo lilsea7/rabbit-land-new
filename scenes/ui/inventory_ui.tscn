@@ -1,0 +1,191 @@
+[gd_scene load_steps=22 format=3 uid="uid://cbuwkkrpff0do"]
+
+[ext_resource type="Texture2D" uid="uid://cd8tuel5gyu8h" path="res://assets/ui/baisc_ui_sprites.png" id="1_4ycse"]
+[ext_resource type="FontFile" uid="uid://2pfwl33qn5vf" path="res://assets/ui/fonts/pixelFont-7-8x14-sproutLands.ttf" id="1_bsps8"]
+[ext_resource type="Script" uid="uid://qbfp6pthh6ks" path="res://scenes/ui/inventory_ui.gd" id="1_drsq2"]
+[ext_resource type="PackedScene" uid="uid://qoat72jghx1p" path="res://scenes/ui/slot.tscn" id="2_drsq2"]
+[ext_resource type="Resource" uid="uid://c2wp8b1m0o48h" path="res://resources/Items/log.tres" id="5_bsps8"]
+[ext_resource type="Resource" uid="uid://lrhxwjo830km" path="res://resources/Items/stone.tres" id="6_ldtye"]
+[ext_resource type="Resource" uid="uid://dmljbm7ead2qo" path="res://resources/Items/wheat.tres" id="7_t28gt"]
+[ext_resource type="Resource" uid="uid://bmt1r68j68yvm" path="res://resources/Items/tomato.tres" id="8_grg3b"]
+[ext_resource type="Resource" uid="uid://dn7gr5rydl88o" path="res://resources/Items/corn.tres" id="9_g4q4h"]
+[ext_resource type="Resource" uid="uid://cor13gvvx07cc" path="res://resources/Items/carrot.tres" id="9_grg3b"]
+[ext_resource type="Resource" uid="uid://cqinrykyjrtrq" path="res://resources/Items/rose.tres" id="10_cyqv3"]
+[ext_resource type="Resource" uid="uid://dfpo6jbgy8dqt" path="res://resources/Items/broccoli.tres" id="11_jsywp"]
+[ext_resource type="Resource" uid="uid://biubtxf3fjf6r" path="res://resources/Items/egg.tres" id="12_jwuib"]
+[ext_resource type="Resource" uid="uid://v8qm72x7s0wf" path="res://resources/Items/milk.tres" id="13_an4jt"]
+
+[sub_resource type="Theme" id="Theme_4ycse"]
+Label/font_sizes/font_size = 16
+Label/fonts/font = ExtResource("1_bsps8")
+RichTextLabel/font_sizes/normal_font_size = 12
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ycse"]
+atlas = ExtResource("1_4ycse")
+region = Rect2(61, 61, 22, 22)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_grg3b"]
+texture = ExtResource("1_4ycse")
+region_rect = Rect2(839, 5, 18, 20)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_g4q4h"]
+load_path = "res://.godot/imported/baisc_ui_sprites.png-9d0b1a66bc9a9feb635dcd2cce036e01.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cyqv3"]
+texture = SubResource("CompressedTexture2D_g4q4h")
+region_rect = Rect2(871, 7, 18, 18)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jsywp"]
+load_path = "res://.godot/imported/baisc_ui_sprites.png-9d0b1a66bc9a9feb635dcd2cce036e01.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jwuib"]
+texture = SubResource("CompressedTexture2D_jsywp")
+region_rect = Rect2(871, 7, 18, 18)
+
+[node name="InventoryUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_4ycse")
+script = ExtResource("1_drsq2")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -109.0
+offset_top = -74.0
+offset_right = 109.0
+offset_bottom = 74.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_4ycse")
+region_rect = Rect2(157, 13, 23, 22)
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 4
+patch_margin_bottom = 3
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -65.0
+offset_right = 195.0
+offset_bottom = 67.0
+grow_vertical = 2
+columns = 4
+
+[node name="Slot" parent="NinePatchRect/GridContainer" instance=ExtResource("2_drsq2")]
+layout_mode = 2
+item = ExtResource("11_jsywp")
+
+[node name="Slot2" parent="NinePatchRect/GridContainer" instance=ExtResource("2_drsq2")]
+layout_mode = 2
+item = ExtResource("9_grg3b")
+
+[node name="Slot3" parent="NinePatchRect/GridContainer" instance=ExtResource("2_drsq2")]
+layout_mode = 2
+item = ExtResource("9_g4q4h")
+
+[node name="Slot4" parent="NinePatchRect/GridContainer" instance=ExtResource("2_drsq2")]
+layout_mode = 2
+item = ExtResource("12_jwuib")
+
+[node name="Slot5" parent="NinePatchRect/GridContainer" instance=ExtResource("2_drsq2")]
+layout_mode = 2
+item = ExtResource("5_bsps8")
+
+[node name="Slot6" parent="NinePatchRect/GridContainer" instance=ExtResource("2_drsq2")]
+layout_mode = 2
+item = ExtResource("13_an4jt")
+
+[node name="Slot7" parent="NinePatchRect/GridContainer" instance=ExtResource("2_drsq2")]
+layout_mode = 2
+item = ExtResource("10_cyqv3")
+
+[node name="Slot8" parent="NinePatchRect/GridContainer" instance=ExtResource("2_drsq2")]
+layout_mode = 2
+item = ExtResource("6_ldtye")
+
+[node name="Slot9" parent="NinePatchRect/GridContainer" instance=ExtResource("2_drsq2")]
+layout_mode = 2
+item = ExtResource("8_grg3b")
+
+[node name="Slot10" parent="NinePatchRect/GridContainer" instance=ExtResource("2_drsq2")]
+layout_mode = 2
+item = ExtResource("7_t28gt")
+
+[node name="Description" type="NinePatchRect" parent="NinePatchRect"]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -174.5
+offset_top = -86.0
+offset_right = -14.5
+offset_bottom = 90.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = SubResource("AtlasTexture_4ycse")
+
+[node name="Name" type="Label" parent="NinePatchRect/Description"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 14.0
+offset_right = 75.0
+offset_bottom = 37.0
+
+[node name="Description" type="RichTextLabel" parent="NinePatchRect/Description"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -69.0
+offset_top = -53.0
+offset_right = 70.0
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Icon" type="TextureRect" parent="NinePatchRect/Description"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -55.0
+offset_right = -10.0
+offset_bottom = -15.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="CloseButton" type="Button" parent="NinePatchRect"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -15.5
+offset_top = -11.0
+offset_right = 9.5
+offset_bottom = 14.0
+grow_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_grg3b")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_cyqv3")
+theme_override_styles/hover = SubResource("StyleBoxTexture_jwuib")

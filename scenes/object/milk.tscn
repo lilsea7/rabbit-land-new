@@ -13,7 +13,7 @@ hframes = 4
 frame = 2
 
 [node name="CollectableComponent" parent="." instance=ExtResource("2_x347f")]
-collactable_name = "milk"
+collectable_name = "milk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
 shape = SubResource("CircleShape2D_qwqa3")

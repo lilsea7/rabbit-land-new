@@ -11,7 +11,7 @@ y_sort_enabled = true
 texture = ExtResource("1_j4mp8")
 
 [node name="CollectableComponent" parent="." instance=ExtResource("2_fngio")]
-collactable_name = "egg"
+collectable_name = "egg"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
 shape = SubResource("CircleShape2D_j4mp8")

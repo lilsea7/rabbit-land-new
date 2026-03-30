@@ -1,18 +1,33 @@
-[gd_scene load_steps=3 format=3 uid="uid://qoat72jghx1p"]
+[gd_scene load_steps=5 format=3 uid="uid://qoat72jghx1p"]
 
 [ext_resource type="Texture2D" uid="uid://cd8tuel5gyu8h" path="res://assets/ui/baisc_ui_sprites.png" id="1_jkamp"]
+[ext_resource type="Script" uid="uid://b3xloll1vfdvj" path="res://scenes/ui/slot.gd" id="1_sad2q"]
+[ext_resource type="FontFile" uid="uid://2pfwl33qn5vf" path="res://assets/ui/fonts/pixelFont-7-8x14-sproutLands.ttf" id="3_c886m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sad2q"]
 atlas = ExtResource("1_jkamp")
-region = Rect2(59, 59, 26, 26)
+region = Rect2(61, 61, 22, 22)
 
 [node name="Slot" type="PanelContainer"]
-offset_right = 26.0
-offset_bottom = 26.0
+custom_minimum_size = Vector2(40, 40)
+offset_right = 30.0
+offset_bottom = 30.0
+script = ExtResource("1_sad2q")
 
 [node name="BG" type="TextureRect" parent="."]
 layout_mode = 2
 texture = SubResource("AtlasTexture_sad2q")
 
 [node name="Icon" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(35, 35)
 layout_mode = 2
+
+[node name="QuantityLabel" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("3_c886m")
+theme_override_font_sizes/font_size = 16
+text = "0"
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

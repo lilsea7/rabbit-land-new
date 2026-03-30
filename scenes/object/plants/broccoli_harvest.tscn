@@ -12,7 +12,8 @@ vframes = 14
 frame = 31
 
 [node name="CollectableComponent" parent="." instance=ExtResource("2_fe46u")]
-collactable_name = "broccoli"
+collectable_name = "broccoli"
+quantity = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
 visible = false

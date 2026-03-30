@@ -13,7 +13,8 @@ vframes = 14
 frame = 6
 
 [node name="CollectableComponent" parent="." instance=ExtResource("2_dmlni")]
-collactable_name = "carrot"
+collectable_name = "carrot"
+quantity = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
 shape = SubResource("CircleShape2D_i4sc8")

@@ -16,7 +16,7 @@ position = Vector2(0, -2)
 texture = SubResource("AtlasTexture_ycexf")
 
 [node name="CollectableComponent" parent="." instance=ExtResource("2_v6p7q")]
-collactable_name = "stone"
+collectable_name = "stone"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
 shape = SubResource("CircleShape2D_3omm5")

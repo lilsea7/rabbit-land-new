@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d0dhtip02w7f6"]
+[gd_scene load_steps=12 format=3 uid="uid://d0dhtip02w7f6"]
 
 [ext_resource type="Theme" uid="uid://ljcck66th0xd" path="res://scenes/ui/game_ui_theme.tres" id="1_e2vrk"]
 [ext_resource type="PackedScene" uid="uid://8f4petbcqx7d" path="res://scenes/ui/emotes_panel.tscn" id="2_0kkfd"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cd8tuel5gyu8h" path="res://assets/ui/baisc_ui_sprites.png" id="3_nwa5a"]
 [ext_resource type="PackedScene" uid="uid://8qpho0ri8727" path="res://scenes/ui/day_and_night_panel.tscn" id="4_gkbp4"]
 [ext_resource type="PackedScene" uid="uid://dofq617k0q8ck" path="res://scenes/ui/plants_ui.tscn" id="7_ooiym"]
+[ext_resource type="PackedScene" uid="uid://cbuwkkrpff0do" path="res://scenes/ui/inventory_ui.tscn" id="8_ce4rh"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ooiym"]
 texture = ExtResource("3_nwa5a")
@@ -48,6 +49,7 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_ooiym")
 
 [node name="InventoryPanel" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("3_gusqm")]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -94,3 +96,7 @@ size_flags_horizontal = 8
 size_flags_vertical = 0
 
 [node name="PlantsUI" parent="." instance=ExtResource("7_ooiym")]
+visible = false
+
+[node name="InventoryUI" parent="." instance=ExtResource("8_ce4rh")]
+visible = false
