@@ -36,14 +36,12 @@ tile_set = ExtResource("1_ardmt")
 
 [node name="Player" parent="." instance=ExtResource("2_6nbhr")]
 position = Vector2(214, 168)
-current_tool = 1
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
 [node name="Chickens" type="Node2D" parent="."]
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="Chickens"]
-visible = false
 position = Vector2(5, 2)
 navigation_polygon = SubResource("NavigationPolygon_6nbhr")
 

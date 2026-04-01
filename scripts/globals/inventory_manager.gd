@@ -80,3 +80,15 @@ func get_quantity(collectable_name: String) -> int:
 # Kiểm tra có đủ số lượng không
 func has_enough(collectable_name: String, amount: int) -> bool:
 	return get_quantity(collectable_name) >= amount
+
+# Thêm tiền cho người chơi
+var money: int = 100   # Số tiền ban đầu
+
+func add_money(amount: int) -> void:
+	money += amount
+	# Có thể emit signal nếu bạn có UI tiền
+	print("Tiền hiện tại: ", money)
+
+# Lấy số tiền hiện tại
+func get_money() -> int:
+	return money

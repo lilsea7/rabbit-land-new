@@ -15,7 +15,6 @@ frame = 11
 [node name="CollectableComponent" parent="." instance=ExtResource("2_hcjra")]
 collision_layer = 160
 collectable_name = "tomato"
-quantity = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
 shape = SubResource("CircleShape2D_r4ph2")

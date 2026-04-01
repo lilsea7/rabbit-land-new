@@ -1,0 +1,62 @@
+[gd_scene load_steps=2 format=3 uid="uid://c57x4j5wsyrc6"]
+
+[ext_resource type="Script" uid="uid://dayt4rkvctao2" path="res://shop_system.gd" id="1_1k7ec"]
+
+[node name="ShopSystem" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1k7ec")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Currency" type="Label" parent="CanvasLayer"]
+offset_left = 35.0
+offset_top = 29.0
+offset_right = 172.0
+offset_bottom = 66.0
+text = "Coin: 0"
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -190.0
+offset_top = -143.0
+offset_bottom = 143.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 8
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Shop"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -100.0
+offset_right = 80.0
+offset_bottom = 127.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ShopInventory" type="VBoxContainer" parent="CanvasLayer/Panel/ScrollContainer"]
+layout_mode = 2

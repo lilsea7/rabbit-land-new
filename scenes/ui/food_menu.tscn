@@ -1,0 +1,149 @@
+[gd_scene load_steps=11 format=3 uid="uid://cl07i03rqnvmm"]
+
+[ext_resource type="Script" uid="uid://c6e27losihy4" path="res://scenes/ui/food_menu.gd" id="1_pfdd0"]
+[ext_resource type="Texture2D" uid="uid://cd8tuel5gyu8h" path="res://assets/ui/baisc_ui_sprites.png" id="1_uc5g0"]
+[ext_resource type="Texture2D" uid="uid://du8rbultoaffr" path="res://assets/game/objects/farming_plants_items_v2.png" id="2_nkd31"]
+[ext_resource type="FontFile" uid="uid://2pfwl33qn5vf" path="res://assets/ui/fonts/pixelFont-7-8x14-sproutLands.ttf" id="2_pfdd0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pfdd0"]
+atlas = ExtResource("1_uc5g0")
+region = Rect2(200, 8, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x6fpd"]
+texture = ExtResource("1_uc5g0")
+region_rect = Rect2(709, 36, 22, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hr6s0"]
+texture = ExtResource("1_uc5g0")
+region_rect = Rect2(741, 38, 22, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uc5g0"]
+atlas = ExtResource("2_nkd31")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ny0es"]
+texture = ExtResource("1_uc5g0")
+region_rect = Rect2(741, 38, 22, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x6fpd"]
+atlas = ExtResource("2_nkd31")
+region = Rect2(16, 112, 16, 16)
+
+[node name="FoodMenu" type="CanvasLayer"]
+layer = 10
+script = ExtResource("1_pfdd0")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(80, 100)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 96.0
+offset_bottom = 104.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 1
+texture = SubResource("AtlasTexture_pfdd0")
+region_rect = Rect2(0, 0, 32, 32)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="HBoxContainer" type="VBoxContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.0
+offset_top = -42.0
+offset_right = 26.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CornFood" type="Button" parent="NinePatchRect/HBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_x6fpd")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_hr6s0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hr6s0")
+
+[node name="IconCorn" type="TextureRect" parent="NinePatchRect/HBoxContainer/CornFood"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.0
+offset_top = -14.5
+offset_right = 2.0
+offset_bottom = 10.299999
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_uc5g0")
+
+[node name="QuantityCorn" type="Label" parent="NinePatchRect/HBoxContainer/CornFood"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.90000004
+anchor_top = 0.83800006
+anchor_right = 0.90000004
+anchor_bottom = 0.883
+offset_left = -21.000004
+offset_top = -22.02
+offset_right = -1.0000038
+offset_bottom = -8.819996
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_pfdd0")
+theme_override_font_sizes/font_size = 18
+text = "x2"
+
+[node name="WheatFood" type="Button" parent="NinePatchRect/HBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_x6fpd")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ny0es")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ny0es")
+
+[node name="IconWheat" type="TextureRect" parent="NinePatchRect/HBoxContainer/WheatFood"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.0
+offset_top = -13.499996
+offset_right = 1.0
+offset_bottom = 11.300003
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_x6fpd")
+
+[node name="QuantityWheat" type="Label" parent="NinePatchRect/HBoxContainer/WheatFood"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.90000004
+anchor_top = 0.883
+anchor_right = 0.90000004
+anchor_bottom = 0.883
+offset_left = -21.000004
+offset_top = -21.98
+offset_right = -1.0000038
+offset_bottom = -7.4799995
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_pfdd0")
+theme_override_font_sizes/font_size = 18
+text = "x2"

@@ -22,9 +22,9 @@
 [ext_resource type="PackedScene" uid="uid://beh8d8iwciy6n" path="res://scenes/object/plants/broccoli.tscn" id="13_7o3do"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_nsrm0"]
-vertices = PackedVector2Array(362, 429, 269.1172, 429, 269.8828, 367, 362, 367)
+vertices = PackedVector2Array(361.6172, 366.90625, 359.35938, 427.25, 269.6328, 429.71875, 267.35938, 366.09375)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(372, 439, 259, 439, 260, 357, 372, 357)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(369, 437, 260, 440, 257, 356, 372, 357)])
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_x42e6"]
 vertices = PackedVector2Array(231.75, 67.15625, 125.75781, 68.84375, 124.24219, 5, 230.24219, 5)
@@ -95,7 +95,7 @@ position = Vector2(5, 2)
 navigation_polygon = SubResource("NavigationPolygon_nsrm0")
 
 [node name="Chicken" parent="Chickens" instance=ExtResource("2_6iamk")]
-position = Vector2(309, 383)
+position = Vector2(316, 381)
 
 [node name="Chicken2" parent="Chickens" instance=ExtResource("2_6iamk")]
 position = Vector2(277, 374)

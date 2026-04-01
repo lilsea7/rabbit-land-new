@@ -6,3 +6,6 @@ extends CharacterBody2D
 
 var walk_cycles: int
 var current_walk_cycles: int
+
+func _ready():
+	pass

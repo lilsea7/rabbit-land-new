@@ -24,7 +24,7 @@ y_sort_enabled = true
 [node name="Level1" parent="GameRoot/LevelRoot" instance=ExtResource("2_pu3yx")]
 
 [node name="Player" parent="GameRoot" instance=ExtResource("3_pu3yx")]
-position = Vector2(175, 135)
+position = Vector2(183, 143)
 collision_mask = 545
 metadata/_edit_group_ = true
 

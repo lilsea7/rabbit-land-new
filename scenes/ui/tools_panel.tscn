@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://icj1aql0pt0v"]
+[gd_scene load_steps=14 format=3 uid="uid://icj1aql0pt0v"]
 
 [ext_resource type="Theme" uid="uid://ljcck66th0xd" path="res://scenes/ui/game_ui_theme.tres" id="1_2yiqu"]
 [ext_resource type="Script" uid="uid://c373nu0q8tp8k" path="res://scenes/ui/tools_panel.gd" id="2_0jxvs"]
@@ -24,12 +24,19 @@ region = Rect2(0, 4, 16, 10)
 atlas = ExtResource("5_gbtgy")
 region = Rect2(2, 2, 12, 13)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0jxvs"]
+load_path = "res://.godot/imported/baisc_ui_sprites.png-9d0b1a66bc9a9feb635dcd2cce036e01.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bdu3n"]
+atlas = SubResource("CompressedTexture2D_0jxvs")
+region = Rect2(640, 224, 16, 16)
+
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gbtgy"]
 load_path = "res://.godot/imported/baisc_ui_sprites.png-9d0b1a66bc9a9feb635dcd2cce036e01.ctex"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a6726"]
 atlas = SubResource("CompressedTexture2D_gbtgy")
-region = Rect2(738, 227, 12, 11)
+region = Rect2(640, 208, 16, 16)
 
 [node name="ToolsPanel" type="PanelContainer"]
 offset_right = 40.0
@@ -77,6 +84,16 @@ icon = SubResource("AtlasTexture_ur6ba")
 icon_alignment = 1
 
 [node name="ToolIventory" type="Button" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(26, 26)
+layout_mode = 2
+theme_type_variation = &"ToolButton"
+theme_override_colors/icon_focus_color = Color(0.76862746, 0.6039216, 0.42352942, 1)
+theme_override_colors/icon_pressed_color = Color(0.76862746, 0.6039216, 0.42352942, 1)
+theme_override_colors/icon_hover_color = Color(0.76862746, 0.6039216, 0.42352942, 1)
+icon = SubResource("AtlasTexture_bdu3n")
+icon_alignment = 1
+
+[node name="ToolShop" type="Button" parent="MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(26, 26)
 layout_mode = 2
 theme_type_variation = &"ToolButton"

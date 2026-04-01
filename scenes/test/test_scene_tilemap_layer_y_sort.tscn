@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=4 uid="uid://dn7goa0domu35"]
+[gd_scene load_steps=7 format=4 uid="uid://dn7goa0domu35"]
 
 [ext_resource type="TileSet" uid="uid://knxfvhe807ul" path="res://Tilesets/game_tile_set.tres" id="1_ctmx0"]
+[ext_resource type="PackedScene" uid="uid://o1jnm6arnte6" path="res://scenes/characters/chicken/chicken.tscn" id="2_n85s2"]
 [ext_resource type="PackedScene" uid="uid://dmng0y6272h6c" path="res://scenes/characters/player/player.tscn" id="2_ph1je"]
 [ext_resource type="PackedScene" uid="uid://lb38axvrk4rh" path="res://scenes/object/plants/wheat.tscn" id="2_vkqnv"]
 [ext_resource type="PackedScene" uid="uid://bkaul74ko1i0f" path="res://scenes/object/plants/tomato.tscn" id="3_n85s2"]
@@ -38,6 +39,9 @@ tile_set = ExtResource("1_ctmx0")
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAMAAsABAAAAAAABQAOAAsABAAAAAAABgARAAsABAAAAAAABwA=")
 tile_set = ExtResource("1_ctmx0")
+
+[node name="Chicken" parent="GameTileMap" instance=ExtResource("2_n85s2")]
+position = Vector2(170, 168)
 
 [node name="Crops" type="Node2D" parent="."]
 y_sort_enabled = true

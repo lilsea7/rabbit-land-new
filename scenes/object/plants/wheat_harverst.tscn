@@ -16,7 +16,6 @@ frame = 5
 [node name="CollectableComponent" parent="." instance=ExtResource("2_xmxcg")]
 collision_layer = 160
 collectable_name = "wheat"
-quantity = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
 shape = SubResource("CircleShape2D_s332p")
