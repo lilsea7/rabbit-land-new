@@ -8,7 +8,7 @@ class_name Chicken
 @onready var state_machine: NodeStateMachine = $StateMachine
 
 # ================== CONFIG ==================
-@export var time_to_lay_egg: float = 8.0   # Dễ test
+@export var time_to_lay_egg: float = 45.0   # Dễ test
 
 # ================== STATE ==================
 var is_fed: bool = false

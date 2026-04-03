@@ -124,7 +124,7 @@ position = Vector2(228, 326)
 position = Vector2(183, 346)
 
 [node name="Cow3" parent="Cows" instance=ExtResource("3_nsrm0")]
-position = Vector2(220, 304)
+position = Vector2(198, 154)
 
 [node name="Cow4" parent="Cows" instance=ExtResource("3_nsrm0")]
 position = Vector2(186, 310)

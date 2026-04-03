@@ -5,8 +5,8 @@
 [ext_resource type="Script" uid="uid://cef8w8jp56xto" path="res://scripts/state_machine/node_state_machine.gd" id="2_31inw"]
 [ext_resource type="Script" uid="uid://b6e0dutysdybn" path="res://scenes/characters/npc_states/idle_state.gd" id="3_r6a33"]
 [ext_resource type="Script" uid="uid://r33waauap84e" path="res://scenes/characters/npc_states/walk_state.gd" id="4_31inw"]
-[ext_resource type="Script" uid="uid://cgcw2jrns4lgg" path="res://scenes/characters/chicken/eating.gd" id="6_vmevo"]
-[ext_resource type="Script" uid="uid://brol6svmvptxx" path="res://scenes/characters/chicken/laying.gd" id="7_ft40v"]
+[ext_resource type="Script" uid="uid://cgcw2jrns4lgg" path="res://scenes/characters/npc_states/eating.gd" id="6_vmevo"]
+[ext_resource type="Script" uid="uid://brol6svmvptxx" path="res://scenes/characters/npc_states/laying.gd" id="7_ft40v"]
 [ext_resource type="PackedScene" uid="uid://c4s6fwcvw81kn" path="res://audio/sfx/chicken_cluck_multiple_sfx.tscn" id="7_hv82h"]
 [ext_resource type="PackedScene" uid="uid://bg8jc3cgnprge" path="res://scenes/components/audio_play_time_component.tscn" id="7_wh5lc"]
 

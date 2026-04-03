@@ -58,6 +58,8 @@ var sell_prices: Dictionary = {
 	"rose": 40,
 	"log": 15,
 	"stone": 10,
+	"egg": 55,
+	"milk": 65,
 	# Thêm vật phẩm mới ở đây...
 }
 
