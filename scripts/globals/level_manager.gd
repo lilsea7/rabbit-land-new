@@ -1,14 +1,12 @@
-# level_manager.gd
 extends Node
 
 signal level_up(new_level: int)
 signal exp_changed(current_exp: int, exp_to_next: int)
 
-# Dữ liệu hiện tại
 var current_level: int = 1
 var current_exp: int = 0
 
-# Exp cần để lên level (theo bảng của bạn)
+# Exp cần để lên từng level
 var exp_required = {
 	1: 50,
 	2: 70,
@@ -39,7 +37,6 @@ var exp_rewards = {
 func _ready() -> void:
 	print("LevelManager đã khởi tạo - Level hiện tại: ", current_level)
 
-# Hàm chính: Thêm exp
 func add_exp(amount: int, action_name: String = "") -> void:
 	if amount <= 0:
 		return
@@ -51,7 +48,6 @@ func add_exp(amount: int, action_name: String = "") -> void:
 	
 	check_level_up()
 
-# Kiểm tra lên level
 func check_level_up() -> void:
 	while current_level < exp_required.size() and current_exp >= get_exp_to_next_level():
 		var exp_needed = get_exp_to_next_level()
@@ -60,30 +56,28 @@ func check_level_up() -> void:
 		
 		print("🎉 LEVEL UP! Bạn đã lên Level ", current_level)
 		level_up.emit(current_level)
+		
+		# Gọi thông báo Level Up
+		var unlock_text = get_unlock_text(current_level)
+		if has_node("/root/LevelUpNotification"):
+			LevelUpNotification.show_level_up(current_level, unlock_text)
 
-# Lấy exp cần để lên level tiếp theo
 func get_exp_to_next_level() -> int:
 	return exp_required.get(current_level, 999999)
 
-# Lấy phần trăm tiến độ
 func get_progress_percent() -> float:
 	var needed = get_exp_to_next_level()
 	if needed <= 0:
 		return 100.0
 	return (float(current_exp) / needed) * 100.0
 
-# Kiểm tra hành động có được mở khóa chưa
-func is_unlocked(action: String) -> bool:
-	match action:
-		"till_ground":
-			return current_level >= 2
-		"plant_seed":
-			return current_level >= 3
-		"chicken":
-			return current_level >= 4
-		"shop":
-			return current_level >= 5
-		"cow":
-			return current_level >= 8
-		_:
-			return true
+# ================== HÀM MỚI: LẤY TEXT MÔ TẢ UNLOCK ==================
+func get_unlock_text(level: int) -> String:
+	match level:
+		2:  return "Cuốc đất"
+		3:  return "Hạt giống lúa mì, cà chua"
+		4:  return "Vật nuôi (Gà)"
+		5:  return "Mở Chợ"
+		8:  return "Vật nuôi (Bò)"
+		11: return "Vùng đất mới"
+		_:  return "Khả năng mới"

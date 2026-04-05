@@ -78,6 +78,9 @@ func feed() -> void:
 	is_fed = true
 	print("🌾 ĐÃ CHO BÒ ĂN! Timer bắt đầu đếm ", time_to_produce_milk, " giây để cho sữa")
 	
+	# === THÊM DÒNG NÀY ===
+	LevelManager.add_exp(LevelManager.exp_rewards["feed_cow"], "feed_cow")
+	
 	if state_machine:
 		state_machine.transition_to("eating")
 	

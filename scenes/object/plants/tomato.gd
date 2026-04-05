@@ -2,14 +2,14 @@ extends Node2D
 
 var tomato_harvest_scene = preload("res://scenes/object/plants/tomato_harvest.tscn")
 
-@onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var sprite_2d: AnimatedSprite2D = $Sprite2D
 @onready var watering_particles: GPUParticles2D = $WateringParticles
 @onready var flowering_particles: GPUParticles2D = $FloweringParticles
 @onready var growth_cycle_component: GrowthCycleComponent = $GrowthCycleComponent
 @onready var hurt_component: HurtComponent = $HurtComponent
 
 var growth_state: DataTypes.GrowthStates = DataTypes.GrowthStates.Seed
-var start_tomato_frame_offset: int = 6
+var has_harvested: bool = false   # ← Biến này rất quan trọng
 
 func _ready() -> void:
 	watering_particles.emitting = false
@@ -19,14 +19,12 @@ func _ready() -> void:
 	growth_cycle_component.crop_maturity.connect(on_crop_maturity)
 	growth_cycle_component.crop_harvesting.connect(on_crop_harvesting)
 
-
 func _process(delta: float) -> void:
 	growth_state = growth_cycle_component.get_current_growth_state()
-	sprite_2d.frame = growth_state + start_tomato_frame_offset
+	sprite_2d.frame = growth_state
 	
 	if growth_state == DataTypes.GrowthStates.Maturity:
 		flowering_particles.emitting = true
-
 
 func on_hurt(hit_damage: int) -> void:
 	if !growth_cycle_component.is_watered:
@@ -35,13 +33,20 @@ func on_hurt(hit_damage: int) -> void:
 		watering_particles.emitting = false
 		growth_cycle_component.is_watered = true
 
-
 func on_crop_maturity() -> void:
 	flowering_particles.emitting = true
 
-
+# ================== SỬA LỖI Ở ĐÂY ==================
 func on_crop_harvesting() -> void:
+	if has_harvested:
+		return                    # Ngăn spawn nhiều lần
+	
+	has_harvested = true
+	
+	print("Thu hoạch Tomato - Spawn harvest instance")
+	
 	var tomato_harvest_instance = tomato_harvest_scene.instantiate() as Node2D
 	tomato_harvest_instance.global_position = global_position
 	get_parent().add_child(tomato_harvest_instance)
+	
 	queue_free()

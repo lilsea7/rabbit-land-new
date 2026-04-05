@@ -1,0 +1,76 @@
+[gd_scene load_steps=14 format=3 uid="uid://yitbwib6d0fm"]
+
+[ext_resource type="Script" uid="uid://bbnjcykc3ugco" path="res://scenes/object/plants/aubergine.gd" id="1_ecrnn"]
+[ext_resource type="Texture2D" uid="uid://cq2t0eoav07v1" path="res://assets/game/objects/farming_plants_v2.png" id="1_pkuvh"]
+[ext_resource type="PackedScene" uid="uid://eilo0sk473j5" path="res://scenes/object/plants/watering_particles.tscn" id="2_ecrnn"]
+[ext_resource type="PackedScene" uid="uid://bm0lxqoms1rpt" path="res://scenes/object/plants/flowering_particles.tscn" id="3_s3ff2"]
+[ext_resource type="PackedScene" uid="uid://cp5v32esn6wry" path="res://scenes/object/plants/growth_cycle_component.tscn" id="4_ya5kv"]
+[ext_resource type="PackedScene" uid="uid://iw6ss4ln5i0p" path="res://scenes/components/hurt_component.tscn" id="5_obgnp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_558kv"]
+atlas = ExtResource("1_pkuvh")
+region = Rect2(16, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17qt1"]
+atlas = ExtResource("1_pkuvh")
+region = Rect2(32, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rael4"]
+atlas = ExtResource("1_pkuvh")
+region = Rect2(48, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_feqpl"]
+atlas = ExtResource("1_pkuvh")
+region = Rect2(64, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n3ob1"]
+atlas = ExtResource("1_pkuvh")
+region = Rect2(80, 80, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yn4j4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_558kv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_17qt1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rael4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_feqpl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n3ob1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_858qg"]
+size = Vector2(15, 10.5)
+
+[node name="Aubergine" type="Node2D"]
+script = ExtResource("1_ecrnn")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -6)
+sprite_frames = SubResource("SpriteFrames_yn4j4")
+frame = 4
+frame_progress = 0.9156955
+
+[node name="WateringParticles" parent="." instance=ExtResource("2_ecrnn")]
+
+[node name="FloweringParticles" parent="." instance=ExtResource("3_s3ff2")]
+
+[node name="GrowthCycleComponent" parent="." instance=ExtResource("4_ya5kv")]
+
+[node name="HurtComponent" parent="." instance=ExtResource("5_obgnp")]
+tool = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtComponent"]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_858qg")

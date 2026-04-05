@@ -1,17 +1,3 @@
-#extends Node
-#
-#var selected_tool: DataTypes.Tools = DataTypes.Tools.None
-#
-#signal tool_selected(tool: DataTypes.Tools)
-#signal enable_tool(tool: DataTypes.Tools)
-#
-#func selecet_tool(tool: DataTypes.Tools) -> void:
-	#tool_selected.emit(tool)
-	#selected_tool = tool
-#
-#func enable_tool_button(tool: DataTypes.Tools) -> void:
-	#enable_tool.emit(tool)
-
 extends Node
 
 var selected_tool: DataTypes.Tools = DataTypes.Tools.None
@@ -41,6 +27,12 @@ func selecet_tool(tool: DataTypes.Tools) -> void:
 		DataTypes.Tools.PlantBroccoli:
 			current_seed_type = "Broccoli"
 			print("Chế độ trồng: Broccoli")
+		DataTypes.Tools.PlantPumkin:
+			current_seed_type = "Pumkin"
+			print("Chế độ trồng: Pumkin")
+		DataTypes.Tools.PlantAubergine:
+			current_seed_type = "Aubergine"
+			print("Chế độ trồng: Aubergine")
 		DataTypes.Tools.Plants:
 			current_seed_type = ""  # Không set seed khi chỉ mở UI
 			print("Mở giao diện chọn hạt giống")

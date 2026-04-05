@@ -13,6 +13,8 @@ enum Tools {
 	PlantCorn,
 	PlantRose,
 	PlantBroccoli,
+	PlantPumkin,
+	PlantAubergine,
 	
 	Plants          # Dùng để mở PlantsUI
 }

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://bvgxw7xbb6abd"]
+[gd_scene load_steps=21 format=4 uid="uid://bvgxw7xbb6abd"]
 
 [ext_resource type="PackedScene" uid="uid://bfcgk355eabgj" path="res://scenes/components/save_lavel_data_component.tscn" id="1_dnkej"]
 [ext_resource type="TileSet" uid="uid://knxfvhe807ul" path="res://Tilesets/game_tile_set.tres" id="1_ksju7"]
@@ -8,13 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://ch0ildoohd3bq" path="res://scenes/components/save_data_component.tscn" id="3_mm8aj"]
 [ext_resource type="PackedScene" uid="uid://cvgm7gain1wk6" path="res://scenes/characters/cow/cow.tscn" id="3_nsrm0"]
 [ext_resource type="Script" uid="uid://cenrdaou3t24g" path="res://scenes/components/field_cursor_component.gd" id="3_s8va5"]
-[ext_resource type="PackedScene" uid="uid://d3datedcitfk3" path="res://scenes/components/crops_cursor_component.tscn" id="4_dga24"]
 [ext_resource type="Resource" uid="uid://c6afvty025wqw" path="res://resources/tilemap_layer_data_resource.tres" id="4_wtwp4"]
-[ext_resource type="Script" uid="uid://5ohial54iwmy" path="res://scenes/components/crops_cursor_component.gd" id="5_qxy0u"]
-[ext_resource type="PackedScene" uid="uid://lb38axvrk4rh" path="res://scenes/object/plants/wheat.tscn" id="8_gmpev"]
+[ext_resource type="PackedScene" uid="uid://dvcv4gs0dsxen" path="res://scenes/object/plants/wheat.tscn" id="8_gmpev"]
 [ext_resource type="PackedScene" uid="uid://cksleduloes4t" path="res://scenes/object/chest/chest.tscn" id="8_qxy0u"]
 [ext_resource type="PackedScene" uid="uid://dkptibkus3e5i" path="res://scenes/object/milk.tscn" id="9_excbq"]
-[ext_resource type="PackedScene" uid="uid://bkaul74ko1i0f" path="res://scenes/object/plants/tomato.tscn" id="9_mkypq"]
+[ext_resource type="PackedScene" uid="uid://dtwb5t0voq0hq" path="res://scenes/object/plants/tomato.tscn" id="9_mkypq"]
 [ext_resource type="PackedScene" uid="uid://bfy22r8f0dhca" path="res://scenes/object/egg.tscn" id="10_iav0o"]
 [ext_resource type="PackedScene" uid="uid://d38nsf68yhk7r" path="res://scenes/object/plants/carrot.tscn" id="10_ndtll"]
 [ext_resource type="PackedScene" uid="uid://di7g6fhamipeh" path="res://scenes/object/plants/corn.tscn" id="11_7h2jl"]
@@ -82,10 +80,6 @@ carrot_plant_scene = ExtResource("10_ndtll")
 corn_plant_scene = ExtResource("11_7h2jl")
 rose_plant_scene = ExtResource("12_mqh5v")
 broccoli_plant_scene = ExtResource("13_7o3do")
-
-[node name="CropsCursorComponent" parent="." node_paths=PackedStringArray("tilled_siol_tilemap_layer") instance=ExtResource("4_dga24")]
-script = ExtResource("5_qxy0u")
-tilled_siol_tilemap_layer = NodePath("../GameTileMap/TilledSoil")
 
 [node name="Chickens" type="Node2D" parent="."]
 y_sort_enabled = true

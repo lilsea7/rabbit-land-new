@@ -1,45 +1,14 @@
-#class_name CollactableComponent
-#extends Area2D
-#
-#@export var collactable_name: String
-#
-#func _on_body_entered(body: Node2D) -> void:
-	#if body is Player:
-		#InventoryManager.add_collectable(collactable_name)
-		#print("Collected: " + collactable_name)
-		#get_parent().queue_free()
-
-#class_name CollectableComponent
-#extends Area2D
-#
-#@export var collectable_name: String = ""   # Tên vật phẩm (Wheat, Log, Stone, Carrot...)
-#@export var quantity: int = 1               # Số lượng thu được mỗi lần
-#
-#func _on_body_entered(body: Node2D) -> void:
-	#if body is Player and collectable_name != "":
-		#
-		## Kiểm tra InventoryManager tồn tại trước khi gọi
-		#if InventoryManager:
-			#InventoryManager.add_collectable(collectable_name, quantity)
-			#print("Thu thập: ", collectable_name, " x", quantity)
-		#else:
-			#push_error("InventoryManager không tồn tại! Không thể thu thập vật phẩm.")
-		#
-		## Xóa vật phẩm sau khi thu thập thành công
-		#get_parent().queue_free()
-
 class_name CollectableComponent
 extends Area2D
 
-@export var collectable_name: String = ""   # Ví dụ: "Log", "Stone", "Wheat"
+@export var collectable_name: String = ""   # Ví dụ: "egg", "milk", "log", "stone"...
 @export var quantity: int = 1
 
 func _ready() -> void:
-	# Bật monitoring để Area2D có thể detect collision
 	monitoring = true
 	monitorable = true
 	
-	# Kết nối signal bằng code để chắc chắn (nếu chưa connect trong editor)
+	# Kết nối signal an toàn
 	if not body_entered.is_connected(_on_body_entered):
 		body_entered.connect(_on_body_entered)
 	
@@ -49,11 +18,28 @@ func _on_body_entered(body: Node2D) -> void:
 	if body is Player and collectable_name != "":
 		print("Player chạm vào collectable: ", collectable_name)
 		
+		# ================== THÊM EXP TẠI ĐÂY ==================
+		match collectable_name.to_lower():   # Dùng to_lower() để tránh lỗi hoa/thường
+			"corn":
+				LevelManager.add_exp(LevelManager.exp_rewards["harvest_crop"], "harvest_crop")
+			"egg":
+				LevelManager.add_exp(LevelManager.exp_rewards["harvest_egg"], "harvest_egg")
+			"milk":
+				LevelManager.add_exp(LevelManager.exp_rewards["harvest_milk"], "harvest_milk")
+			"log":
+				LevelManager.add_exp(LevelManager.exp_rewards.get("chop_tree", 5), "chop_tree")
+			"stone":
+				LevelManager.add_exp(LevelManager.exp_rewards.get("mine_stone", 5), "mine_stone")
+			# Thêm các vật phẩm khác sau này
+			_:
+				print("Không có exp reward cho vật phẩm: ", collectable_name)
+		
+		# Thu thập vật phẩm vào Inventory
 		if InventoryManager:
 			InventoryManager.add_collectable(collectable_name, quantity)
 			print("Đã thu thập: ", collectable_name, " x", quantity)
 		else:
-			push_error("InventoryManager không tồn tại! Không thể thu thập vật phẩm.")
+			push_error("InventoryManager không tồn tại!")
 		
 		# Xóa vật phẩm sau khi thu thập
 		get_parent().queue_free()

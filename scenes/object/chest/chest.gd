@@ -2,8 +2,8 @@ extends Node2D
 
 var balloon_scene = preload("res://dialogue/game_dialogue_balloon.tscn")
 
-var wheat_harvest_scene = preload("res://scenes/object/plants/wheat_harverst.tscn")
-var tomato_harvest_scene = preload("res://scenes/object/plants/tomato_harvest.tscn")
+var corn_harvest_scene = preload("res://scenes/object/plants/corn_harvest.tscn")
+var carrot_harvest_scene = preload("res://scenes/object/plants/carrot_harvest.tscn")
 
 @export var dialogue_start_command: String
 @export var food_drop_height: int = 40
@@ -51,8 +51,8 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func on_feed_the_animals() -> void:
 	if in_range:
-		trigger_feed_harvest("wheat", wheat_harvest_scene)
-		trigger_feed_harvest("tomato", tomato_harvest_scene)
+		trigger_feed_harvest("corn", corn_harvest_scene)
+		trigger_feed_harvest("carrot", carrot_harvest_scene)
 		
 func trigger_feed_harvest(inventory_item: String, scene: Resource) -> void:
 	var inventory: Dictionary = InventoryManager.inventory

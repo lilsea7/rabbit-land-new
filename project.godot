@@ -32,6 +32,7 @@ GameManager="*res://scripts/globals/game_manager.gd"
 SceneManager="*res://scripts/globals/scene_manager.gd"
 ShopManager="*res://scripts/globals/shop_manager.gd"
 LevelManager="*res://scripts/globals/level_manager.gd"
+LevelUpNotification="*res://scenes/ui/level_up_notification.tscn"
 
 [display]
 
