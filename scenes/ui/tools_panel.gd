@@ -15,6 +15,9 @@ extends PanelContainer
 func _ready() -> void:
 	ToolManager.enable_tool.connect(on_enable_tool_button)
 	
+	tool_axe.disabled = true
+	tool_axe.focus_mode = Control.FOCUS_NONE
+	
 	tool_tilling.disabled = true
 	tool_tilling.focus_mode = Control.FOCUS_NONE
 	
@@ -90,6 +93,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		_hide_all_ui()
 
 func on_enable_tool_button(tool: DataTypes.Tools) -> void:
+	if tool == DataTypes.Tools.TillGround:
+		tool_axe.disabled = false
+		tool_axe.focus_mode = Control.FOCUS_ALL
 	if tool == DataTypes.Tools.TillGround:
 		tool_tilling.disabled = false
 		tool_tilling.focus_mode = Control.FOCUS_ALL
