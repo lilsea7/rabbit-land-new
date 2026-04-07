@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://ch4ss8m4cu5aj" path="res://scenes/ui/game_menu_screen_background.gd" id="1_ifnas"]
 [ext_resource type="TileSet" uid="uid://knxfvhe807ul" path="res://Tilesets/game_tile_set.tres" id="1_lg8wd"]
-[ext_resource type="PackedScene" uid="uid://lb38axvrk4rh" path="res://scenes/object/plants/wheat.tscn" id="2_ifnas"]
-[ext_resource type="PackedScene" uid="uid://bkaul74ko1i0f" path="res://scenes/object/plants/tomato.tscn" id="3_yoi42"]
+[ext_resource type="PackedScene" uid="uid://dvcv4gs0dsxen" path="res://scenes/object/plants/wheat.tscn" id="2_ifnas"]
+[ext_resource type="PackedScene" uid="uid://dtwb5t0voq0hq" path="res://scenes/object/plants/tomato.tscn" id="3_yoi42"]
 [ext_resource type="PackedScene" uid="uid://dmng0y6272h6c" path="res://scenes/characters/player/player.tscn" id="4_dio82"]
 [ext_resource type="PackedScene" uid="uid://o1jnm6arnte6" path="res://scenes/characters/chicken/chicken.tscn" id="5_qxc5e"]
 [ext_resource type="PackedScene" uid="uid://cqawq4fpa5tt6" path="res://scenes/characters/guide/guide.tscn" id="6_p1l82"]

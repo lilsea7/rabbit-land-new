@@ -8,8 +8,8 @@ var current_level: int = 1
 var current_exp: int = 0
 
 var exp_required = {
-	1: 10, 2: 200, 3: 500, 4: 800, 5: 1200,
-	6: 2000, 7: 2500, 8: 3500, 9: 4000, 10: 5000
+	1: 10, 2: 11, 3: 12, 4: 13, 5: 14,
+	6: 15, 7: 16, 8: 17, 9: 18, 10: 19
 }
 
 var exp_rewards = {
@@ -41,7 +41,6 @@ func add_exp(amount: int, action_name: String = "") -> void:
 		return
 	current_exp += amount
 	print("📈 Nhận ", amount, " exp từ: ", action_name)
-	
 	exp_changed.emit(current_exp, get_exp_to_next_level())
 	check_level_up()
 
@@ -69,13 +68,50 @@ func check_level_up() -> void:
 		
 		exp_changed.emit(current_exp, get_exp_to_next_level())
 
+# ================== MỞ KHÓA TÍNH NĂNG ==================
 func unlock_features_for_level(level: int) -> bool:
 	if not unlock_features.has(level):
 		return false
+	
+	var has_new_unlock = false
 	for feature in unlock_features[level]:
 		print("🔓 Đã mở khóa: ", feature)
 		feature_unlocked.emit(feature)
-	return true
+		has_new_unlock = true
+		
+		# Unlock tool tương ứng
+		match feature:
+			"plant_wheat", "plant_tomato", "plant_carrot":
+				ToolManager.unlock_tool(DataTypes.Tools.PlantWheat)
+				ToolManager.unlock_tool(DataTypes.Tools.PlantTomato)
+				ToolManager.unlock_tool(DataTypes.Tools.PlantCarrot)
+				ToolManager.unlock_tool(DataTypes.Tools.Plants)
+			
+			"plant_corn", "plant_rose", "plant_broccoli":
+				ToolManager.unlock_tool(DataTypes.Tools.PlantCorn)
+				ToolManager.unlock_tool(DataTypes.Tools.PlantRose)
+				ToolManager.unlock_tool(DataTypes.Tools.PlantBroccoli)
+				ToolManager.unlock_tool(DataTypes.Tools.Plants)  # Đảm bảo nút Plants UI
+			
+			"chicken":
+				# Mở chức năng cho gà ăn (Level 4)
+				ToolManager.unlock_tool(DataTypes.Tools.Plants)
+			
+			"cow":
+				# Mở chức năng cho bò ăn (Level 8)
+				ToolManager.unlock_tool(DataTypes.Tools.Plants)
+			
+			"shop":
+				pass  # Tool Shop thường không cần unlock riêng
+
+	return has_new_unlock
+
+# ================== KIỂM TRA ĐÃ UNLOCK ==================
+func is_unlocked(feature: String) -> bool:
+	for lvl in unlock_features.keys():
+		if lvl <= current_level and feature in unlock_features[lvl]:
+			return true
+	return false
 
 func get_exp_to_next_level() -> int:
 	return exp_required.get(current_level, 999999)
@@ -88,10 +124,10 @@ func get_progress_percent() -> float:
 
 func get_unlock_text(level: int) -> String:
 	match level:
-		3:  return "Hạt giống lúa mì, cà chua, cà rốt"
-		4:  return "Vật nuôi (Gà)"
-		5:  return "Mở chợ mua bán hàng hóa"
-		6:  return "Hạt giống ngô, hoa hồng, bông cải xanh"
-		8:  return "Vật nuôi (Bò)"
+		3: return "Hạt giống lúa mì, cà chua, cà rốt"
+		4: return "Vật nuôi (Gà)"
+		5: return "Mở chợ mua bán hàng hóa"
+		6: return "Hạt giống ngô, hoa hồng, bông cải xanh"
+		8: return "Vật nuôi (Bò)"
 		10: return "Vùng đất mới"
-		_:  return "Khả năng mới"
+		_: return "Khả năng mới"

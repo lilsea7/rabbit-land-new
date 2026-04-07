@@ -55,6 +55,7 @@ text = "Level 2"
 [node name="UnlockLabel" type="Label" parent="ColorRect/VBoxContainer"]
 layout_mode = 2
 text = "Mở khóa: Cuốc đất"
+autowrap_mode = 2
 
 [node name="CloseButton" type="Button" parent="ColorRect/VBoxContainer"]
 visible = false

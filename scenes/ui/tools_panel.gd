@@ -5,38 +5,66 @@ extends PanelContainer
 @onready var tool_watering_can: Button = $MarginContainer/HBoxContainer/ToolWateringCan
 @onready var tool_plants: Button = $MarginContainer/HBoxContainer/ToolPlants
 @onready var tool_iventory: Button = $MarginContainer/HBoxContainer/ToolIventory
-@onready var tool_shop: Button = $MarginContainer/HBoxContainer/ToolShop   # ← Nút Shop
+@onready var tool_shop: Button = $MarginContainer/HBoxContainer/ToolShop
 
 # Tham chiếu đến các UI
 @onready var plants_ui: Control = $"../../PlantsUI"
 @onready var inventory_ui: Control = $"../../InventoryUI"
-@onready var shop_ui: Control = $"../../ShopUI"   # ← Thêm dòng này
+@onready var shop_ui: Control = $"../../ShopUI"
 
 func _ready() -> void:
 	ToolManager.enable_tool.connect(on_enable_tool_button)
 	
+	# Đóng băng toàn bộ tool khi bắt đầu game
 	tool_axe.disabled = true
-	tool_axe.focus_mode = Control.FOCUS_NONE
-	
 	tool_tilling.disabled = true
-	tool_tilling.focus_mode = Control.FOCUS_NONE
-	
 	tool_watering_can.disabled = true
+	tool_plants.disabled = true
+
+	tool_axe.focus_mode = Control.FOCUS_NONE
+	tool_tilling.focus_mode = Control.FOCUS_NONE
 	tool_watering_can.focus_mode = Control.FOCUS_NONE
-	
+	tool_plants.focus_mode = Control.FOCUS_NONE
+
 	# Ẩn tất cả UI ban đầu
-	if plants_ui:
-		plants_ui.visible = false
-	if inventory_ui:
-		inventory_ui.visible = false
-	if shop_ui:
-		shop_ui.visible = false
-	
+	if plants_ui: plants_ui.visible = false
+	if inventory_ui: inventory_ui.visible = false
+	if shop_ui: shop_ui.visible = false
+
 	# Kết nối các nút
 	tool_plants.pressed.connect(_on_tool_plants_pressed)
 	tool_iventory.pressed.connect(_on_tool_iventory_pressed)
-	tool_shop.pressed.connect(_on_tool_shop_pressed)   # ← Kết nối nút Shop
+	tool_shop.pressed.connect(_on_tool_shop_pressed)
 
+# ================== MỞ TOOL KHI NHẬN TỪ NPC HOẶC LEVEL UP ==================
+func on_enable_tool_button(tool: DataTypes.Tools) -> void:
+	match tool:
+		DataTypes.Tools.AxeWood:
+			tool_axe.disabled = false
+			tool_axe.focus_mode = Control.FOCUS_ALL
+			print("🔓 Đã mở khóa Tool Axe")
+		
+		DataTypes.Tools.TillGround:
+			tool_tilling.disabled = false
+			tool_tilling.focus_mode = Control.FOCUS_ALL
+			print("🔓 Đã mở khóa Tool Tilling")
+		
+		DataTypes.Tools.WaterCrops:
+			tool_watering_can.disabled = false
+			tool_watering_can.focus_mode = Control.FOCUS_ALL
+			print("🔓 Đã mở khóa Tool Watering Can")
+		
+		DataTypes.Tools.PlantWheat, \
+		DataTypes.Tools.PlantTomato, \
+		DataTypes.Tools.PlantCarrot, \
+		DataTypes.Tools.PlantCorn,\
+		DataTypes.Tools.PlantRose, \
+		DataTypes.Tools.PlantBroccoli:
+			tool_plants.disabled = false
+			tool_plants.focus_mode = Control.FOCUS_ALL
+			print("🔓 Đã mở khóa Tool Plants (UI chọn hạt giống)")
+
+# ================== CÁC HÀM NHẤN BUTTON ==================
 func _on_tool_axe_pressed() -> void:
 	ToolManager.selecet_tool(DataTypes.Tools.AxeWood)
 	_hide_all_ui()
@@ -71,7 +99,6 @@ func _on_tool_iventory_pressed() -> void:
 	else:
 		push_error("Không tìm thấy InventoryUI!")
 
-# === LOGIC MỚI: Mở Shop UI ===
 func _on_tool_shop_pressed() -> void:
 	if shop_ui:
 		if shop_ui.visible:
@@ -79,7 +106,7 @@ func _on_tool_shop_pressed() -> void:
 			print("Đã đóng Shop UI")
 		else:
 			shop_ui.visible = true
-			shop_ui.open_shop()          # Gọi hàm mở và cập nhật Shop
+			shop_ui.open_shop()
 			print("Đã mở Shop UI")
 	else:
 		push_error("Không tìm thấy ShopUI!")
@@ -92,23 +119,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		tool_watering_can.release_focus()
 		_hide_all_ui()
 
-func on_enable_tool_button(tool: DataTypes.Tools) -> void:
-	if tool == DataTypes.Tools.TillGround:
-		tool_axe.disabled = false
-		tool_axe.focus_mode = Control.FOCUS_ALL
-	if tool == DataTypes.Tools.TillGround:
-		tool_tilling.disabled = false
-		tool_tilling.focus_mode = Control.FOCUS_ALL
-	elif tool == DataTypes.Tools.WaterCrops:
-		tool_watering_can.disabled = false
-		tool_watering_can.focus_mode = Control.FOCUS_ALL
-
-# Hàm ẩn tất cả UI (dùng chung)
+# Hàm ẩn tất cả UI
 func _hide_all_ui() -> void:
-	if plants_ui:
-		plants_ui.visible = false
-	if inventory_ui:
-		inventory_ui.visible = false
-	if shop_ui:
-		shop_ui.visible = false
+	if plants_ui: plants_ui.visible = false
+	if inventory_ui: inventory_ui.visible = false
+	if shop_ui: shop_ui.visible = false
 	print("Đã ẩn tất cả UI")

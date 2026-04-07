@@ -359,6 +359,8 @@ layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HelpPopup/Control/PanelContainer/MarginContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="TITLE" type="Label" parent="HelpPopup/Control/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -445,10 +447,13 @@ layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="AboutPopup/Control/PanelContainer/MarginContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="TITLE" type="Label" parent="AboutPopup/Control/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 6
+size_flags_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0.76862746, 0.6039216, 0.42352942, 1)
 theme_override_constants/shadow_offset_x = 4
@@ -459,11 +464,15 @@ horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="AboutPopup/Control/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Made with love using Godot Engine"
+text = "Made with Godot Engine"
 
 [node name="Label3" type="Label" parent="AboutPopup/Control/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "❤️Developed by txinh (@lilsea.7)"
+text = "Developed by txinh (@lilsea.7)"
+
+[node name="Label" type="Label" parent="AboutPopup/Control/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Assets by CUP NOOBLE"
 
 [node name="CloseAbout" type="Button" parent="AboutPopup/Control"]
 custom_minimum_size = Vector2(30, 30)

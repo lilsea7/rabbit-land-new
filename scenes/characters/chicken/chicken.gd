@@ -8,7 +8,7 @@ class_name Chicken
 @onready var state_machine: NodeStateMachine = $StateMachine
 
 # ================== CONFIG ==================
-@export var time_to_lay_egg: float = 45.0   # Dễ test
+@export var time_to_lay_egg: float = 45.0
 
 # ================== STATE ==================
 var is_fed: bool = false
@@ -22,9 +22,8 @@ var food_menu_scene: PackedScene = preload("res://scenes/ui/food_menu.tscn")
 # ================== READY ==================
 func _ready() -> void:
 	print("🐔 Chicken _ready()")
-	
 	egg_timer.one_shot = true
-	egg_timer.timeout.connect(_on_egg_timer_timeout)   # Đảm bảo kết nối
+	egg_timer.timeout.connect(_on_egg_timer_timeout)
 	
 	if interaction_area:
 		interaction_area.body_entered.connect(_on_body_entered)
@@ -43,15 +42,28 @@ func _on_body_exited(body: Node2D) -> void:
 		player_in_range = false
 		body.clear_interact_target(self)
 		
+		# Tự động đóng FoodMenu khi rời vùng
 		if current_food_menu and is_instance_valid(current_food_menu):
 			current_food_menu.close_menu()
 			current_food_menu.queue_free()
 			current_food_menu = null
 
-# ================== INTERACT ==================
+# ================== INTERACT - CHỈ MỞ KHI ĐÃ UNLOCK (Level 4) ==================
 func interact() -> void:
 	if not player_in_range:
 		return
+	
+	# Kiểm tra an toàn LevelManager
+	if not LevelManager or not LevelManager.has_method("is_unlocked"):
+		print("⚠️ LevelManager chưa sẵn sàng!")
+		return
+	
+	# === KIỂM TRA UNLOCK CHỨC NĂNG CHO GÀ ĂN ===
+	if not LevelManager.is_unlocked("chicken"):
+		print("❌ Chức năng cho gà ăn chưa được mở khóa! Cần đạt Level 4.")
+		return
+	
+	# Không cho mở nhiều menu cùng lúc
 	if current_food_menu and is_instance_valid(current_food_menu):
 		print("⚠️ FoodMenu đã tồn tại")
 		return
@@ -60,7 +72,7 @@ func interact() -> void:
 	
 	var food_menu = food_menu_scene.instantiate()
 	get_tree().root.add_child(food_menu)
-	food_menu.open_food_menu(self)
+	food_menu.open_food_menu(self)      # Truyền con gà vào FoodMenu
 	
 	current_food_menu = food_menu
 
@@ -73,19 +85,19 @@ func feed() -> void:
 	is_fed = true
 	print("🍗 ĐÃ CHO GÀ ĂN! Timer bắt đầu đếm ", time_to_lay_egg, " giây")
 	
-	# === THÊM DÒNG NÀY ===
+	# Cộng kinh nghiệm
 	LevelManager.add_exp(LevelManager.exp_rewards["feed_chicken"], "feed_chicken")
 	
 	if state_machine:
 		state_machine.transition_to("eating")
 	
-	egg_timer.stop()                    # Reset timer cũ
+	egg_timer.stop()
 	egg_timer.wait_time = time_to_lay_egg
 	egg_timer.start()
 	
 	print("⏰ EGG TIMER ĐÃ START - Chờ ", time_to_lay_egg, " giây")
 
-# ================== TIMER TIMEOUT ==================
+# ================== TIMER & LAY EGG ==================
 func _on_egg_timer_timeout() -> void:
 	print("⏰ EGG TIMER TIMEOUT → Gà đẻ trứng!")
 	lay_egg()
@@ -93,11 +105,11 @@ func _on_egg_timer_timeout() -> void:
 	if state_machine:
 		state_machine.transition_to("idle")
 
-# ================== LAY EGG ==================
 func lay_egg() -> void:
 	if not egg_scene:
 		push_error("❌ Missing egg_scene!")
 		return
+	
 	var egg = egg_scene.instantiate()
 	var spawn_pos = egg_spawn_point.global_position if egg_spawn_point else global_position + Vector2(0, 20)
 	egg.global_position = spawn_pos
