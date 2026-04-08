@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://cwnrvsq6ohu1t"]
+[gd_scene load_steps=40 format=3 uid="uid://cwnrvsq6ohu1t"]
 
 [ext_resource type="FontFile" uid="uid://2pfwl33qn5vf" path="res://assets/ui/fonts/pixelFont-7-8x14-sproutLands.ttf" id="1_j64c2"]
 [ext_resource type="Script" uid="uid://bu3yu3fcrwuay" path="res://scenes/ui/shop_ui.gd" id="2_j64c2"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://du8rbultoaffr" path="res://assets/game/objects/farming_plants_items_v2.png" id="13_amby3"]
 [ext_resource type="Resource" uid="uid://bmt1r68j68yvm" path="res://resources/Items/tomato.tres" id="13_hmn88"]
 [ext_resource type="Texture2D" uid="uid://bldxywxuxe5ii" path="res://assets/game/objects/egg_item.png" id="14_5ferc"]
+[ext_resource type="FontVariation" uid="uid://ifuaiodn04dj" path="res://assets/ui/fonts/zx_palm_variation.tres" id="14_426is"]
 [ext_resource type="Resource" uid="uid://dmljbm7ead2qo" path="res://resources/Items/wheat.tres" id="14_rqeav"]
 [ext_resource type="Texture2D" uid="uid://dkywr8fa4iiu4" path="res://assets/game/objects/simple_milk_and_grass_item.png" id="15_426is"]
 
@@ -54,6 +55,10 @@ region = Rect2(16, 112, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_02u0b"]
 atlas = ExtResource("3_426is")
 region = Rect2(628, 115, 7, 10)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_426is"]
+texture = ExtResource("3_426is")
+region_rect = Rect2(400, 72, 32, 16)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_02u0b"]
 load_path = "res://.godot/imported/farming_plants_items_v2.png-d1a3f2c1171165262a5cece513072c33.ctex"
@@ -254,9 +259,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 2.0
+offset_left = -1.0
 offset_top = -16.5
-offset_right = 37.0
+offset_right = 34.0
 offset_bottom = 18.5
 grow_vertical = 2
 texture = SubResource("AtlasTexture_426is")
@@ -268,9 +273,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -10.75
+offset_left = -16.75
 offset_top = -7.0
-offset_right = 10.75
+offset_right = 4.75
 offset_bottom = 7.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -279,11 +284,33 @@ text = "25"
 
 [node name="Coin" type="TextureRect" parent="NinePatchRect2/ScrollContainer/VBoxContainer/Wheat"]
 layout_mode = 0
-offset_left = 70.0
+offset_left = 64.0
 offset_top = 10.0
-offset_right = 81.0
+offset_right = 75.0
 offset_bottom = 27.0
 texture = SubResource("AtlasTexture_02u0b")
+
+[node name="ButtonSell" type="Button" parent="NinePatchRect2/ScrollContainer/VBoxContainer/Wheat"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -29.0
+offset_top = -6.5
+offset_bottom = 6.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.91764706, 0.88235295, 0.47058824, 1)
+theme_override_colors/font_hover_color = Color(0.91764706, 0.88235295, 0.47058824, 1)
+theme_override_fonts/font = ExtResource("14_426is")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxTexture_426is")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_426is")
+theme_override_styles/hover = SubResource("StyleBoxTexture_426is")
+text = "SELL"
 
 [node name="Tomato" type="Panel" parent="NinePatchRect2/ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(115, 35)
@@ -296,9 +323,8 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 2.0
 offset_top = -16.5
-offset_right = 37.0
+offset_right = 35.0
 offset_bottom = 18.5
 grow_vertical = 2
 texture = SubResource("AtlasTexture_c0s4l")
@@ -310,9 +336,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -10.75
+offset_left = -15.75
 offset_top = -7.0
-offset_right = 10.75
+offset_right = 5.75
 offset_bottom = 7.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -321,11 +347,33 @@ text = "30"
 
 [node name="Coin" type="TextureRect" parent="NinePatchRect2/ScrollContainer/VBoxContainer/Tomato"]
 layout_mode = 0
-offset_left = 70.0
+offset_left = 65.0
 offset_top = 10.0
-offset_right = 81.0
+offset_right = 76.0
 offset_bottom = 27.0
 texture = SubResource("AtlasTexture_02u0b")
+
+[node name="ButtonSell" type="Button" parent="NinePatchRect2/ScrollContainer/VBoxContainer/Tomato"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -29.0
+offset_top = -6.5
+offset_bottom = 6.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.91764706, 0.88235295, 0.47058824, 1)
+theme_override_colors/font_hover_color = Color(0.91764706, 0.88235295, 0.47058824, 1)
+theme_override_fonts/font = ExtResource("14_426is")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxTexture_426is")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_426is")
+theme_override_styles/hover = SubResource("StyleBoxTexture_426is")
+text = "SELL"
 
 [node name="Carrot" type="Panel" parent="NinePatchRect2/ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(115, 35)
@@ -338,9 +386,8 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 2.0
 offset_top = -16.5
-offset_right = 37.0
+offset_right = 35.0
 offset_bottom = 18.5
 grow_vertical = 2
 texture = SubResource("AtlasTexture_ls5xl")
@@ -352,9 +399,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -10.75
+offset_left = -14.75
 offset_top = -7.0
-offset_right = 10.75
+offset_right = 6.75
 offset_bottom = 7.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -363,11 +410,33 @@ text = "35"
 
 [node name="Coin" type="TextureRect" parent="NinePatchRect2/ScrollContainer/VBoxContainer/Carrot"]
 layout_mode = 0
-offset_left = 70.0
+offset_left = 66.0
 offset_top = 10.0
-offset_right = 81.0
+offset_right = 77.0
 offset_bottom = 27.0
 texture = SubResource("AtlasTexture_02u0b")
+
+[node name="ButtonSell" type="Button" parent="NinePatchRect2/ScrollContainer/VBoxContainer/Carrot"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -29.0
+offset_top = -6.5
+offset_bottom = 6.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.91764706, 0.88235295, 0.47058824, 1)
+theme_override_colors/font_hover_color = Color(0.91764706, 0.88235295, 0.47058824, 1)
+theme_override_fonts/font = ExtResource("14_426is")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxTexture_426is")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_426is")
+theme_override_styles/hover = SubResource("StyleBoxTexture_426is")
+text = "SELL"
 
 [node name="Corn" type="Panel" parent="NinePatchRect2/ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(115, 35)
@@ -380,9 +449,8 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 2.0
 offset_top = -16.5
-offset_right = 37.0
+offset_right = 35.0
 offset_bottom = 18.5
 grow_vertical = 2
 texture = SubResource("AtlasTexture_secc5")
@@ -394,9 +462,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -10.75
+offset_left = -14.75
 offset_top = -7.0
-offset_right = 10.75
+offset_right = 6.75
 offset_bottom = 7.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -405,11 +473,33 @@ text = "32"
 
 [node name="Coin" type="TextureRect" parent="NinePatchRect2/ScrollContainer/VBoxContainer/Corn"]
 layout_mode = 0
-offset_left = 70.0
+offset_left = 66.0
 offset_top = 10.0
-offset_right = 81.0
+offset_right = 77.0
 offset_bottom = 27.0
 texture = SubResource("AtlasTexture_02u0b")
+
+[node name="ButtonSell" type="Button" parent="NinePatchRect2/ScrollContainer/VBoxContainer/Corn"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -29.0
+offset_top = -6.5
+offset_bottom = 6.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.91764706, 0.88235295, 0.47058824, 1)
+theme_override_colors/font_hover_color = Color(0.91764706, 0.88235295, 0.47058824, 1)
+theme_override_fonts/font = ExtResource("14_426is")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxTexture_426is")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_426is")
+theme_override_styles/hover = SubResource("StyleBoxTexture_426is")
+text = "SELL"
 
 [node name="Rose" type="Panel" parent="NinePatchRect2/ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(115, 35)
@@ -422,10 +512,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 2.0
-offset_top = -16.5
-offset_right = 37.0
-offset_bottom = 18.5
+offset_top = -18.5
+offset_right = 35.0
+offset_bottom = 16.5
 grow_vertical = 2
 texture = SubResource("AtlasTexture_idjpc")
 
@@ -436,9 +525,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -10.75
+offset_left = -14.75
 offset_top = -7.0
-offset_right = 10.75
+offset_right = 6.75
 offset_bottom = 7.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -447,11 +536,33 @@ text = "40"
 
 [node name="Coin" type="TextureRect" parent="NinePatchRect2/ScrollContainer/VBoxContainer/Rose"]
 layout_mode = 0
-offset_left = 70.0
+offset_left = 66.0
 offset_top = 10.0
-offset_right = 81.0
+offset_right = 77.0
 offset_bottom = 27.0
 texture = SubResource("AtlasTexture_02u0b")
+
+[node name="ButtonSell" type="Button" parent="NinePatchRect2/ScrollContainer/VBoxContainer/Rose"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -29.0
+offset_top = -6.5
+offset_bottom = 6.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.91764706, 0.88235295, 0.47058824, 1)
+theme_override_colors/font_hover_color = Color(0.91764706, 0.88235295, 0.47058824, 1)
+theme_override_fonts/font = ExtResource("14_426is")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxTexture_426is")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_426is")
+theme_override_styles/hover = SubResource("StyleBoxTexture_426is")
+text = "SELL"
 
 [node name="Broccoli" type="Panel" parent="NinePatchRect2/ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(115, 35)
@@ -464,9 +575,8 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 2.0
 offset_top = -16.5
-offset_right = 37.0
+offset_right = 35.0
 offset_bottom = 18.5
 grow_vertical = 2
 texture = SubResource("AtlasTexture_hmn88")
@@ -478,9 +588,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -10.75
+offset_left = -13.75
 offset_top = -7.0
-offset_right = 10.75
+offset_right = 7.75
 offset_bottom = 7.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -489,11 +599,33 @@ text = "35"
 
 [node name="Coin" type="TextureRect" parent="NinePatchRect2/ScrollContainer/VBoxContainer/Broccoli"]
 layout_mode = 0
-offset_left = 70.0
+offset_left = 67.0
 offset_top = 10.0
-offset_right = 81.0
+offset_right = 78.0
 offset_bottom = 27.0
 texture = SubResource("AtlasTexture_02u0b")
+
+[node name="ButtonSell" type="Button" parent="NinePatchRect2/ScrollContainer/VBoxContainer/Broccoli"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -29.0
+offset_top = -6.5
+offset_bottom = 6.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.91764706, 0.88235295, 0.47058824, 1)
+theme_override_colors/font_hover_color = Color(0.91764706, 0.88235295, 0.47058824, 1)
+theme_override_fonts/font = ExtResource("14_426is")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxTexture_426is")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_426is")
+theme_override_styles/hover = SubResource("StyleBoxTexture_426is")
+text = "SELL"
 
 [node name="Egg" type="Panel" parent="NinePatchRect2/ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(115, 35)
@@ -506,9 +638,8 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 2.0
 offset_top = -16.5
-offset_right = 37.0
+offset_right = 35.0
 offset_bottom = 18.5
 grow_vertical = 2
 texture = SubResource("AtlasTexture_rqeav")
@@ -520,9 +651,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -10.75
+offset_left = -14.75
 offset_top = -7.0
-offset_right = 10.75
+offset_right = 6.75
 offset_bottom = 7.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -531,11 +662,33 @@ text = "55"
 
 [node name="Coin" type="TextureRect" parent="NinePatchRect2/ScrollContainer/VBoxContainer/Egg"]
 layout_mode = 0
-offset_left = 70.0
+offset_left = 66.0
 offset_top = 10.0
-offset_right = 81.0
+offset_right = 77.0
 offset_bottom = 27.0
 texture = SubResource("AtlasTexture_02u0b")
+
+[node name="ButtonSell" type="Button" parent="NinePatchRect2/ScrollContainer/VBoxContainer/Egg"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -29.0
+offset_top = -6.5
+offset_bottom = 6.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.91764706, 0.88235295, 0.47058824, 1)
+theme_override_colors/font_hover_color = Color(0.91764706, 0.88235295, 0.47058824, 1)
+theme_override_fonts/font = ExtResource("14_426is")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxTexture_426is")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_426is")
+theme_override_styles/hover = SubResource("StyleBoxTexture_426is")
+text = "SELL"
 
 [node name="Milk" type="Panel" parent="NinePatchRect2/ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(115, 35)
@@ -548,9 +701,8 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 2.0
 offset_top = -16.5
-offset_right = 37.0
+offset_right = 35.0
 offset_bottom = 18.5
 grow_vertical = 2
 texture = SubResource("AtlasTexture_ro3oc")
@@ -562,9 +714,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -10.75
+offset_left = -14.75
 offset_top = -7.0
-offset_right = 10.75
+offset_right = 6.75
 offset_bottom = 7.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -573,8 +725,30 @@ text = "60"
 
 [node name="Coin" type="TextureRect" parent="NinePatchRect2/ScrollContainer/VBoxContainer/Milk"]
 layout_mode = 0
-offset_left = 70.0
+offset_left = 66.0
 offset_top = 10.0
-offset_right = 81.0
+offset_right = 77.0
 offset_bottom = 27.0
 texture = SubResource("AtlasTexture_02u0b")
+
+[node name="ButtonSell" type="Button" parent="NinePatchRect2/ScrollContainer/VBoxContainer/Milk"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -29.0
+offset_top = -6.5
+offset_bottom = 6.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.91764706, 0.88235295, 0.47058824, 1)
+theme_override_colors/font_hover_color = Color(0.91764706, 0.88235295, 0.47058824, 1)
+theme_override_fonts/font = ExtResource("14_426is")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxTexture_426is")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_426is")
+theme_override_styles/hover = SubResource("StyleBoxTexture_426is")
+text = "SELL"

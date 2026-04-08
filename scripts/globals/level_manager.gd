@@ -8,7 +8,7 @@ var current_level: int = 1
 var current_exp: int = 0
 
 var exp_required = {
-	1: 10, 2: 11, 3: 12, 4: 13, 5: 14,
+	1: 5, 2: 5, 3: 5, 4: 13, 5: 14,
 	6: 15, 7: 16, 8: 17, 9: 18, 10: 19
 }
 
@@ -27,11 +27,14 @@ var exp_rewards = {
 var unlock_features = {
 	3: ["plant_wheat", "plant_tomato", "plant_carrot"],
 	4: ["chicken"],
-	5: ["shop"],
+	5: ["shop_market"],        # Level 5 mở Market
 	6: ["plant_corn", "plant_rose", "plant_broccoli"],
 	8: ["cow"],
 	10: ["new_areas"]
 }
+
+# Biến đánh dấu đã cấp hạt giống ban đầu chưa (tránh cộng nhiều lần)
+var has_given_starter_seeds: bool = false
 
 func _ready() -> void:
 	print("LevelManager đã khởi tạo - Level hiện tại: ", current_level)
@@ -68,18 +71,18 @@ func check_level_up() -> void:
 		
 		exp_changed.emit(current_exp, get_exp_to_next_level())
 
-# ================== MỞ KHÓA TÍNH NĂNG ==================
+# ================== MỞ KHÓA TÍNH NĂNG + CẤP HẠT GIỐNG ==================
 func unlock_features_for_level(level: int) -> bool:
 	if not unlock_features.has(level):
 		return false
 	
 	var has_new_unlock = false
+	
 	for feature in unlock_features[level]:
 		print("🔓 Đã mở khóa: ", feature)
 		feature_unlocked.emit(feature)
 		has_new_unlock = true
 		
-		# Unlock tool tương ứng
 		match feature:
 			"plant_wheat", "plant_tomato", "plant_carrot":
 				ToolManager.unlock_tool(DataTypes.Tools.PlantWheat)
@@ -91,18 +94,24 @@ func unlock_features_for_level(level: int) -> bool:
 				ToolManager.unlock_tool(DataTypes.Tools.PlantCorn)
 				ToolManager.unlock_tool(DataTypes.Tools.PlantRose)
 				ToolManager.unlock_tool(DataTypes.Tools.PlantBroccoli)
-				ToolManager.unlock_tool(DataTypes.Tools.Plants)  # Đảm bảo nút Plants UI
+				ToolManager.unlock_tool(DataTypes.Tools.Plants)
 			
 			"chicken":
-				# Mở chức năng cho gà ăn (Level 4)
 				ToolManager.unlock_tool(DataTypes.Tools.Plants)
 			
 			"cow":
-				# Mở chức năng cho bò ăn (Level 8)
 				ToolManager.unlock_tool(DataTypes.Tools.Plants)
 			
-			"shop":
-				pass  # Tool Shop thường không cần unlock riêng
+			"shop_market":   # Level 5 - Mở Market
+				print("🛒 Market đã được mở khóa tại Level 5!")
+
+	# === CẤP 5 HẠT GIỐNG BAN ĐẦU - CHỈ THỰC HIỆN 1 LẦN KHI LÊN LEVEL 3 ===
+	if level == 3 and not has_given_starter_seeds:
+		InventoryManager.add_collectable("wheat_seed", 5)
+		InventoryManager.add_collectable("tomato_seed", 5)
+		InventoryManager.add_collectable("carrot_seed", 5)
+		has_given_starter_seeds = true
+		print("🌱 Đã cấp 5 hạt giống ban đầu: Lúa mì, Cà chua, Cà rốt")
 
 	return has_new_unlock
 

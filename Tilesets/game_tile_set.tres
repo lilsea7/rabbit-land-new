@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=40 format=3 uid="uid://knxfvhe807ul"]
+[gd_resource type="TileSet" load_steps=42 format=3 uid="uid://knxfvhe807ul"]
 
 [ext_resource type="Texture2D" uid="uid://chnvtwwtkgskb" path="res://assets/game/tilesets/water.png" id="1_m70i2"]
 [ext_resource type="Texture2D" uid="uid://c6p4eggyakn24" path="res://assets/game/tilesets/grass.png" id="2_cbdxd"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bfyvxx4rn2rk" path="res://scenes/object/trees/small_tree.tscn" id="8_4agr7"]
 [ext_resource type="Texture2D" uid="uid://cq2t0eoav07v1" path="res://assets/game/objects/farming_plants_v2.png" id="8_aekik"]
 [ext_resource type="PackedScene" uid="uid://bcug0m77tgagd" path="res://scenes/object/trees/large_tree.tscn" id="9_mt8is"]
+[ext_resource type="Texture2D" uid="uid://b1xp0q1eg0kav" path="res://assets/game/objects/small_House_light_with_door_grass.png" id="10_dekbp"]
 [ext_resource type="PackedScene" uid="uid://yjjnoukvsn4y" path="res://scenes/object/rocks/rock.tscn" id="10_o2x3h"]
 [ext_resource type="Texture2D" uid="uid://wk3bljrr81em" path="res://assets/game/tilesets/tilled_dirt_wide_cropfields.png" id="11_skfke"]
 [ext_resource type="Texture2D" uid="uid://cjfmxgur8vbpv" path="res://assets/game/tilesets/fences.png" id="11_tmfy7"]
@@ -424,6 +425,11 @@ texture = ExtResource("8_aekik")
 5:3/0 = 0
 4:3/0 = 0
 3:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jloba"]
+texture = ExtResource("10_dekbp")
+4:4/size_in_atlas = Vector2i(4, 4)
+4:4/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xwv23"]
 texture = ExtResource("3_hu6sp")
@@ -1110,3 +1116,4 @@ sources/14 = SubResource("TileSetAtlasSource_u54wr")
 sources/15 = SubResource("TileSetAtlasSource_dekbp")
 sources/16 = SubResource("TileSetAtlasSource_ghad2")
 sources/10 = SubResource("TileSetAtlasSource_4usuj")
+sources/18 = SubResource("TileSetAtlasSource_jloba")

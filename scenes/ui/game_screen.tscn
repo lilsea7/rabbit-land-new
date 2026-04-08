@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://d0dhtip02w7f6"]
+[gd_scene load_steps=17 format=3 uid="uid://d0dhtip02w7f6"]
 
 [ext_resource type="Theme" uid="uid://ljcck66th0xd" path="res://scenes/ui/game_ui_theme.tres" id="1_e2vrk"]
 [ext_resource type="PackedScene" uid="uid://8f4petbcqx7d" path="res://scenes/ui/emotes_panel.tscn" id="2_0kkfd"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dofq617k0q8ck" path="res://scenes/ui/plants_ui.tscn" id="7_ooiym"]
 [ext_resource type="PackedScene" uid="uid://cbuwkkrpff0do" path="res://scenes/ui/inventory_ui.tscn" id="8_ce4rh"]
 [ext_resource type="PackedScene" uid="uid://cwnrvsq6ohu1t" path="res://scenes/ui/shop_ui.tscn" id="9_r1vnj"]
+[ext_resource type="PackedScene" uid="uid://85rbu6alk1c3" path="res://scenes/ui/market_ui.tscn" id="11_dscta"]
 [ext_resource type="PackedScene" uid="uid://cl07i03rqnvmm" path="res://scenes/ui/food_menu.tscn" id="11_nktmq"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ooiym"]
@@ -108,7 +109,7 @@ text = "0"
 script = ExtResource("4_c0p0g")
 
 [node name="LevelPanel" type="Panel" parent="MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(80, 40)
+custom_minimum_size = Vector2(90, 45)
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxTexture_ce4rh")
@@ -123,9 +124,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -40.0
-offset_top = -19.0
+offset_top = -15.0
 offset_right = 40.0
-offset_bottom = 19.0
+offset_bottom = 15.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -139,8 +140,12 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "0 / 50"
 
-[node name="ExpBar" type="ProgressBar" parent="MarginContainer/HBoxContainer/LevelPanel/VBoxContainer"]
-layout_mode = 2
+[node name="ExpBar" type="ProgressBar" parent="MarginContainer/HBoxContainer/LevelPanel"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 23.0
+offset_right = 85.0
+offset_bottom = 40.0
 show_percentage = false
 
 [node name="ToolsPanel" parent="MarginContainer" instance=ExtResource("2_gusqm")]
@@ -160,6 +165,9 @@ visible = false
 visible = false
 
 [node name="ShopUI" parent="." instance=ExtResource("9_r1vnj")]
+visible = false
+
+[node name="MarketUI" parent="." instance=ExtResource("11_dscta")]
 visible = false
 
 [node name="FoodMenu" parent="." instance=ExtResource("11_nktmq")]

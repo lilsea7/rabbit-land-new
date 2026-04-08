@@ -1,0 +1,525 @@
+[gd_scene load_steps=23 format=3 uid="uid://85rbu6alk1c3"]
+
+[ext_resource type="Script" uid="uid://dj1arruny6pmd" path="res://scenes/ui/market_ui.gd" id="1_6lbji"]
+[ext_resource type="Texture2D" uid="uid://btoiwj8p1b4qg" path="res://assets/ui/setting_menu.png" id="1_j1hsa"]
+[ext_resource type="Texture2D" uid="uid://cd8tuel5gyu8h" path="res://assets/ui/baisc_ui_sprites.png" id="2_6lbji"]
+[ext_resource type="Texture2D" uid="uid://du8rbultoaffr" path="res://assets/game/objects/farming_plants_items_v2.png" id="3_61l2l"]
+[ext_resource type="FontVariation" uid="uid://ifuaiodn04dj" path="res://assets/ui/fonts/zx_palm_variation.tres" id="4_km5ve"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_urou3"]
+atlas = ExtResource("1_j1hsa")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7s17i"]
+texture = ExtResource("2_6lbji")
+region_rect = Rect2(168, 184, 80, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_308ef"]
+atlas = ExtResource("3_61l2l")
+region = Rect2(0, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7x1ju"]
+atlas = ExtResource("2_6lbji")
+region = Rect2(628, 115, 7, 10)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8jvmr"]
+texture = ExtResource("2_6lbji")
+region_rect = Rect2(400, 72, 32, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_02u0b"]
+load_path = "res://.godot/imported/farming_plants_items_v2.png-d1a3f2c1171165262a5cece513072c33.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0icn3"]
+atlas = SubResource("CompressedTexture2D_02u0b")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dgrft"]
+load_path = "res://.godot/imported/farming_plants_items_v2.png-d1a3f2c1171165262a5cece513072c33.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_huyas"]
+atlas = SubResource("CompressedTexture2D_dgrft")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r7v6v"]
+load_path = "res://.godot/imported/farming_plants_items_v2.png-d1a3f2c1171165262a5cece513072c33.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w25ib"]
+atlas = SubResource("CompressedTexture2D_r7v6v")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dygap"]
+load_path = "res://.godot/imported/farming_plants_items_v2.png-d1a3f2c1171165262a5cece513072c33.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hhw5x"]
+atlas = SubResource("CompressedTexture2D_dygap")
+region = Rect2(0, 160, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dyikt"]
+load_path = "res://.godot/imported/farming_plants_items_v2.png-d1a3f2c1171165262a5cece513072c33.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qvjgj"]
+atlas = SubResource("CompressedTexture2D_dyikt")
+region = Rect2(0, 96, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0yg5c"]
+texture = ExtResource("2_6lbji")
+region_rect = Rect2(839, 5, 18, 20)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8jjwq"]
+texture = ExtResource("2_6lbji")
+region_rect = Rect2(871, 7, 18, 18)
+
+[node name="MarketUI" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6lbji")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(100, 150)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -122.0
+offset_right = 100.0
+offset_bottom = 97.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_urou3")
+region_rect = Rect2(136, 8, 112, 128)
+
+[node name="Label" type="Label" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -35.0
+offset_top = 6.5
+offset_right = 37.0
+offset_bottom = 32.5
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 18
+text = "MARKET"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.0
+offset_top = -79.5
+offset_right = 73.0
+offset_bottom = 99.5
+grow_horizontal = 2
+grow_vertical = 2
+follow_focus = true
+vertical_scroll_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+
+[node name="Wheat" type="Panel" parent="NinePatchRect/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(115, 35)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_7s17i")
+
+[node name="Icon" type="TextureRect" parent="NinePatchRect/ScrollContainer/VBoxContainer/Wheat"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -1.0
+offset_top = -18.5
+offset_right = 34.0
+offset_bottom = 16.5
+grow_vertical = 2
+texture = SubResource("AtlasTexture_308ef")
+
+[node name="Label" type="Label" parent="NinePatchRect/ScrollContainer/VBoxContainer/Wheat"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.75
+offset_top = -13.0
+offset_right = -1.25
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "5"
+
+[node name="Coin" type="TextureRect" parent="NinePatchRect/ScrollContainer/VBoxContainer/Wheat"]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 10.0
+offset_right = 92.0
+offset_bottom = 27.0
+texture = SubResource("AtlasTexture_7x1ju")
+
+[node name="ButtonBuy" type="Button" parent="NinePatchRect/ScrollContainer/VBoxContainer/Wheat"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -29.0
+offset_top = -6.5
+offset_bottom = 6.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.91764706, 0.88235295, 0.47058824, 1)
+theme_override_colors/font_hover_color = Color(0.91764706, 0.88235295, 0.47058824, 1)
+theme_override_fonts/font = ExtResource("4_km5ve")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxTexture_8jvmr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_8jvmr")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8jvmr")
+text = "BUY"
+
+[node name="Tomato" type="Panel" parent="NinePatchRect/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(115, 35)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_7s17i")
+
+[node name="Icon" type="TextureRect" parent="NinePatchRect/ScrollContainer/VBoxContainer/Tomato"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -18.5
+offset_right = 35.0
+offset_bottom = 16.5
+grow_vertical = 2
+texture = SubResource("AtlasTexture_0icn3")
+
+[node name="Label" type="Label" parent="NinePatchRect/ScrollContainer/VBoxContainer/Tomato"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.75
+offset_top = -13.0
+offset_right = -1.25
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "8"
+
+[node name="Coin" type="TextureRect" parent="NinePatchRect/ScrollContainer/VBoxContainer/Tomato"]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 10.0
+offset_right = 92.0
+offset_bottom = 27.0
+texture = SubResource("AtlasTexture_7x1ju")
+
+[node name="ButtonBuy" type="Button" parent="NinePatchRect/ScrollContainer/VBoxContainer/Tomato"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -29.0
+offset_top = -6.5
+offset_bottom = 6.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.91764706, 0.88235295, 0.47058824, 1)
+theme_override_colors/font_hover_color = Color(0.91764706, 0.88235295, 0.47058824, 1)
+theme_override_fonts/font = ExtResource("4_km5ve")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxTexture_8jvmr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_8jvmr")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8jvmr")
+text = "BUY"
+
+[node name="Carrot" type="Panel" parent="NinePatchRect/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(115, 35)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_7s17i")
+
+[node name="Icon" type="TextureRect" parent="NinePatchRect/ScrollContainer/VBoxContainer/Carrot"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -18.5
+offset_right = 35.0
+offset_bottom = 16.5
+grow_vertical = 2
+texture = SubResource("AtlasTexture_huyas")
+
+[node name="Label" type="Label" parent="NinePatchRect/ScrollContainer/VBoxContainer/Carrot"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.75
+offset_top = -13.0
+offset_right = -1.25
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "10"
+
+[node name="Coin" type="TextureRect" parent="NinePatchRect/ScrollContainer/VBoxContainer/Carrot"]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 10.0
+offset_right = 92.0
+offset_bottom = 27.0
+texture = SubResource("AtlasTexture_7x1ju")
+
+[node name="ButtonBuy" type="Button" parent="NinePatchRect/ScrollContainer/VBoxContainer/Carrot"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -29.0
+offset_top = -6.5
+offset_bottom = 6.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.91764706, 0.88235295, 0.47058824, 1)
+theme_override_colors/font_hover_color = Color(0.91764706, 0.88235295, 0.47058824, 1)
+theme_override_fonts/font = ExtResource("4_km5ve")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxTexture_8jvmr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_8jvmr")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8jvmr")
+text = "BUY"
+
+[node name="Corn" type="Panel" parent="NinePatchRect/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(115, 35)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_7s17i")
+
+[node name="Icon" type="TextureRect" parent="NinePatchRect/ScrollContainer/VBoxContainer/Corn"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -18.5
+offset_right = 35.0
+offset_bottom = 16.5
+grow_vertical = 2
+texture = SubResource("AtlasTexture_w25ib")
+
+[node name="Label" type="Label" parent="NinePatchRect/ScrollContainer/VBoxContainer/Corn"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.75
+offset_top = -13.0
+offset_right = -0.25
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "5"
+
+[node name="Coin" type="TextureRect" parent="NinePatchRect/ScrollContainer/VBoxContainer/Corn"]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 10.0
+offset_right = 92.0
+offset_bottom = 27.0
+texture = SubResource("AtlasTexture_7x1ju")
+
+[node name="ButtonBuy" type="Button" parent="NinePatchRect/ScrollContainer/VBoxContainer/Corn"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -29.0
+offset_top = -6.5
+offset_bottom = 6.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.91764706, 0.88235295, 0.47058824, 1)
+theme_override_colors/font_hover_color = Color(0.91764706, 0.88235295, 0.47058824, 1)
+theme_override_fonts/font = ExtResource("4_km5ve")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxTexture_8jvmr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_8jvmr")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8jvmr")
+text = "BUY"
+
+[node name="Rose" type="Panel" parent="NinePatchRect/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(115, 35)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_7s17i")
+
+[node name="Icon" type="TextureRect" parent="NinePatchRect/ScrollContainer/VBoxContainer/Rose"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -18.5
+offset_right = 35.0
+offset_bottom = 16.5
+grow_vertical = 2
+texture = SubResource("AtlasTexture_hhw5x")
+
+[node name="Label" type="Label" parent="NinePatchRect/ScrollContainer/VBoxContainer/Rose"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.75
+offset_top = -13.0
+offset_right = -0.25
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "20"
+
+[node name="Coin" type="TextureRect" parent="NinePatchRect/ScrollContainer/VBoxContainer/Rose"]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 10.0
+offset_right = 92.0
+offset_bottom = 27.0
+texture = SubResource("AtlasTexture_7x1ju")
+
+[node name="ButtonBuy" type="Button" parent="NinePatchRect/ScrollContainer/VBoxContainer/Rose"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -29.0
+offset_top = -6.5
+offset_bottom = 6.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.91764706, 0.88235295, 0.47058824, 1)
+theme_override_colors/font_hover_color = Color(0.91764706, 0.88235295, 0.47058824, 1)
+theme_override_fonts/font = ExtResource("4_km5ve")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxTexture_8jvmr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_8jvmr")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8jvmr")
+text = "BUY"
+
+[node name="Broccoli" type="Panel" parent="NinePatchRect/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(115, 35)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_7s17i")
+
+[node name="Icon" type="TextureRect" parent="NinePatchRect/ScrollContainer/VBoxContainer/Broccoli"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -18.5
+offset_right = 35.0
+offset_bottom = 16.5
+grow_vertical = 2
+texture = SubResource("AtlasTexture_qvjgj")
+
+[node name="Label" type="Label" parent="NinePatchRect/ScrollContainer/VBoxContainer/Broccoli"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.75
+offset_top = -13.0
+offset_right = 0.75
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "15"
+
+[node name="Coin" type="TextureRect" parent="NinePatchRect/ScrollContainer/VBoxContainer/Broccoli"]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 10.0
+offset_right = 92.0
+offset_bottom = 27.0
+texture = SubResource("AtlasTexture_7x1ju")
+
+[node name="ButtonBuy" type="Button" parent="NinePatchRect/ScrollContainer/VBoxContainer/Broccoli"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -29.0
+offset_top = -6.5
+offset_bottom = 6.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.91764706, 0.88235295, 0.47058824, 1)
+theme_override_colors/font_hover_color = Color(0.91764706, 0.88235295, 0.47058824, 1)
+theme_override_fonts/font = ExtResource("4_km5ve")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxTexture_8jvmr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_8jvmr")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8jvmr")
+text = "BUY"
+
+[node name="ButtonClose" type="Button" parent="."]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 74.0
+offset_top = -126.0
+offset_right = 106.0
+offset_bottom = -94.0
+grow_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_0yg5c")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_8jjwq")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8jjwq")
