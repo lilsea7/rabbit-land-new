@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dvcv4gs0dsxen"]
+[gd_scene load_steps=16 format=3 uid="uid://dvcv4gs0dsxen"]
 
 [ext_resource type="Script" uid="uid://d2s280sqq3w0r" path="res://scenes/object/plants/wheat.gd" id="1_x26rd"]
 [ext_resource type="Texture2D" uid="uid://cq2t0eoav07v1" path="res://assets/game/objects/farming_plants_v2.png" id="2_lpsb6"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://bm0lxqoms1rpt" path="res://scenes/object/plants/flowering_particles.tscn" id="4_fh3fn"]
 [ext_resource type="PackedScene" uid="uid://cp5v32esn6wry" path="res://scenes/object/plants/growth_cycle_component.tscn" id="5_kvf0e"]
 [ext_resource type="PackedScene" uid="uid://iw6ss4ln5i0p" path="res://scenes/components/hurt_component.tscn" id="6_v34ls"]
+[ext_resource type="Script" uid="uid://bl64joot86mh2" path="res://scenes/components/save_data_component.gd" id="7_x26rd"]
+[ext_resource type="Script" uid="uid://caispeekk2575" path="res://resources/plant_save_data_resource.gd" id="8_omcsw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_00d0q"]
 atlas = ExtResource("2_lpsb6")
@@ -57,9 +59,9 @@ size = Vector2(15, 10.5)
 script = ExtResource("1_x26rd")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -5)
+position = Vector2(0, -6)
 sprite_frames = SubResource("SpriteFrames_yn4j4")
-frame_progress = 0.16281836
+frame_progress = 0.53838277
 
 [node name="WateringParticles" parent="." instance=ExtResource("3_2nxsi")]
 
@@ -73,3 +75,8 @@ tool = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtComponent"]
 position = Vector2(0, -3)
 shape = SubResource("RectangleShape2D_858qg")
+
+[node name="SaveDataComponent" type="Node" parent="."]
+script = ExtResource("7_x26rd")
+save_data_resource = ExtResource("8_omcsw")
+metadata/_custom_type_script = "uid://bl64joot86mh2"

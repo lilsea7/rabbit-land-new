@@ -31,17 +31,13 @@ func _unhandled_input(event: InputEvent) -> void:
 
 # ================== NHẬN BỘ DỤNG CỤ KHỞI ĐẦU TỪ NPC ==================
 func on_give_crop_seeds() -> void:
+	# Kiểm tra nếu tools đã được mở khóa rồi thì bỏ qua
+	if ToolManager.unlocked_tools[DataTypes.Tools.AxeWood]:
+		print("⚠️ Tools đã được tặng trước đó!")
+		return
+		
 	print("🎁 NPC tặng bộ dụng cụ khởi đầu cho người chơi!")
-	
-	# Mở khóa 3 tool cơ bản
 	ToolManager.unlock_tool(DataTypes.Tools.AxeWood)
 	ToolManager.unlock_tool(DataTypes.Tools.TillGround)
 	ToolManager.unlock_tool(DataTypes.Tools.WaterCrops)
-	
-	# Tặng thêm một ít hạt giống ban đầu (tùy chọn, bạn có thể chỉnh số lượng)
-	#if InventoryManager:
-		#InventoryManager.add_collectable("wheat", 5)
-		#InventoryManager.add_collectable("tomato", 3)
-		#print("🌱 Đã tặng 5 hạt lúa mì và 3 hạt cà chua")
-	
 	print("✅ Người chơi đã nhận rìu, cuốc, bình tưới!")

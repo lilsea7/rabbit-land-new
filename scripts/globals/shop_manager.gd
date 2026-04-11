@@ -1,6 +1,5 @@
 extends Node
 
-# ================== GIÁ BÁN VẬT PHẨM ==================
 var sell_prices: Dictionary = {
 	"wheat": 25,
 	"tomato": 30,
@@ -55,7 +54,6 @@ func sell_item(item_name: String, quantity: int) -> bool:
 	
 	return true
 
-# ================== CÁC HÀM HỖ TRỢ THÊM (Coin) ==================
 
 # Thêm tiền trực tiếp (dùng cho quest, bán NPC, phần thưởng...)
 func add_money(amount: int) -> void:

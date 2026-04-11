@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://jcam4dfmxe7c"]
+[gd_scene load_steps=5 format=3 uid="uid://jcam4dfmxe7c"]
 
 [ext_resource type="Script" uid="uid://dc03lf8f33782" path="res://scenes/ui/level_up_notification.gd" id="1_w8vn1"]
 [ext_resource type="FontFile" uid="uid://2pfwl33qn5vf" path="res://assets/ui/fonts/pixelFont-7-8x14-sproutLands.ttf" id="2_6o4sm"]
@@ -6,63 +6,72 @@
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v47mj"]
 texture = ExtResource("3_m4l80")
-region_rect = Rect2(160, 176, 96, 32)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rynck"]
-texture = ExtResource("3_m4l80")
-region_rect = Rect2(256, 176, 96, 32)
+texture_margin_left = 6.8376045
+texture_margin_top = 7.283535
+texture_margin_right = 6.9334407
+texture_margin_bottom = 6.726717
+region_rect = Rect2(153, 9, 30, 30)
 
 [node name="LevelUpNotification" type="CanvasLayer"]
 script = ExtResource("1_w8vn1")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(150, 150)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.14117648, 0.19215687, 0.23921569, 0.27058825)
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(100, 100)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+offset_left = -110.0
+offset_top = -90.0
+offset_right = 110.0
+offset_bottom = 90.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.14117648, 0.19215687, 0.23921569, 0.27058825)
+theme_override_styles/panel = SubResource("StyleBoxTexture_v47mj")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -97.0
+offset_top = -78.0
+offset_right = 99.0
+offset_bottom = 76.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 16
+alignment = 1
 
-[node name="TitleLabel" type="Label" parent="ColorRect/VBoxContainer"]
+[node name="TitleLabel" type="Label" parent="Panel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("2_6o4sm")
 theme_override_font_sizes/font_size = 27
 text = "LEVEL UP!"
 
-[node name="LevelLabel" type="Label" parent="ColorRect/VBoxContainer"]
+[node name="LevelLabel" type="Label" parent="Panel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_6o4sm")
+theme_override_font_sizes/font_size = 18
 text = "Level 2"
 
-[node name="UnlockLabel" type="Label" parent="ColorRect/VBoxContainer"]
+[node name="UnlockLabel" type="Label" parent="Panel/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 18
 text = "Mở khóa: Cuốc đất"
 autowrap_mode = 2
-
-[node name="CloseButton" type="Button" parent="ColorRect/VBoxContainer"]
-visible = false
-custom_minimum_size = Vector2(0, 30)
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_styles/normal = SubResource("StyleBoxTexture_v47mj")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_rynck")
-theme_override_styles/hover = SubResource("StyleBoxTexture_rynck")
-text = "OK"

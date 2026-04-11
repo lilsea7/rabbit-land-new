@@ -8,8 +8,8 @@ var current_level: int = 1
 var current_exp: int = 0
 
 var exp_required = {
-	1: 5, 2: 5, 3: 5, 4: 13, 5: 14,
-	6: 15, 7: 16, 8: 17, 9: 18, 10: 19
+	1: 1, 2: 2, 3: 5, 4: 800, 5: 1200,
+	6: 2000, 7: 2500, 8: 3500, 9: 4000, 10: 5000
 }
 
 var exp_rewards = {
@@ -105,7 +105,6 @@ func unlock_features_for_level(level: int) -> bool:
 			"shop_market":   # Level 5 - Mở Market
 				print("🛒 Market đã được mở khóa tại Level 5!")
 
-	# === CẤP 5 HẠT GIỐNG BAN ĐẦU - CHỈ THỰC HIỆN 1 LẦN KHI LÊN LEVEL 3 ===
 	if level == 3 and not has_given_starter_seeds:
 		InventoryManager.add_collectable("wheat_seed", 5)
 		InventoryManager.add_collectable("tomato_seed", 5)
@@ -115,7 +114,7 @@ func unlock_features_for_level(level: int) -> bool:
 
 	return has_new_unlock
 
-# ================== KIỂM TRA ĐÃ UNLOCK ==================
+
 func is_unlocked(feature: String) -> bool:
 	for lvl in unlock_features.keys():
 		if lvl <= current_level and feature in unlock_features[lvl]:

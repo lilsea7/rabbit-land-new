@@ -10,6 +10,8 @@ var wheat_harvest_scene = preload("res://scenes/object/plants/wheat_harvest.tscn
 
 var growth_state: DataTypes.GrowthStates = DataTypes.GrowthStates.Seed
 
+# ================== SAVE & LOAD ==================
+@onready var save_data_component: SaveDataComponent = $SaveDataComponent
 
 func _ready() -> void:
 	watering_particles.emitting = false
@@ -18,15 +20,16 @@ func _ready() -> void:
 	hurt_component.hurt.connect(on_hurt)
 	growth_cycle_component.crop_maturity.connect(on_crop_maturity)
 	growth_cycle_component.crop_harvesting.connect(on_crop_harvesting)
-
+	
+	# Nếu có SaveDataComponent thì gán resource
+	if save_data_component:
+		save_data_component.save_data_resource = PlantSaveDataResource.new()
 
 func _process(delta: float) -> void:
 	growth_state = growth_cycle_component.get_current_growth_state()
 	sprite_2d.frame = growth_state
-	
 	if growth_state == DataTypes.GrowthStates.Maturity:
 		flowering_particles.emitting = true
-
 
 func on_hurt(hit_damage: int) -> void:
 	if !growth_cycle_component.is_watered:
@@ -35,13 +38,32 @@ func on_hurt(hit_damage: int) -> void:
 		watering_particles.emitting = false
 		growth_cycle_component.is_watered = true
 
-
 func on_crop_maturity() -> void:
 	flowering_particles.emitting = true
-
 
 func on_crop_harvesting() -> void:
 	var wheat_harvest_instance = wheat_harvest_scene.instantiate() as Node2D
 	wheat_harvest_instance.global_position = global_position
 	get_parent().add_child(wheat_harvest_instance)
 	queue_free()
+
+# ================== HÀM SAVE & LOAD CHO CÂY ==================
+func get_save_data() -> Dictionary:
+	return {
+		"scene_path": scene_file_path,           # Đường dẫn scene của cây này
+		"position": global_position,
+		"growth_state": growth_state,
+		"is_watered": growth_cycle_component.is_watered
+	}
+
+func load_save_data(data: Dictionary) -> void:
+	if data.has("position"):
+		global_position = data["position"]
+	if data.has("growth_state") and growth_cycle_component:
+		growth_state = data["growth_state"] as DataTypes.GrowthStates
+		growth_cycle_component.current_growth_state = growth_state
+	if data.has("is_watered") and growth_cycle_component:
+		growth_cycle_component.is_watered = data["is_watered"]
+	
+	# Cập nhật lại sprite
+	sprite_2d.frame = growth_state

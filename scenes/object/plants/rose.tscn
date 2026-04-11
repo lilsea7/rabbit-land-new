@@ -57,8 +57,9 @@ size = Vector2(16, 10)
 script = ExtResource("1_08ydb")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -5)
+position = Vector2(0, -6)
 sprite_frames = SubResource("SpriteFrames_7ptj5")
+frame_progress = 0.4736401
 
 [node name="WateringParticles" parent="." instance=ExtResource("2_3t3iy")]
 

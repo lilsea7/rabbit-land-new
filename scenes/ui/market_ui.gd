@@ -43,7 +43,7 @@ func _connect_buy_buttons() -> void:
 		var buy_button = panel.get_node_or_null("ButtonBuy")
 		if buy_button:
 			buy_button.pressed.connect(_on_buy_seed.bind(seed_name))
-			print("Đã kết nối ButtonBuy cho: ", seed_name)
+			#print("Đã kết nối ButtonBuy cho: ", seed_name)
 
 # Mở Market
 func open_market() -> void:

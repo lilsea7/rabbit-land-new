@@ -30,12 +30,12 @@ func _on_inventory_changed() -> void:
 			if slot.item != null:
 				item_name = slot.item.title.to_lower().strip_edges()   # ← Dùng .title
 			else:
-				print("   Slot ", slot.name, " chưa gán Item Resource!")
+				#print("   Slot ", slot.name, " chưa gán Item Resource!")
 				continue
 			
 			var quantity = inventory.get(item_name, 0)
 			
-			print("   Slot: ", slot.name, " → Item: '", item_name, "' | Số lượng: ", quantity)
+			#print("   Slot: ", slot.name, " → Item: '", item_name, "' | Số lượng: ", quantity)
 			
 			slot.update_quantity(quantity)
 	
