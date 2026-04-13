@@ -340,10 +340,13 @@ texture = ExtResource("3_aekik")
 texture = ExtResource("3_rw31k")
 7:0/size_in_atlas = Vector2i(3, 3)
 7:0/0 = 0
+7:0/0/y_sort_origin = 14
 5:1/size_in_atlas = Vector2i(2, 2)
 5:1/0 = 0
+5:1/0/y_sort_origin = 8
 4:1/size_in_atlas = Vector2i(1, 2)
 4:1/0 = 0
+4:1/0/y_sort_origin = 8
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dgkku"]
 texture = ExtResource("4_qaixi")
@@ -352,16 +355,22 @@ texture = ExtResource("4_qaixi")
 10:4/0 = 0
 6:5/size_in_atlas = Vector2i(2, 2)
 6:5/0 = 0
+6:5/0/y_sort_origin = 7
 4:5/size_in_atlas = Vector2i(2, 2)
 4:5/0 = 0
+4:5/0/y_sort_origin = 7
 2:5/size_in_atlas = Vector2i(2, 2)
 2:5/0 = 0
+2:5/0/y_sort_origin = 6
 0:5/size_in_atlas = Vector2i(2, 2)
 0:5/0 = 0
+0:5/0/y_sort_origin = 6
 4:1/size_in_atlas = Vector2i(2, 2)
 4:1/0 = 0
+4:1/0/y_sort_origin = 6
 6:0/size_in_atlas = Vector2i(3, 3)
 6:0/0 = 0
+6:0/0/y_sort_origin = 10
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ya5cf"]
 texture = ExtResource("5_85lhn")
@@ -376,6 +385,7 @@ texture = ExtResource("5_85lhn")
 texture = ExtResource("6_aekik")
 0:0/size_in_atlas = Vector2i(3, 3)
 0:0/0 = 0
+0:0/0/y_sort_origin = 8
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dekbp"]
 texture = ExtResource("7_85lhn")
@@ -430,6 +440,7 @@ texture = ExtResource("8_aekik")
 texture = ExtResource("10_dekbp")
 4:4/size_in_atlas = Vector2i(4, 4)
 4:4/0 = 0
+4:4/0/y_sort_origin = 10
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xwv23"]
 texture = ExtResource("3_hu6sp")
@@ -702,8 +713,11 @@ scenes/7/scene = ExtResource("10_o2x3h")
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_38im4"]
 texture = ExtResource("15_dekbp")
 2:1/0 = 0
+2:1/0/y_sort_origin = 1
 3:1/0 = 0
+3:1/0/y_sort_origin = 2
 3:2/0 = 0
+3:2/0/y_sort_origin = 2
 2:2/0 = 0
 1:2/0 = 0
 3:3/0 = 0
@@ -715,6 +729,7 @@ texture = ExtResource("15_dekbp")
 1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0
+3:0/0/y_sort_origin = 1
 0:4/0 = 0
 1:4/0 = 0
 2:4/0 = 0
@@ -724,10 +739,13 @@ texture = ExtResource("15_dekbp")
 8:4/0 = 0
 7:0/size_in_atlas = Vector2i(3, 3)
 7:0/0 = 0
+7:0/0/y_sort_origin = 8
 5:1/size_in_atlas = Vector2i(2, 2)
 5:1/0 = 0
+5:1/0/y_sort_origin = 8
 4:1/size_in_atlas = Vector2i(1, 2)
 4:1/0 = 0
+4:1/0/y_sort_origin = 7
 5:3/size_in_atlas = Vector2i(2, 1)
 5:3/0 = 0
 

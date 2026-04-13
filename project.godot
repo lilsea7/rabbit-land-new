@@ -34,6 +34,8 @@ ShopManager="*res://scripts/globals/shop_manager.gd"
 LevelManager="*res://scripts/globals/level_manager.gd"
 LevelUpNotification="*res://scenes/ui/level_up_notification.tscn"
 Global="*res://scripts/globals/global.gd"
+SceneTransition="*res://scenes/scene_transition.tscn"
+SoundManager="*res://scenes/manager/sound_manager.tscn"
 
 [display]
 

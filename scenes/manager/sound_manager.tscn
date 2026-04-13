@@ -1,0 +1,33 @@
+[gd_scene load_steps=8 format=3 uid="uid://dq0pukdhm23rr"]
+
+[ext_resource type="Script" uid="uid://dtnleq60pkih6" path="res://scenes/manager/sound_manager.gd" id="1_yi7ou"]
+[ext_resource type="PackedScene" uid="uid://cyqtsmm6de6kv" path="res://audio/music/on_the_farm_music.tscn" id="2_6rrk0"]
+[ext_resource type="PackedScene" uid="uid://cxy0hp3sfauns" path="res://audio/sfx/chicken_cluck_1sfx.tscn" id="3_ij1g2"]
+[ext_resource type="PackedScene" uid="uid://c3rt5odtgody8" path="res://audio/sfx/chicken_cluck_2sfx.tscn" id="4_4fgff"]
+[ext_resource type="PackedScene" uid="uid://dvo6vj2bdf0ub" path="res://audio/sfx/chicken_cluck_3sfx.tscn" id="5_utxtf"]
+[ext_resource type="PackedScene" uid="uid://c4s6fwcvw81kn" path="res://audio/sfx/chicken_cluck_multiple_sfx.tscn" id="6_lf5h0"]
+[ext_resource type="PackedScene" uid="uid://b657xqj1e3lbw" path="res://audio/sfx/cow_moo_sfx.tscn" id="7_glmvo"]
+
+[node name="SoundManager" type="Node"]
+script = ExtResource("1_yi7ou")
+
+[node name="BGM" type="Node" parent="."]
+
+[node name="OnTheFarmMusic" parent="BGM" instance=ExtResource("2_6rrk0")]
+
+[node name="SFX" type="Node" parent="."]
+
+[node name="ChickenCluck1SFX" parent="SFX" instance=ExtResource("3_ij1g2")]
+max_distance = 200.0
+
+[node name="ChickenCluck2SFX" parent="SFX" instance=ExtResource("4_4fgff")]
+max_distance = 200.0
+
+[node name="ChickenCluck3SFX" parent="SFX" instance=ExtResource("5_utxtf")]
+max_distance = 200.0
+
+[node name="ChickenCluckMultipleSFX" parent="SFX" instance=ExtResource("6_lf5h0")]
+max_distance = 200.0
+
+[node name="CowMooSFX" parent="SFX" instance=ExtResource("7_glmvo")]
+max_distance = 200.0

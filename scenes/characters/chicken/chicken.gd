@@ -20,6 +20,8 @@ func _ready() -> void:
 	egg_scene = load("res://scenes/object/egg.tscn")
 	food_menu_scene = load("res://scenes/ui/food_menu.tscn")
 	
+	_start_cluck_loop()
+	
 	#print("🐔 Chicken _ready()")
 	egg_timer.one_shot = true
 	egg_timer.timeout.connect(_on_egg_timer_timeout)
@@ -105,10 +107,18 @@ func lay_egg() -> void:
 		return
 	
 	var egg = egg_scene.instantiate()
-	var spawn_pos = egg_spawn_point.global_position if egg_spawn_point else global_position + Vector2(0, 20)
+	var spawn_pos = global_position + Vector2(0, 8)
+	
+	get_tree().root.add_child(egg)
 	egg.global_position = spawn_pos
-	get_parent().add_child(egg)
-	#print("✅ 🥚 GÀ ĐÃ ĐẺ TRỨNG tại ", spawn_pos)
+	
+	print("✅ 🥚 GÀ ĐÃ ĐẺ TRỨNG tại ", spawn_pos)
 
 func is_hungry() -> bool:
 	return not is_fed
+
+func _start_cluck_loop() -> void:
+	while is_instance_valid(self):
+		await get_tree().create_timer(randf_range(3.0, 8.0)).timeout
+		if is_instance_valid(self):
+			SoundManager.play_chicken_sfx(global_position)

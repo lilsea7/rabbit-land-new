@@ -1,0 +1,79 @@
+# sound_manager.gd
+extends Node
+
+# ================== NHẠC NỀN ==================
+@onready var bgm_player: AudioStreamPlayer2D = $BGM/OnTheFarmMusic
+
+# ================== SFX GÀ ==================
+@onready var chicken_sfx_1: AudioStreamPlayer2D = $SFX/ChickenCluck1SFX
+@onready var chicken_sfx_2: AudioStreamPlayer2D = $SFX/ChickenCluck2SFX
+@onready var chicken_sfx_3: AudioStreamPlayer2D = $SFX/ChickenCluck3SFX
+@onready var chicken_sfx_multiple: AudioStreamPlayer2D = $SFX/ChickenCluckMultipleSFX
+
+# ================== SFX BÒ ==================
+@onready var cow_sfx: AudioStreamPlayer2D = $SFX/CowMooSFX
+
+# ================== CÀI ĐẶT ==================
+@export var bgm_volume: float = 0.5
+@export var sfx_volume: float = 1.0
+
+var chicken_sfx_list: Array = []
+
+func _ready() -> void:
+	# Gộp các sfx gà vào list để random
+	chicken_sfx_list = [chicken_sfx_1, chicken_sfx_2, chicken_sfx_3, chicken_sfx_multiple]
+	
+	set_bgm_volume(bgm_volume)
+	set_sfx_volume(sfx_volume)
+	play_bgm()
+	
+	print("BGM node: ", get_node_or_null("BGM/OnTheFarmMusic"))
+	print("Chicken1: ", get_node_or_null("SFX/ChickenCluck1SFX"))
+	print("Chicken2: ", get_node_or_null("SFX/ChickenCluck2SFX"))
+	print("Chicken3: ", get_node_or_null("SFX/ChickenCluck3SFX"))
+	print("ChickenMultiple: ", get_node_or_null("SFX/ChickenCluckMultipleSFX"))
+	print("Cow: ", get_node_or_null("SFX/CowMooSFX"))
+	
+# ================== NHẠC NỀN ==================
+func play_bgm() -> void:
+	if bgm_player and not bgm_player.playing:
+		bgm_player.play()
+		print("🎵 Đang phát nhạc nền")
+
+func stop_bgm() -> void:
+	if bgm_player:
+		bgm_player.stop()
+
+func set_bgm_volume(value: float) -> void:
+	if bgm_player:
+		bgm_player.volume_db = linear_to_db(value)
+
+func play_chicken_sfx(position: Vector2) -> void:
+	var sfx = chicken_sfx_list[randi() % chicken_sfx_list.size()]
+	if sfx == null:
+		print("⚠️ Chicken SFX null!")
+		return
+	if not sfx.playing:
+		sfx.global_position = position
+		sfx.play()
+
+func play_cow_sfx(position: Vector2) -> void:
+	if cow_sfx == null:
+		print("⚠️ Cow SFX null!")
+		return
+	if not cow_sfx.playing:
+		cow_sfx.global_position = position
+		cow_sfx.play()
+
+# ================== ÂM LƯỢNG SFX ==================
+func set_sfx_volume(value: float) -> void:
+	for sfx in chicken_sfx_list:
+		if sfx:
+			sfx.volume_db = linear_to_db(value)
+	if cow_sfx:
+		cow_sfx.volume_db = linear_to_db(value)
+
+# ================== THÊM SFX MỚI SAU NÀY ==================
+# func play_axe_sfx() -> void: ...
+# func play_harvest_sfx() -> void: ...
+# func play_till_sfx() -> void: ...

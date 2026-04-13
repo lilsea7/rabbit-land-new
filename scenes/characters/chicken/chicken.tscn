@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://o1jnm6arnte6"]
+[gd_scene load_steps=18 format=3 uid="uid://o1jnm6arnte6"]
 
 [ext_resource type="Texture2D" uid="uid://dp0ljtdgrqr8k" path="res://assets/game/characters/chicken_sprites.png" id="1_awcwn"]
 [ext_resource type="Script" uid="uid://dq11ph2b6y4ds" path="res://scenes/characters/chicken/chicken.gd" id="1_r6a33"]
@@ -7,7 +7,6 @@
 [ext_resource type="Script" uid="uid://r33waauap84e" path="res://scenes/characters/npc_states/walk_state.gd" id="4_31inw"]
 [ext_resource type="Script" uid="uid://cgcw2jrns4lgg" path="res://scenes/characters/npc_states/eating.gd" id="6_vmevo"]
 [ext_resource type="Script" uid="uid://brol6svmvptxx" path="res://scenes/characters/npc_states/laying.gd" id="7_ft40v"]
-[ext_resource type="PackedScene" uid="uid://c4s6fwcvw81kn" path="res://audio/sfx/chicken_cluck_multiple_sfx.tscn" id="7_hv82h"]
 [ext_resource type="PackedScene" uid="uid://bg8jc3cgnprge" path="res://scenes/components/audio_play_time_component.tscn" id="7_wh5lc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_asyyu"]
@@ -114,12 +113,9 @@ script = ExtResource("6_vmevo")
 [node name="Laying" type="Node" parent="StateMachine"]
 script = ExtResource("7_ft40v")
 
-[node name="AudioPlayTimeComponent" parent="." node_paths=PackedStringArray("audio_stream_player_2D") instance=ExtResource("7_wh5lc")]
+[node name="AudioPlayTimeComponent" parent="." instance=ExtResource("7_wh5lc")]
 wait_time = 5.0
 autostart = true
-audio_stream_player_2D = NodePath("../ChickenCluckMultipleSFX")
-
-[node name="ChickenCluckMultipleSFX" parent="." instance=ExtResource("7_hv82h")]
 
 [node name="EggSpawnPoint" type="Marker2D" parent="."]
 position = Vector2(0, 1)

@@ -1,29 +1,35 @@
 extends Node2D
 
-var wheat_harvest_scene = preload("res://scenes/object/plants/wheat_harvest.tscn")
+# ================== CONFIG ==================
+const HARVEST_DAYS: int = 4
+const EXP_PLANT: int = 6
+const EXP_HARVEST: int = 7
 
+var wheat_harvest_scene = preload("res://scenes/object/plants/wheat_harvest.tscn")
 @onready var sprite_2d: AnimatedSprite2D = $Sprite2D
 @onready var watering_particles: GPUParticles2D = $WateringParticles
 @onready var flowering_particles: GPUParticles2D = $FloweringParticles
 @onready var growth_cycle_component: GrowthCycleComponent = $GrowthCycleComponent
 @onready var hurt_component: HurtComponent = $HurtComponent
-
 var growth_state: DataTypes.GrowthStates = DataTypes.GrowthStates.Seed
-
-# ================== SAVE & LOAD ==================
 @onready var save_data_component: SaveDataComponent = $SaveDataComponent
 
 func _ready() -> void:
+	# Set thời gian thu hoạch
+	growth_cycle_component.days_until_harvest = HARVEST_DAYS
+
 	watering_particles.emitting = false
 	flowering_particles.emitting = false
-	
+
 	hurt_component.hurt.connect(on_hurt)
 	growth_cycle_component.crop_maturity.connect(on_crop_maturity)
 	growth_cycle_component.crop_harvesting.connect(on_crop_harvesting)
-	
-	# Nếu có SaveDataComponent thì gán resource
+	growth_cycle_component.crop_ready_harvest.connect(on_crop_ready_harvest)
+
 	if save_data_component:
 		save_data_component.save_data_resource = PlantSaveDataResource.new()
+
+
 
 func _process(delta: float) -> void:
 	growth_state = growth_cycle_component.get_current_growth_state()
@@ -47,10 +53,14 @@ func on_crop_harvesting() -> void:
 	get_parent().add_child(wheat_harvest_instance)
 	queue_free()
 
-# ================== HÀM SAVE & LOAD CHO CÂY ==================
+# Cộng exp khi thu hoạch
+func on_crop_ready_harvest() -> void:
+	LevelManager.add_exp(EXP_HARVEST, "harvest_crop")
+
+# ================== SAVE & LOAD ==================
 func get_save_data() -> Dictionary:
 	return {
-		"scene_path": scene_file_path,           # Đường dẫn scene của cây này
+		"scene_path": scene_file_path,
 		"position": global_position,
 		"growth_state": growth_state,
 		"is_watered": growth_cycle_component.is_watered
@@ -64,6 +74,4 @@ func load_save_data(data: Dictionary) -> void:
 		growth_cycle_component.current_growth_state = growth_state
 	if data.has("is_watered") and growth_cycle_component:
 		growth_cycle_component.is_watered = data["is_watered"]
-	
-	# Cập nhật lại sprite
 	sprite_2d.frame = growth_state

@@ -115,6 +115,14 @@ size_flags_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxTexture_ce4rh")
 script = ExtResource("6_dscta")
 
+[node name="ExpBar" type="ProgressBar" parent="MarginContainer/HBoxContainer/LevelPanel"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 23.0
+offset_right = 85.0
+offset_bottom = 40.0
+show_percentage = false
+
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/LevelPanel"]
 custom_minimum_size = Vector2(80, 30)
 layout_mode = 1
@@ -139,14 +147,6 @@ text = "LEVEL 1"
 layout_mode = 2
 size_flags_horizontal = 4
 text = "0 / 50"
-
-[node name="ExpBar" type="ProgressBar" parent="MarginContainer/HBoxContainer/LevelPanel"]
-layout_mode = 0
-offset_left = 5.0
-offset_top = 23.0
-offset_right = 85.0
-offset_bottom = 40.0
-show_percentage = false
 
 [node name="ToolsPanel" parent="MarginContainer" instance=ExtResource("2_gusqm")]
 layout_mode = 2

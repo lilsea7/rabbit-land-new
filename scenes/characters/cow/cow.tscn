@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cvgm7gain1wk6"]
+[gd_scene load_steps=17 format=3 uid="uid://cvgm7gain1wk6"]
 
 [ext_resource type="Script" uid="uid://cxc4kdhve5c0" path="res://scenes/characters/cow/cow.gd" id="1_j7g5r"]
 [ext_resource type="Texture2D" uid="uid://donv6xvr4m1uo" path="res://assets/game/characters/cow_sprites.png" id="1_sa3qd"]
@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://b6e0dutysdybn" path="res://scenes/characters/npc_states/idle_state.gd" id="3_ilrem"]
 [ext_resource type="Script" uid="uid://r33waauap84e" path="res://scenes/characters/npc_states/walk_state.gd" id="4_j7g5r"]
 [ext_resource type="Script" uid="uid://cgcw2jrns4lgg" path="res://scenes/characters/npc_states/eating.gd" id="6_1cmdg"]
-[ext_resource type="PackedScene" uid="uid://b657xqj1e3lbw" path="res://audio/sfx/cow_moo_sfx.tscn" id="6_cgos1"]
 [ext_resource type="Script" uid="uid://brol6svmvptxx" path="res://scenes/characters/npc_states/laying.gd" id="7_essvg"]
 [ext_resource type="PackedScene" uid="uid://bg8jc3cgnprge" path="res://scenes/components/audio_play_time_component.tscn" id="7_gsrfl"]
 
@@ -105,12 +104,10 @@ script = ExtResource("6_1cmdg")
 [node name="Laying" type="Node" parent="StateMachine"]
 script = ExtResource("7_essvg")
 
-[node name="CowMooSFX" parent="." instance=ExtResource("6_cgos1")]
-
-[node name="AudioPlayTimeComponent" parent="." node_paths=PackedStringArray("audio_stream_player_2D") instance=ExtResource("7_gsrfl")]
+[node name="AudioPlayTimeComponent" parent="." instance=ExtResource("7_gsrfl")]
 wait_time = 20.0
 autostart = true
-audio_stream_player_2D = NodePath("../CowMooSFX")
+sfx_type = 1
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(0, 1)

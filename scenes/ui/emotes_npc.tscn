@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://bkhxw3ivsweqg"]
+
+[ext_resource type="Theme" uid="uid://ljcck66th0xd" path="res://scenes/ui/game_ui_theme.tres" id="1_1n0ox"]
+[ext_resource type="Texture2D" uid="uid://dd4admtya4uao" path="res://assets/game/characters/emotenpc.png" id="2_kqvka"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1n0ox"]
+atlas = ExtResource("2_kqvka")
+region = Rect2(0, 0, 21, 17)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iqjry"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1n0ox")
+}],
+"loop": true,
+"name": &"emote_1_idle",
+"speed": 5.0
+}]
+
+[node name="EmotesNPC" type="Panel"]
+custom_minimum_size = Vector2(50, 50)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("1_1n0ox")
+theme_type_variation = &"DarkWoodPanel"
+
+[node name="Emote" type="Control" parent="."]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Emote"]
+position = Vector2(19, 20)
+scale = Vector2(2.0294118, 2.0294118)
+sprite_frames = SubResource("SpriteFrames_iqjry")
+animation = &"emote_1_idle"
+autoplay = "emote_1_idle"
+
+[node name="EmoteIdleTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="EmoteIdleTimer" to="." method="_on_emote_idle_timer_timeout"]

@@ -17,6 +17,8 @@ var food_menu_scene: PackedScene = preload("res://scenes/ui/food_menu.tscn")
 
 func _ready() -> void:
 	#print("🐄 Cow _ready()")
+	_start_moo_loop()
+	
 	milk_timer.one_shot = true
 	milk_timer.timeout.connect(_on_milk_timer_timeout)
 	
@@ -113,3 +115,9 @@ func produce_milk() -> void:
 
 func is_hungry() -> bool:
 	return not is_fed
+
+func _start_moo_loop() -> void:
+	while is_instance_valid(self):
+		await get_tree().create_timer(randf_range(5.0, 12.0)).timeout
+		if is_instance_valid(self):
+			SoundManager.play_cow_sfx(global_position)

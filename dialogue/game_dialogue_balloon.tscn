@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://c4qjbfkcgawtk"]
+[gd_scene load_steps=10 format=3 uid="uid://c4qjbfkcgawtk"]
 
 [ext_resource type="Script" uid="uid://d3or8asst7akr" path="res://dialogue/game_dialogue_balloon.gd" id="1_sjhsj"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_cindb"]
 [ext_resource type="Theme" uid="uid://bqkjbl73pj63w" path="res://dialogue/dialogue_balloon_theme.tres" id="2_xkmgq"]
+[ext_resource type="PackedScene" uid="uid://bkhxw3ivsweqg" path="res://scenes/ui/emotes_npc.tscn" id="3_071sy"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_aimjp"]
 [ext_resource type="PackedScene" uid="uid://8f4petbcqx7d" path="res://scenes/ui/emotes_panel.tscn" id="3_vwqec"]
 
@@ -82,7 +83,11 @@ layout_mode = 2
 [node name="HBoxContainer" type="HBoxContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer"]
 layout_mode = 2
 
+[node name="EmotesNPC" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer" instance=ExtResource("3_071sy")]
+layout_mode = 2
+
 [node name="EmotesPanel" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer" instance=ExtResource("3_vwqec")]
+visible = false
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer"]
