@@ -15,6 +15,7 @@ func on_hurt(hit_damage: int) -> void:
 	material.set_shader_parameter("shake_intensity", 0.3)
 	await get_tree().create_timer(0.5).timeout
 	material.set_shader_parameter("shake_intensity", 0.0)
+	SoundManager.play_hurt_sfx(global_position)
 
 func on_max_damage_reached() -> void:
 	await get_tree().create_timer(0.3).timeout

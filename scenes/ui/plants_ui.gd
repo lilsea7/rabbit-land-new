@@ -77,6 +77,7 @@ func update_quantity_label(slot_name: String) -> void:
 			slot_button.disabled = false
 
 func _on_seed_slot_pressed(slot_name: String) -> void:
+	SoundManager.play_button_click()
 	var seed_item_name = slot_to_seed.get(slot_name, "")
 	if seed_item_name == "":
 		return
@@ -106,3 +107,4 @@ func hide_ui():
 func _on_close_plant_ui_pressed() -> void:
 	hide_ui()
 	ToolManager.selecet_tool(DataTypes.Tools.None)
+	SoundManager.play_button_click()

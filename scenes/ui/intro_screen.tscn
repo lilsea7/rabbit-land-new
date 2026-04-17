@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cj3256mfligyv"]
+[gd_scene load_steps=3 format=3 uid="uid://cj3256mfligyv"]
 
 [ext_resource type="Script" uid="uid://drlmp8uwfpkyk" path="res://scenes/ui/intro_screen.gd" id="1_ih0o2"]
+[ext_resource type="FontFile" uid="uid://cukc6nitng44y" path="res://assets/ui/fonts/DancingScript-VariableFont_wght.ttf" id="2_orp5c"]
 
 [node name="IntroScreen" type="CanvasLayer"]
 script = ExtResource("1_ih0o2")
@@ -26,3 +27,4 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_orp5c")

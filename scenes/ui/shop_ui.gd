@@ -19,6 +19,7 @@ func open_shop() -> void:
 	_on_inventory_changed()
 
 func _on_close_button_pressed() -> void:
+	SoundManager.play_button_click()
 	visible = false
 
 # ================== CẬP NHẬT INVENTORY BÊN TRÁI ==================

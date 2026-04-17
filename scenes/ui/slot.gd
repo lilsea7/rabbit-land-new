@@ -46,14 +46,26 @@ func _update_display() -> void:
 			quantity_label.visible = false
 
 # Hover vào slot
+#func _on_mouse_entered() -> void:
+	#if item != null and owner != null and owner.has_method("set_description"):
+		#owner.set_description(item)
+#
+## Rời chuột khỏi slot
+#func _on_mouse_exited() -> void:
+	#if owner != null and owner.has_method("clear_description"):
+		#owner.clear_description()
 func _on_mouse_entered() -> void:
-	if item != null and owner != null and owner.has_method("set_description"):
-		owner.set_description(item)
+	if item == null:
+		return
+	# Tìm InventoryUI thay vì dùng owner
+	var inventory_ui = get_tree().root.find_child("InventoryUI", true, false)
+	if inventory_ui and inventory_ui.has_method("set_description"):
+		inventory_ui.set_description(item)
 
-# Rời chuột khỏi slot
 func _on_mouse_exited() -> void:
-	if owner != null and owner.has_method("clear_description"):
-		owner.clear_description()
+	var inventory_ui = get_tree().root.find_child("InventoryUI", true, false)
+	if inventory_ui and inventory_ui.has_method("clear_description"):
+		inventory_ui.clear_description()
 
 # Xử lý click chuột trái để phát signal "pressed"
 func _gui_input(event: InputEvent) -> void:

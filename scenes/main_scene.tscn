@@ -26,13 +26,13 @@ y_sort_enabled = true
 [node name="Level1" parent="GameRoot/LevelRoot" instance=ExtResource("2_pu3yx")]
 
 [node name="Player" parent="GameRoot" instance=ExtResource("3_pu3yx")]
-position = Vector2(73, 155)
+position = Vector2(80, 117)
 collision_mask = 561
 metadata/_edit_group_ = true
 
 [node name="Camera2D" type="Camera2D" parent="GameRoot/Player"]
 
 [node name="Guide" parent="GameRoot" instance=ExtResource("4_gubc5")]
-position = Vector2(40, 150)
+position = Vector2(45, 115)
 
 [node name="GameScreen" parent="." instance=ExtResource("2_7ykc4")]

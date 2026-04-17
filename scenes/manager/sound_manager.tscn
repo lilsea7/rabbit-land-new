@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dq0pukdhm23rr"]
+[gd_scene load_steps=10 format=3 uid="uid://dq0pukdhm23rr"]
 
 [ext_resource type="Script" uid="uid://dtnleq60pkih6" path="res://scenes/manager/sound_manager.gd" id="1_yi7ou"]
 [ext_resource type="PackedScene" uid="uid://cyqtsmm6de6kv" path="res://audio/music/on_the_farm_music.tscn" id="2_6rrk0"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://dvo6vj2bdf0ub" path="res://audio/sfx/chicken_cluck_3sfx.tscn" id="5_utxtf"]
 [ext_resource type="PackedScene" uid="uid://c4s6fwcvw81kn" path="res://audio/sfx/chicken_cluck_multiple_sfx.tscn" id="6_lf5h0"]
 [ext_resource type="PackedScene" uid="uid://b657xqj1e3lbw" path="res://audio/sfx/cow_moo_sfx.tscn" id="7_glmvo"]
+[ext_resource type="PackedScene" uid="uid://cclrpw6471c5h" path="res://audio/sfx/button_click.tscn" id="8_4fgff"]
+[ext_resource type="PackedScene" uid="uid://ct33in25dbc47" path="res://audio/sfx/hurt_sfx.tscn" id="9_utxtf"]
 
 [node name="SoundManager" type="Node"]
 script = ExtResource("1_yi7ou")
@@ -31,3 +33,7 @@ max_distance = 200.0
 
 [node name="CowMooSFX" parent="SFX" instance=ExtResource("7_glmvo")]
 max_distance = 200.0
+
+[node name="ButtonClick" parent="SFX" instance=ExtResource("8_4fgff")]
+
+[node name="HurtSfx" parent="SFX" instance=ExtResource("9_utxtf")]

@@ -1,13 +1,13 @@
-[gd_scene load_steps=23 format=3 uid="uid://85rbu6alk1c3"]
+[gd_scene load_steps=22 format=3 uid="uid://85rbu6alk1c3"]
 
 [ext_resource type="Script" uid="uid://dj1arruny6pmd" path="res://scenes/ui/market_ui.gd" id="1_6lbji"]
-[ext_resource type="Texture2D" uid="uid://btoiwj8p1b4qg" path="res://assets/ui/setting_menu.png" id="1_j1hsa"]
 [ext_resource type="Texture2D" uid="uid://cd8tuel5gyu8h" path="res://assets/ui/baisc_ui_sprites.png" id="2_6lbji"]
 [ext_resource type="Texture2D" uid="uid://du8rbultoaffr" path="res://assets/game/objects/farming_plants_items_v2.png" id="3_61l2l"]
 [ext_resource type="FontVariation" uid="uid://ifuaiodn04dj" path="res://assets/ui/fonts/zx_palm_variation.tres" id="4_km5ve"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_urou3"]
-atlas = ExtResource("1_j1hsa")
+[sub_resource type="AtlasTexture" id="AtlasTexture_j1hsa"]
+atlas = ExtResource("2_6lbji")
+region = Rect2(153, 9, 30, 30)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7s17i"]
 texture = ExtResource("2_6lbji")
@@ -93,8 +93,12 @@ offset_right = 100.0
 offset_bottom = 97.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("AtlasTexture_urou3")
-region_rect = Rect2(136, 8, 112, 128)
+texture = SubResource("AtlasTexture_j1hsa")
+region_rect = Rect2(0, 0, 30, 30)
+patch_margin_left = 7
+patch_margin_top = 7
+patch_margin_right = 7
+patch_margin_bottom = 7
 
 [node name="Label" type="Label" parent="NinePatchRect"]
 layout_mode = 1
@@ -102,9 +106,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -35.0
-offset_top = 6.5
+offset_top = 4.5
 offset_right = 37.0
-offset_bottom = 32.5
+offset_bottom = 30.5
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 18
 text = "MARKET"
@@ -116,9 +120,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -73.0
+offset_left = -84.0
 offset_top = -79.5
-offset_right = 73.0
+offset_right = 82.0
 offset_bottom = 99.5
 grow_horizontal = 2
 grow_vertical = 2
@@ -141,9 +145,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = -1.0
+offset_left = 5.0
 offset_top = -18.5
-offset_right = 34.0
+offset_right = 40.0
 offset_bottom = 16.5
 grow_vertical = 2
 texture = SubResource("AtlasTexture_308ef")
@@ -166,9 +170,9 @@ text = "5"
 
 [node name="Coin" type="TextureRect" parent="NinePatchRect/ScrollContainer/VBoxContainer/Wheat"]
 layout_mode = 0
-offset_left = 81.0
+offset_left = 83.0
 offset_top = 10.0
-offset_right = 92.0
+offset_right = 94.0
 offset_bottom = 27.0
 texture = SubResource("AtlasTexture_7x1ju")
 
@@ -179,8 +183,9 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -29.0
+offset_left = -34.0
 offset_top = -6.5
+offset_right = -5.0
 offset_bottom = 6.5
 grow_horizontal = 0
 grow_vertical = 2
@@ -205,8 +210,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
+offset_left = 5.0
 offset_top = -18.5
-offset_right = 35.0
+offset_right = 40.0
 offset_bottom = 16.5
 grow_vertical = 2
 texture = SubResource("AtlasTexture_0icn3")
@@ -229,9 +235,9 @@ text = "8"
 
 [node name="Coin" type="TextureRect" parent="NinePatchRect/ScrollContainer/VBoxContainer/Tomato"]
 layout_mode = 0
-offset_left = 81.0
+offset_left = 83.0
 offset_top = 10.0
-offset_right = 92.0
+offset_right = 94.0
 offset_bottom = 27.0
 texture = SubResource("AtlasTexture_7x1ju")
 
@@ -242,8 +248,9 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -29.0
+offset_left = -34.0
 offset_top = -6.5
+offset_right = -5.0
 offset_bottom = 6.5
 grow_horizontal = 0
 grow_vertical = 2
@@ -268,8 +275,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
+offset_left = 5.0
 offset_top = -18.5
-offset_right = 35.0
+offset_right = 40.0
 offset_bottom = 16.5
 grow_vertical = 2
 texture = SubResource("AtlasTexture_huyas")
@@ -292,9 +300,9 @@ text = "10"
 
 [node name="Coin" type="TextureRect" parent="NinePatchRect/ScrollContainer/VBoxContainer/Carrot"]
 layout_mode = 0
-offset_left = 81.0
+offset_left = 83.0
 offset_top = 10.0
-offset_right = 92.0
+offset_right = 94.0
 offset_bottom = 27.0
 texture = SubResource("AtlasTexture_7x1ju")
 
@@ -305,8 +313,9 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -29.0
+offset_left = -34.0
 offset_top = -6.5
+offset_right = -5.0
 offset_bottom = 6.5
 grow_horizontal = 0
 grow_vertical = 2
@@ -331,8 +340,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
+offset_left = 5.0
 offset_top = -18.5
-offset_right = 35.0
+offset_right = 40.0
 offset_bottom = 16.5
 grow_vertical = 2
 texture = SubResource("AtlasTexture_w25ib")
@@ -355,9 +365,9 @@ text = "5"
 
 [node name="Coin" type="TextureRect" parent="NinePatchRect/ScrollContainer/VBoxContainer/Corn"]
 layout_mode = 0
-offset_left = 81.0
+offset_left = 83.0
 offset_top = 10.0
-offset_right = 92.0
+offset_right = 94.0
 offset_bottom = 27.0
 texture = SubResource("AtlasTexture_7x1ju")
 
@@ -368,8 +378,9 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -29.0
+offset_left = -34.0
 offset_top = -6.5
+offset_right = -5.0
 offset_bottom = 6.5
 grow_horizontal = 0
 grow_vertical = 2
@@ -394,8 +405,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
+offset_left = 5.0
 offset_top = -18.5
-offset_right = 35.0
+offset_right = 40.0
 offset_bottom = 16.5
 grow_vertical = 2
 texture = SubResource("AtlasTexture_hhw5x")
@@ -418,9 +430,9 @@ text = "20"
 
 [node name="Coin" type="TextureRect" parent="NinePatchRect/ScrollContainer/VBoxContainer/Rose"]
 layout_mode = 0
-offset_left = 81.0
+offset_left = 83.0
 offset_top = 10.0
-offset_right = 92.0
+offset_right = 94.0
 offset_bottom = 27.0
 texture = SubResource("AtlasTexture_7x1ju")
 
@@ -431,8 +443,9 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -29.0
+offset_left = -34.0
 offset_top = -6.5
+offset_right = -5.0
 offset_bottom = 6.5
 grow_horizontal = 0
 grow_vertical = 2
@@ -457,8 +470,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
+offset_left = 5.0
 offset_top = -18.5
-offset_right = 35.0
+offset_right = 40.0
 offset_bottom = 16.5
 grow_vertical = 2
 texture = SubResource("AtlasTexture_qvjgj")
@@ -481,9 +495,9 @@ text = "15"
 
 [node name="Coin" type="TextureRect" parent="NinePatchRect/ScrollContainer/VBoxContainer/Broccoli"]
 layout_mode = 0
-offset_left = 81.0
+offset_left = 83.0
 offset_top = 10.0
-offset_right = 92.0
+offset_right = 94.0
 offset_bottom = 27.0
 texture = SubResource("AtlasTexture_7x1ju")
 
@@ -494,8 +508,9 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -29.0
+offset_left = -34.0
 offset_top = -6.5
+offset_right = -5.0
 offset_bottom = 6.5
 grow_horizontal = 0
 grow_vertical = 2
@@ -515,10 +530,10 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = 74.0
-offset_top = -126.0
-offset_right = 106.0
-offset_bottom = -94.0
+offset_left = 77.0
+offset_top = -131.0
+offset_right = 109.0
+offset_bottom = -99.0
 grow_horizontal = 0
 theme_override_styles/normal = SubResource("StyleBoxTexture_0yg5c")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_8jjwq")

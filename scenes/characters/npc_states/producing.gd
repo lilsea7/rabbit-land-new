@@ -1,7 +1,7 @@
 extends NodeState
 
 func _on_enter() -> void:
-	print("Chicken: Entering Laying state")
+	print("Pet: Entering Producing state")
 	# Play animation đẻ trứng nếu có
 
 func _on_exit() -> void:

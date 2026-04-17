@@ -1,8 +1,7 @@
 extends Node
 
-var inventory: Dictionary = {} # Key: tên vật phẩm, Value: số lượng
+var inventory: Dictionary = {} 
 signal inventory_changed
-
 
 func _ready() -> void:
 	var default_items = [
@@ -15,7 +14,6 @@ func _ready() -> void:
 	for item_name in default_items:
 		if not inventory.has(item_name):
 			inventory[item_name] = 0
-
 
 func add_collectable(collectable_name: String, amount: int = 1) -> void:
 	if collectable_name == "":
@@ -41,18 +39,17 @@ func get_quantity(collectable_name: String) -> int:
 func has_enough(collectable_name: String, amount: int) -> bool:
 	return get_quantity(collectable_name) >= amount
 
-
 func get_inventory() -> Dictionary:
 	return inventory.duplicate(true)   # duplicate để tránh reference
 
 
 func set_inventory(new_inventory: Dictionary) -> void:
 	inventory = new_inventory.duplicate(true)
-	inventory_changed.emit()           # Cập nhật tất cả UI
+	inventory_changed.emit()      
 	#print("📦 Inventory đã được load lại với ", inventory.size(), " loại vật phẩm")
 
 
-var money: int = 500
+var money: int
 
 func add_money(amount: int) -> void:
 	if amount <= 0:

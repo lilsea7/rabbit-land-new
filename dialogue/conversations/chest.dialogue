@@ -1,23 +1,23 @@
 ~ start_cow_pasture_box
 
-Pasture Box: [Chào] những chú bò của bạn đang đói.
+Pasture Box: Xin chào những chú bò của bạn đang đói.
 Pasture Box: Cần 2 lúa mì hoặc  2 ngô để cho chúng ăn.
 Pasture Box: Hãy đến gần chúng và bấm E nhé!
 - Có
 	Temmo: Tuyệt! Hãy cho chúng ăn đi.
 	do GameDialogueManager.action_feed_the_animals()
 - Không 
-	Temmo: Không, tôi không cần cho chúng ăn. Tôi có đủ sữa rồi.
+	Temmo: Không. Tôi có đủ sữa rồi.
 => END
 
 ~ start_chicken_pasture_box
 
-Pasture Box: [Chào bạn] những chú gà của bạn đang đói
+Pasture Box: Chào bạn những chú gà của bạn đang đói
 Pasture Box: Cần 2 lúa mì hoặc 2 ngô để cho chúng ăn.
 Pasture Box: Hãy đến gần chúng và bấm E nhé!
 - Có
 	Temmo: Tuyệt! Hãy cho chúng ăn đi.
 	do GameDialogueManager.action_feed_the_animals()
 - Không 
-	Temmo: Không, tôi không cần cho chúng ăn. Tôi có đủ sữa rồi.
+	Temmo: Không. Tôi có đủ sữa rồi.
 => END

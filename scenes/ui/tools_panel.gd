@@ -78,6 +78,7 @@ func _on_tool_watering_can_pressed() -> void:
 	_hide_all_ui()
 
 func _on_tool_plants_pressed() -> void:
+	SoundManager.play_button_click()
 	if ToolManager.selected_tool == DataTypes.Tools.Plants:
 		ToolManager.selecet_tool(DataTypes.Tools.None)
 		_hide_all_ui()
@@ -88,6 +89,7 @@ func _on_tool_plants_pressed() -> void:
 			print("Đã mở Plants UI")
 
 func _on_tool_iventory_pressed() -> void:
+	SoundManager.play_button_click()
 	if inventory_ui:
 		if inventory_ui.visible:
 			inventory_ui.visible = false
@@ -100,6 +102,7 @@ func _on_tool_iventory_pressed() -> void:
 		push_error("Không tìm thấy InventoryUI!")
 
 func _on_tool_shop_pressed() -> void:
+	SoundManager.play_button_click()
 	if shop_ui:
 		if shop_ui.visible:
 			shop_ui.visible = false

@@ -1,4 +1,3 @@
-# intro_screen.gd
 extends CanvasLayer
 
 @onready var background: ColorRect = $Background
@@ -17,16 +16,13 @@ func _ready() -> void:
 	_start_intro()
 
 func _start_intro() -> void:
-	# Fade in background
 	var tween = create_tween()
 	tween.tween_property(background, "modulate:a", 1.0, 0.5)
 	await tween.finished
 
-	# Hiển thị từng câu
 	for story in stories:
 		story_label.text = story
 		
-		# Fade in chữ
 		var t_in = create_tween()
 		t_in.tween_property(story_label, "modulate:a", 1.0, 0.8)
 		await t_in.finished

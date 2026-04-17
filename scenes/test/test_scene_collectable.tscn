@@ -1,13 +1,17 @@
-[gd_scene load_steps=9 format=4 uid="uid://dgig7fpxc4bey"]
+[gd_scene load_steps=13 format=4 uid="uid://dgig7fpxc4bey"]
 
 [ext_resource type="TileSet" uid="uid://knxfvhe807ul" path="res://Tilesets/game_tile_set.tres" id="1_hcahp"]
 [ext_resource type="PackedScene" uid="uid://dmng0y6272h6c" path="res://scenes/characters/player/player.tscn" id="2_tujot"]
-[ext_resource type="PackedScene" uid="uid://bfy22r8f0dhca" path="res://scenes/object/egg.tscn" id="3_ma31v"]
+[ext_resource type="PackedScene" uid="uid://bkhxwa7dq5u5i" path="res://scenes/object/egg.tscn" id="3_ma31v"]
 [ext_resource type="PackedScene" uid="uid://c1viodru0jm70" path="res://scenes/object/rocks/stone.tscn" id="4_w0yft"]
 [ext_resource type="PackedScene" uid="uid://18g72aohcbxq" path="res://scenes/object/trees/log.tscn" id="5_7lcqg"]
 [ext_resource type="PackedScene" uid="uid://dkptibkus3e5i" path="res://scenes/object/milk.tscn" id="6_w0yft"]
-[ext_resource type="PackedScene" uid="uid://l6ick0i6iorr" path="res://scenes/object/plants/wheat_harverst.tscn" id="7_fwq2c"]
-[ext_resource type="PackedScene" uid="uid://deca22dslbiiw" path="res://scenes/object/plants/tomato_harvest.tscn" id="8_wxa84"]
+[ext_resource type="PackedScene" uid="uid://dwhj4ovc4sif6" path="res://scenes/object/plants/tomato_harvest.tscn" id="8_wxa84"]
+[ext_resource type="PackedScene" uid="uid://bpvmomuxj2qo" path="res://scenes/object/plants/wheat_harvest.tscn" id="8_xp0uc"]
+[ext_resource type="PackedScene" uid="uid://bnshbiqodcki3" path="res://scenes/object/plants/rose_harvest.tscn" id="9_fd5kq"]
+[ext_resource type="PackedScene" uid="uid://8epyygm4g2vm" path="res://scenes/object/plants/pumkin_harvest.tscn" id="10_1qw1m"]
+[ext_resource type="PackedScene" uid="uid://byf0exqvwveb5" path="res://scenes/object/plants/corn_harvest.tscn" id="11_iqjsi"]
+[ext_resource type="PackedScene" uid="uid://dnna8fv1gsx6x" path="res://scenes/object/plants/carrot_harvest.tscn" id="12_jfcak"]
 
 [node name="TestSceneCollectables" type="Node2D"]
 y_sort_enabled = true
@@ -38,9 +42,21 @@ position = Vector2(206, 138)
 [node name="Milk" parent="." instance=ExtResource("6_w0yft")]
 position = Vector2(249, 138)
 
-[node name="CornHarverst" parent="." instance=ExtResource("7_fwq2c")]
-position = Vector2(310, 147)
-
 [node name="TomatoHarvest" parent="." instance=ExtResource("8_wxa84")]
 y_sort_enabled = true
 position = Vector2(345, 150)
+
+[node name="WheatHarvest" parent="." instance=ExtResource("8_xp0uc")]
+position = Vector2(318, 168)
+
+[node name="RoseHarvest" parent="." instance=ExtResource("9_fd5kq")]
+position = Vector2(182, 172)
+
+[node name="PumkinHarvest" parent="." instance=ExtResource("10_1qw1m")]
+position = Vector2(286, 188)
+
+[node name="CornHarvest" parent="." instance=ExtResource("11_iqjsi")]
+position = Vector2(323, 112)
+
+[node name="CarrotHarvest" parent="." instance=ExtResource("12_jfcak")]
+position = Vector2(267, 108)

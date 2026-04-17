@@ -13,7 +13,7 @@ extends Control
 	"broccoli": $NinePatchRect/ScrollContainer/VBoxContainer/Broccoli
 }
 
-# Giá bán của từng hạt giống (bạn có thể chỉnh)
+# Giá bán của từng hạt giống 
 var seed_prices = {
 	"wheat": 5,
 	"tomato": 8,
@@ -78,3 +78,4 @@ func _on_buy_seed(seed_name: String) -> void:
 func _on_close_pressed() -> void:
 	visible = false
 	print("Market UI đã đóng")
+	SoundManager.play_button_click()

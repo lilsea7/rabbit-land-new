@@ -13,6 +13,12 @@ extends Node
 # ================== SFX BÒ ==================
 @onready var cow_sfx: AudioStreamPlayer2D = $SFX/CowMooSFX
 
+# ================== SFX BUTTON ==================
+@onready var button_click_sfx: AudioStreamPlayer = $SFX/ButtonClick
+
+# ================== HURT TREE ROCK ==================
+@onready var hurt_sfx: AudioStreamPlayer2D = $SFX/HurtSfx
+
 # ================== CÀI ĐẶT ==================
 @export var bgm_volume: float = 0.5
 @export var sfx_volume: float = 1.0
@@ -33,6 +39,7 @@ func _ready() -> void:
 	print("Chicken3: ", get_node_or_null("SFX/ChickenCluck3SFX"))
 	print("ChickenMultiple: ", get_node_or_null("SFX/ChickenCluckMultipleSFX"))
 	print("Cow: ", get_node_or_null("SFX/CowMooSFX"))
+	
 	
 # ================== NHẠC NỀN ==================
 func play_bgm() -> void:
@@ -70,10 +77,19 @@ func set_sfx_volume(value: float) -> void:
 	for sfx in chicken_sfx_list:
 		if sfx:
 			sfx.volume_db = linear_to_db(value)
-	if cow_sfx:
-		cow_sfx.volume_db = linear_to_db(value)
+	for sfx in [cow_sfx, button_click_sfx, hurt_sfx]:  # thêm 2 cái mới vào đây
+		if sfx:
+			sfx.volume_db = linear_to_db(value)
 
-# ================== THÊM SFX MỚI SAU NÀY ==================
-# func play_axe_sfx() -> void: ...
-# func play_harvest_sfx() -> void: ...
-# func play_till_sfx() -> void: ...
+# ================== SFX UI ==================
+func play_button_click() -> void:
+	if button_click_sfx and not button_click_sfx.playing:
+		button_click_sfx.play()
+
+# ================== SFX CHẶT CÂY / ĐÁ ==================
+func play_hurt_sfx(position: Vector2) -> void:
+	if hurt_sfx == null:
+		print("⚠️ Hurt SFX null!")
+		return
+	hurt_sfx.global_position = position
+	hurt_sfx.play()

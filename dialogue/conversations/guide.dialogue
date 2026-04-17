@@ -1,15 +1,13 @@
 ~ start
 
-txinh: [Xinh chào!], rất vui được gặp bạn.
+txinh: Xinh chào! Rất vui được gặp bạn.
 txinh: Chào mừng bạn đến với trang trại nhé!
-txinh: Có vẻ các con vật nuôi của bạn đang đói.
-txinh: Bạn cần phải trồng một số loại cây để cho chúng ăn.
-txinh: Hãy nhận bộ dụng cụ và hạt giống từ mình nhé!
+txinh: Hãy nhận bộ dụng cụ từ mình để phát triển nông trại nhé!
 - Nhận bộ dụng cụ
 	Teemo: Vâng, tất nhiên rồi!
 	do GameDialogueManager.action_give_crop_seeds()
 - Không, hãy để sau đi
-	Teemo: Tôi chưa sẵn sàng để phát triển nông trại của mình
+	Teemo: Tôi chưa sẵn sàng để phát triển nông trại của mình.
 	txinh: Hãy tìm mình khi bạn cần nhé!
 
 => END

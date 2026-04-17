@@ -12,7 +12,6 @@ func _ready() -> void:
 	interactable_component.interactable_deactivated.connect(on_interactable_deactivated)
 	interactable_label_component.hide()
 	
-	# Kết nối signal từ dialogue (nếu bạn vẫn dùng)
 	GameDialogueManager.give_crops_seeds.connect(on_give_crop_seeds)
 
 func on_interactable_activated() -> void:
@@ -31,7 +30,6 @@ func _unhandled_input(event: InputEvent) -> void:
 
 # ================== NHẬN BỘ DỤNG CỤ KHỞI ĐẦU TỪ NPC ==================
 func on_give_crop_seeds() -> void:
-	# Kiểm tra nếu tools đã được mở khóa rồi thì bỏ qua
 	if ToolManager.unlocked_tools[DataTypes.Tools.AxeWood]:
 		print("⚠️ Tools đã được tặng trước đó!")
 		return

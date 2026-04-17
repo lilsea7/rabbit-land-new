@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://b6e0dutysdybn" path="res://scenes/characters/npc_states/idle_state.gd" id="3_ilrem"]
 [ext_resource type="Script" uid="uid://r33waauap84e" path="res://scenes/characters/npc_states/walk_state.gd" id="4_j7g5r"]
 [ext_resource type="Script" uid="uid://cgcw2jrns4lgg" path="res://scenes/characters/npc_states/eating.gd" id="6_1cmdg"]
-[ext_resource type="Script" uid="uid://brol6svmvptxx" path="res://scenes/characters/npc_states/laying.gd" id="7_essvg"]
+[ext_resource type="Script" uid="uid://brol6svmvptxx" path="res://scenes/characters/npc_states/producing.gd" id="7_essvg"]
 [ext_resource type="PackedScene" uid="uid://bg8jc3cgnprge" path="res://scenes/components/audio_play_time_component.tscn" id="7_gsrfl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ilrem"]
@@ -101,7 +101,7 @@ navigation_agent_2d = NodePath("../../NavigationAgent2D")
 [node name="Eating" type="Node" parent="StateMachine"]
 script = ExtResource("6_1cmdg")
 
-[node name="Laying" type="Node" parent="StateMachine"]
+[node name="Producing" type="Node" parent="StateMachine"]
 script = ExtResource("7_essvg")
 
 [node name="AudioPlayTimeComponent" parent="." instance=ExtResource("7_gsrfl")]
