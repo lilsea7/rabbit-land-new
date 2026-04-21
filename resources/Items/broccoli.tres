@@ -11,6 +11,6 @@ region = Rect2(16, 96, 16, 16)
 script = ExtResource("2_axm1c")
 title = "Broccoli"
 icon = SubResource("AtlasTexture_shvmc")
-description = "A nutritious green vegetable harvested after full growth.
-Used in cooking or for trading."
+description = "Rau xanh dinh dưỡng, thu hoạch sau khi cây trưởng thành.
+Dùng trong chế biến hoặc buôn bán."
 metadata/_custom_type_script = "uid://txnored4j7y7"

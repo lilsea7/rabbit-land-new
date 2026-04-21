@@ -11,6 +11,6 @@ region = Rect2(32, 0, 16, 16)
 script = ExtResource("2_rjshn")
 title = "Milk"
 icon = SubResource("AtlasTexture_4r42b")
-description = "A livestock product collected from cows after being well-fed.
-Used in food processing or for trading."
+description = "Sản phẩm thu được từ bò sau khi được cung cấp thức ăn đầy đủ.
+Dùng trong chế biến hoặc kinh doanh."
 metadata/_custom_type_script = "uid://txnored4j7y7"

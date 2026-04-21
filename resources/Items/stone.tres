@@ -11,6 +11,6 @@ region = Rect2(112, 16, 16, 16)
 script = ExtResource("2_egkwi")
 title = "Stone"
 icon = SubResource("AtlasTexture_y2yx3")
-description = "A basic mineral resource collected from rocks in the environment.
-Used for crafting tools and constructing structures."
+description = "Tài nguyên khoáng sản cơ bản, thu thập từ các tảng đá trong môi trường.
+Sử dụng để chế tạo công cụ và xây dựng."
 metadata/_custom_type_script = "uid://txnored4j7y7"

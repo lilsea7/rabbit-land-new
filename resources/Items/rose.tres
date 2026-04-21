@@ -11,6 +11,6 @@ region = Rect2(16, 160, 16, 16)
 script = ExtResource("2_554na")
 title = "Rose"
 icon = SubResource("AtlasTexture_ctos3")
-description = "A decorative flower grown and harvested when fully matured.
-Suitable for decoration or trading purposes."
+description = "Hoa trang trí được trồng và thu hoạch khi phát triển đầy đủ.
+Phù hợp cho trang trí hoặc trao đổi."
 metadata/_custom_type_script = "uid://txnored4j7y7"

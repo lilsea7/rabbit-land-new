@@ -12,7 +12,7 @@ extends CanvasModulate
 		initial_hour = ih
 		DayAndNightCycleManager.initial_hour = ih
 		DayAndNightCycleManager.set_initial_time()
-		
+		#
 @export var initial_minute: int = 30:
 	set(im):
 		initial_minute = im

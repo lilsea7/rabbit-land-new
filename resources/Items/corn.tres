@@ -9,8 +9,8 @@ region = Rect2(16, 0, 16, 16)
 
 [resource]
 script = ExtResource("2_y6hud")
-title = "Corn"
+title = "Corn "
 icon = SubResource("AtlasTexture_w8ang")
-description = "A valuable agricultural crop harvested at full maturity.
-Used as food or as feed for livestock."
+description = "Cây trồng nông nghiệp có giá trị, thu hoạch khi phát triển hoàn chỉnh.
+Dùng làm thực phẩm hoặc thức ăn cho vật nuôi."
 metadata/_custom_type_script = "uid://txnored4j7y7"

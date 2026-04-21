@@ -8,8 +8,8 @@ atlas = ExtResource("1_3x2c0")
 
 [resource]
 script = ExtResource("2_qqc3v")
-title = "Egg"
+title = "Egg "
 icon = SubResource("AtlasTexture_ljbh1")
-description = "A livestock product obtained from chickens after being properly fed.
-An essential ingredient for cooking."
+description = "Sản phẩm chăn nuôi thu được từ gà sau khi được cho ăn.
+Là nguyên liệu quan trọng trong chế biến thực phẩm."
 metadata/_custom_type_script = "uid://txnored4j7y7"

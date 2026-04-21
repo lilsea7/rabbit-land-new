@@ -11,6 +11,6 @@ region = Rect2(80, 32, 16, 16)
 script = ExtResource("2_7sorj")
 title = "Log"
 icon = SubResource("AtlasTexture_h0mq1")
-description = "Basic wood material obtained by chopping or interacting with trees.
-Used for crafting, building, and construction purposes."
+description = "Nguyên liệu gỗ cơ bản, thu được khi chặt hoặc tương tác với cây.
+Dùng trong chế tạo, xây dựng và phát triển công trình."
 metadata/_custom_type_script = "uid://txnored4j7y7"

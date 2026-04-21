@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://d0dhtip02w7f6"]
+[gd_scene load_steps=19 format=3 uid="uid://d0dhtip02w7f6"]
 
 [ext_resource type="Theme" uid="uid://ljcck66th0xd" path="res://scenes/ui/game_ui_theme.tres" id="1_e2vrk"]
 [ext_resource type="PackedScene" uid="uid://8f4petbcqx7d" path="res://scenes/ui/emotes_panel.tscn" id="2_0kkfd"]
@@ -9,9 +9,11 @@
 [ext_resource type="Script" uid="uid://jln5wbu2yvba" path="res://scenes/ui/level_panel.gd" id="6_dscta"]
 [ext_resource type="PackedScene" uid="uid://dofq617k0q8ck" path="res://scenes/ui/plants_ui.tscn" id="7_ooiym"]
 [ext_resource type="PackedScene" uid="uid://cbuwkkrpff0do" path="res://scenes/ui/inventory_ui.tscn" id="8_ce4rh"]
+[ext_resource type="PackedScene" uid="uid://dtm5n2760rqg2" path="res://scenes/ui/day_and_night.tscn" id="8_ywp2c"]
 [ext_resource type="PackedScene" uid="uid://cwnrvsq6ohu1t" path="res://scenes/ui/shop_ui.tscn" id="9_r1vnj"]
 [ext_resource type="PackedScene" uid="uid://85rbu6alk1c3" path="res://scenes/ui/market_ui.tscn" id="11_dscta"]
 [ext_resource type="PackedScene" uid="uid://cl07i03rqnvmm" path="res://scenes/ui/food_menu.tscn" id="11_nktmq"]
+[ext_resource type="PackedScene" uid="uid://yf2kjnghwjet" path="res://scenes/ui/bridge_ui.tscn" id="13_wwq64"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ooiym"]
 texture = ExtResource("3_nwa5a")
@@ -154,6 +156,12 @@ size_flags_horizontal = 4
 size_flags_vertical = 8
 
 [node name="DayAndNightPanel" parent="MarginContainer" instance=ExtResource("4_gkbp4")]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="DayAndNight" parent="MarginContainer" instance=ExtResource("8_ywp2c")]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
@@ -171,4 +179,7 @@ visible = false
 visible = false
 
 [node name="FoodMenu" parent="." instance=ExtResource("11_nktmq")]
+visible = false
+
+[node name="BridgeUI" parent="." instance=ExtResource("13_wwq64")]
 visible = false

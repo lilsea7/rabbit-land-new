@@ -45,6 +45,7 @@ func _ready() -> void:
 	
 
 func _on_setting_button_pressed() -> void:
+	SoundManager.play_button_click()
 	if setting_popup:
 		setting_popup.visible = true
 		print("✅ Mở Setting Popup")
@@ -52,6 +53,7 @@ func _on_setting_button_pressed() -> void:
 		push_error("Không mở được SettingPopup!")
 
 func _on_help_button_pressed() -> void:
+	SoundManager.play_button_click()
 	if help_popup:
 		help_popup.visible = true
 		print("✅ Mở Help Popup")
@@ -59,6 +61,7 @@ func _on_help_button_pressed() -> void:
 		push_error("Không mở được HelpPopup!")
 
 func _on_about_button_pressed() -> void:
+	SoundManager.play_button_click()
 	if about_popup:
 		about_popup.visible = true
 		print("✅ Mở About Popup")

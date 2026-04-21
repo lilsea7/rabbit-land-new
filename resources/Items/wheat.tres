@@ -11,6 +11,6 @@ region = Rect2(16, 112, 16, 16)
 script = ExtResource("2_2f1u3")
 title = "Wheat"
 icon = SubResource("AtlasTexture_2a8gs")
-description = "A common crop harvested after planting and proper care.
-Used as an ingredient for cooking or as animal feed."
+description = "Cây lương thực phổ biến, thu hoạch sau khi gieo trồng và chăm sóc.
+Dùng làm nguyên liệu chế biến hoặc thức ăn cho vật nuôi."
 metadata/_custom_type_script = "uid://txnored4j7y7"

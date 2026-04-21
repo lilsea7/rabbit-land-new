@@ -11,6 +11,6 @@ region = Rect2(16, 48, 16, 16)
 script = ExtResource("2_2y5x4")
 title = "Tomato"
 icon = SubResource("AtlasTexture_ynfe6")
-description = "A crop harvested from tomato plants after the growth process.
-Can be used for cooking or trading."
+description = "Nông sản thu hoạch từ cây cà chua sau quá trình trồng trọt.
+Có thể dùng để chế biến thực phẩm hoặc buôn bán."
 metadata/_custom_type_script = "uid://txnored4j7y7"

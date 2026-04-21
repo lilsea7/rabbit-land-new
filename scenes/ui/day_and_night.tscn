@@ -1,0 +1,193 @@
+[gd_scene load_steps=22 format=3 uid="uid://dtm5n2760rqg2"]
+
+[ext_resource type="Script" uid="uid://bfbwmyi7q83ld" path="res://scenes/ui/day_and_night.gd" id="1_0v6ca"]
+[ext_resource type="Texture2D" uid="uid://cv2yvg1g0w1lb" path="res://assets/ui/weather_ui.png" id="1_kmcn1"]
+[ext_resource type="Texture2D" uid="uid://c0r2y41y0nmra" path="res://assets/ui/weather_icons_smal_freel.png" id="2_0v6ca"]
+[ext_resource type="FontFile" uid="uid://2pfwl33qn5vf" path="res://assets/ui/fonts/pixelFont-7-8x14-sproutLands.ttf" id="3_rlbgj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndmdv"]
+atlas = ExtResource("1_kmcn1")
+region = Rect2(6, 7, 65, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k5aep"]
+atlas = ExtResource("1_kmcn1")
+region = Rect2(17, 71, 13, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0v6ca"]
+atlas = ExtResource("1_kmcn1")
+region = Rect2(3, 67, 11, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rlbgj"]
+atlas = ExtResource("1_kmcn1")
+region = Rect2(3, 82, 11, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6xxd"]
+atlas = ExtResource("1_kmcn1")
+region = Rect2(3, 97, 11, 15)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qqrkx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0v6ca")
+}],
+"loop": true,
+"name": &"phase_1",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rlbgj")
+}],
+"loop": true,
+"name": &"phase_2",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6xxd")
+}],
+"loop": true,
+"name": &"phase_3",
+"speed": 2.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0lej4"]
+atlas = ExtResource("2_0v6ca")
+region = Rect2(7, 7, 18, 17)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_o6xxd"]
+load_path = "res://.godot/imported/Weather_Icons_smal_freel.png-3a42d451e55d14f9eb73bc67a40459ed.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqrkx"]
+atlas = SubResource("CompressedTexture2D_o6xxd")
+region = Rect2(39, 7, 18, 17)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ef5df"]
+load_path = "res://.godot/imported/Weather_Icons_smal_freel.png-3a42d451e55d14f9eb73bc67a40459ed.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o2em2"]
+atlas = SubResource("CompressedTexture2D_ef5df")
+region = Rect2(7, 71, 18, 17)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vspfg"]
+load_path = "res://.godot/imported/Weather_Icons_smal_freel.png-3a42d451e55d14f9eb73bc67a40459ed.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mdv4d"]
+atlas = SubResource("CompressedTexture2D_vspfg")
+region = Rect2(39, 71, 18, 17)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_n0a6j"]
+load_path = "res://.godot/imported/Weather_Icons_smal_freel.png-3a42d451e55d14f9eb73bc67a40459ed.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ed28"]
+atlas = SubResource("CompressedTexture2D_n0a6j")
+region = Rect2(7, 39, 18, 17)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hksqx"]
+load_path = "res://.godot/imported/Weather_Icons_smal_freel.png-3a42d451e55d14f9eb73bc67a40459ed.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f8vmh"]
+atlas = SubResource("CompressedTexture2D_hksqx")
+region = Rect2(39, 39, 18, 17)
+
+[node name="DayAndNight" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_0v6ca")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+clip_contents = true
+layout_mode = 0
+offset_left = -65.0
+offset_bottom = 54.0
+texture = SubResource("AtlasTexture_ndmdv")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRectTime" type="TextureRect" parent="TextureRect"]
+layout_mode = 1
+offset_left = 36.0
+offset_top = 8.0
+offset_right = 49.0
+offset_bottom = 25.0
+texture = SubResource("AtlasTexture_k5aep")
+
+[node name="arrow" type="AnimatedSprite2D" parent="TextureRect"]
+position = Vector2(34, 9)
+sprite_frames = SubResource("SpriteFrames_qqrkx")
+animation = &"phase_1"
+centered = false
+
+[node name="TextureRectIcon" type="TextureRect" parent="TextureRect"]
+layout_mode = 1
+offset_left = 9.0
+offset_top = 8.0
+offset_right = 27.0
+offset_bottom = 25.0
+texture = SubResource("AtlasTexture_0lej4")
+
+[node name="icon_morning" type="TextureRect" parent="TextureRect/TextureRectIcon"]
+visible = false
+layout_mode = 1
+offset_right = 18.0
+offset_bottom = 17.0
+texture = SubResource("AtlasTexture_0lej4")
+
+[node name="icon_noon" type="TextureRect" parent="TextureRect/TextureRectIcon"]
+visible = false
+layout_mode = 1
+offset_right = 18.0
+offset_bottom = 17.0
+texture = SubResource("AtlasTexture_qqrkx")
+
+[node name="icon_afternoon" type="TextureRect" parent="TextureRect/TextureRectIcon"]
+visible = false
+layout_mode = 1
+offset_right = 18.0
+offset_bottom = 17.0
+texture = SubResource("AtlasTexture_o2em2")
+
+[node name="icon_sunset" type="TextureRect" parent="TextureRect/TextureRectIcon"]
+visible = false
+layout_mode = 1
+offset_right = 18.0
+offset_bottom = 17.0
+texture = SubResource("AtlasTexture_mdv4d")
+
+[node name="icon_evening" type="TextureRect" parent="TextureRect/TextureRectIcon"]
+visible = false
+layout_mode = 1
+offset_right = 18.0
+offset_bottom = 17.0
+texture = SubResource("AtlasTexture_6ed28")
+
+[node name="icon_night" type="TextureRect" parent="TextureRect/TextureRectIcon"]
+visible = false
+layout_mode = 1
+offset_right = 18.0
+offset_bottom = 17.0
+texture = SubResource("AtlasTexture_f8vmh")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.5
+offset_top = 13.0
+offset_right = 3.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DayLabel" type="Label" parent="TextureRect/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_rlbgj")
+theme_override_font_sizes/font_size = 9
+text = "DAY 0 "

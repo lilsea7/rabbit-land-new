@@ -41,3 +41,22 @@ func recalculate_time() -> void:
 	if current_day != day:
 		current_day = day
 		time_tick_day.emit(day)
+		
+
+# ==================== HÀM HỖ TRỢ (THÊM VÀO CUỐI FILE) ====================
+
+# Lấy giờ hiện tại từ time
+func get_current_hour() -> int:
+	var total_minutes: int = int(time / GAME_MINUTE_DURATION)
+	var current_day_minutes: int = total_minutes % MINUTES_PER_DAY
+	return int(current_day_minutes / MINUTES_PER_HOUR)
+
+
+# Lấy phút hiện tại
+func get_current_minute() -> int:
+	return current_minute
+
+
+# Lấy ngày hiện tại
+func get_current_day() -> int:
+	return current_day

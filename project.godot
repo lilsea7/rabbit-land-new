@@ -36,6 +36,7 @@ LevelUpNotification="*res://scenes/ui/level_up_notification.tscn"
 Global="*res://scripts/globals/global.gd"
 SceneTransition="*res://scenes/scene_transition.tscn"
 SoundManager="*res://scenes/manager/sound_manager.tscn"
+TimeManager="*res://scripts/globals/time_manager.gd"
 
 [display]
 
