@@ -1,4 +1,3 @@
-# ending_screen.gd
 extends CanvasLayer
 
 @onready var background: ColorRect = $Background

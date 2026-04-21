@@ -1,4 +1,3 @@
-# door_exit.gd
 extends StaticBody2D
 
 # door ra ngoài

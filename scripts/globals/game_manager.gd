@@ -1,4 +1,3 @@
-# game_manager.gd
 extends Node
 
 var game_menu_screen = preload("res://scenes/ui/game_menu_screen.tscn")

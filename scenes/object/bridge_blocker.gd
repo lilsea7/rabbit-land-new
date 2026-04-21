@@ -1,4 +1,3 @@
-# bridge_blocker.gd
 extends Node2D
 
 @export var required_log: int = 1
