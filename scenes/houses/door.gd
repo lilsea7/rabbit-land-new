@@ -20,7 +20,11 @@ func on_interactable_activated() -> void:
 	
 	animated_sprite_2d.play("open_door")
 	collision_layer = DataTypes.ColisonLayer.Player
+	SaveGameManager.save_game()
 	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.5).timeout
+	SceneTransition.fade_to_scene(target_scene, spawn_point_name)
+# Save state trước khi chuyển scene
 	SceneTransition.fade_to_scene(target_scene, spawn_point_name)
 
 func on_interactable_deactivated() -> void:

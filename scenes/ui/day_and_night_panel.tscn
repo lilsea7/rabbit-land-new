@@ -54,7 +54,6 @@ theme_type_variation = &"DayAndNightLabel"
 text = "00:00"
 
 [node name="Control" type="Control" parent="."]
-visible = false
 anchors_preset = 0
 offset_left = -80.0
 offset_top = 56.0

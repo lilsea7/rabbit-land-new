@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dtm5n2760rqg2"]
+[gd_scene load_steps=18 format=3 uid="uid://dtm5n2760rqg2"]
 
 [ext_resource type="Script" uid="uid://bfbwmyi7q83ld" path="res://scenes/ui/day_and_night.gd" id="1_0v6ca"]
 [ext_resource type="Texture2D" uid="uid://cv2yvg1g0w1lb" path="res://assets/ui/weather_ui.png" id="1_kmcn1"]
@@ -56,42 +56,31 @@ animations = [{
 atlas = ExtResource("2_0v6ca")
 region = Rect2(7, 7, 18, 17)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_o6xxd"]
-load_path = "res://.godot/imported/Weather_Icons_smal_freel.png-3a42d451e55d14f9eb73bc67a40459ed.ctex"
+[sub_resource type="AtlasTexture" id="AtlasTexture_ef5df"]
+atlas = ExtResource("2_0v6ca")
+region = Rect2(7, 7, 18, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qqrkx"]
-atlas = SubResource("CompressedTexture2D_o6xxd")
+atlas = ExtResource("2_0v6ca")
 region = Rect2(39, 7, 18, 17)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ef5df"]
-load_path = "res://.godot/imported/Weather_Icons_smal_freel.png-3a42d451e55d14f9eb73bc67a40459ed.ctex"
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_o2em2"]
-atlas = SubResource("CompressedTexture2D_ef5df")
+atlas = ExtResource("2_0v6ca")
 region = Rect2(7, 71, 18, 17)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vspfg"]
-load_path = "res://.godot/imported/Weather_Icons_smal_freel.png-3a42d451e55d14f9eb73bc67a40459ed.ctex"
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_mdv4d"]
-atlas = SubResource("CompressedTexture2D_vspfg")
+atlas = ExtResource("2_0v6ca")
 region = Rect2(39, 71, 18, 17)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_n0a6j"]
-load_path = "res://.godot/imported/Weather_Icons_smal_freel.png-3a42d451e55d14f9eb73bc67a40459ed.ctex"
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_6ed28"]
-atlas = SubResource("CompressedTexture2D_n0a6j")
+atlas = ExtResource("2_0v6ca")
 region = Rect2(7, 39, 18, 17)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hksqx"]
-load_path = "res://.godot/imported/Weather_Icons_smal_freel.png-3a42d451e55d14f9eb73bc67a40459ed.ctex"
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_f8vmh"]
-atlas = SubResource("CompressedTexture2D_hksqx")
+atlas = ExtResource("2_0v6ca")
 region = Rect2(39, 39, 18, 17)
 
-[node name="DayAndNight" type="Control"]
+[node name="DayAndNight" type="Control" groups=["save_data_component"]]
 layout_mode = 3
 anchors_preset = 0
 size_flags_horizontal = 4
@@ -130,42 +119,36 @@ offset_bottom = 25.0
 texture = SubResource("AtlasTexture_0lej4")
 
 [node name="icon_morning" type="TextureRect" parent="TextureRect/TextureRectIcon"]
-visible = false
 layout_mode = 1
 offset_right = 18.0
 offset_bottom = 17.0
-texture = SubResource("AtlasTexture_0lej4")
+texture = SubResource("AtlasTexture_ef5df")
 
 [node name="icon_noon" type="TextureRect" parent="TextureRect/TextureRectIcon"]
-visible = false
 layout_mode = 1
 offset_right = 18.0
 offset_bottom = 17.0
 texture = SubResource("AtlasTexture_qqrkx")
 
 [node name="icon_afternoon" type="TextureRect" parent="TextureRect/TextureRectIcon"]
-visible = false
 layout_mode = 1
 offset_right = 18.0
 offset_bottom = 17.0
 texture = SubResource("AtlasTexture_o2em2")
 
 [node name="icon_sunset" type="TextureRect" parent="TextureRect/TextureRectIcon"]
-visible = false
 layout_mode = 1
 offset_right = 18.0
 offset_bottom = 17.0
 texture = SubResource("AtlasTexture_mdv4d")
 
 [node name="icon_evening" type="TextureRect" parent="TextureRect/TextureRectIcon"]
-visible = false
 layout_mode = 1
 offset_right = 18.0
 offset_bottom = 17.0
 texture = SubResource("AtlasTexture_6ed28")
 
 [node name="icon_night" type="TextureRect" parent="TextureRect/TextureRectIcon"]
-visible = false
 layout_mode = 1
 offset_right = 18.0
 offset_bottom = 17.0

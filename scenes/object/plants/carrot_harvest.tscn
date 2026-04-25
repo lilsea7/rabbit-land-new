@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_i4sc8"]
 radius = 9.0
 
-[node name="CarrotHarvest" type="Sprite2D"]
+[node name="CarrotHarvest" type="Sprite2D" groups=["harvest_item"]]
 texture = ExtResource("1_gp3ya")
 hframes = 5
 vframes = 14

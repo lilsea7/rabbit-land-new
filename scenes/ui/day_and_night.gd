@@ -49,7 +49,19 @@ func _ready() -> void:
 	# Kết nối signal từ bộ đếm chính
 	DayAndNightCycleManager.time_tick.connect(_on_time_tick)
 	
-	# Cập nhật lần đầu khi game chạy
+# Buộc Godot phải include tất cả texture vào file export
+	var icons_to_force = [icon_morning, icon_noon, icon_afternoon, icon_sunset, icon_evening, icon_night]
+	
+	for icon in icons_to_force:
+		if icon and icon.texture:
+			icon.texture = icon.texture  # trick quan trọng
+	
+	# Force arrow (AnimatedSprite2D)
+	if arrow and arrow.sprite_frames:
+		arrow.sprite_frames = arrow.sprite_frames
+	# ============================================================
+	
+	# Cập nhật lần đầu
 	_update_from_current_time()
 
 
@@ -132,3 +144,36 @@ func _calculate_current_hour() -> int:
 	var total_minutes: int = int(DayAndNightCycleManager.time / DayAndNightCycleManager.GAME_MINUTE_DURATION)
 	var current_day_minutes: int = total_minutes % DayAndNightCycleManager.MINUTES_PER_DAY
 	return int(current_day_minutes / DayAndNightCycleManager.MINUTES_PER_HOUR)
+
+# ==================== HÀM LƯU TRẠNG THÁI (gọi khi save game) ====================
+func save_day_night_state(save_data: SaveGameDataResource) -> void:
+	# Lấy trạng thái icon hiện tại
+	var current_hour = _calculate_current_hour()
+	var current_period = _get_time_of_day(current_hour)
+	save_data.current_time_period = TimeOfDay.keys()[current_period]   # chuyển enum thành String
+	
+	# Lấy trạng thái mũi tên
+	save_data.current_arrow_phase = _get_arrow_phase(current_hour)
+
+
+# ==================== HÀM LOAD TRẠNG THÁI (gọi khi load game) ====================
+func load_day_night_state(save_data: SaveGameDataResource) -> void:
+	# Load icon
+	if period_icons.has(TimeOfDay[save_data.current_time_period]):
+		main_icon_container.texture = period_icons[TimeOfDay[save_data.current_time_period]]
+	
+	# Load mũi tên
+	if arrow:
+		var anim_name = "phase_" + str(save_data.current_arrow_phase + 1)
+		if arrow.sprite_frames and arrow.sprite_frames.has_animation(anim_name):
+			arrow.play(anim_name)
+
+
+# ==================== HÀM HỖ TRỢ (thêm vào cuối script) ====================
+func _get_arrow_phase(hour: int) -> int:
+	if hour >= 6 and hour < 13:
+		return 0   # phase_1
+	elif hour >= 13 and hour < 18:
+		return 1   # phase_2
+	else:
+		return 2   # phase_3

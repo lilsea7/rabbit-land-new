@@ -25,6 +25,7 @@ func save_game() -> void:
 	save_level_and_exp()
 	save_inventory()
 	save_plants()
+	save_harvests()
 	save_tilled_tiles()
 	save_removed_objects()
 	save_removed_trees() 
@@ -56,6 +57,7 @@ func load_game() -> void:
 	load_level_and_exp()
 	load_inventory()
 	load_plants()
+	load_harvests()
 	load_tilled_tiles()
 	load_removed_objects()
 	load_removed_trees()
@@ -131,6 +133,32 @@ func load_time() -> void:
 	print("✅ Đã load thời gian: ", DayAndNightCycleManager.time)
 
 # ================== CÂY TRỒNG ==================
+#func save_plants() -> void:
+	#if not game_data_resource: return
+	#var plants_root = get_tree().root.find_child("PlantsRoot", true, false)
+	#if not plants_root: return
+	#game_data_resource.plants_data.clear()
+	#for plant in plants_root.get_children():
+		#if plant.has_method("get_save_data"):
+			#var data = plant.get_save_data()
+			#if data:
+				#game_data_resource.plants_data.append(data)
+#
+#func load_plants() -> void:
+	#var plants_root = get_tree().root.find_child("PlantsRoot", true, false)
+	#if not plants_root or not game_data_resource: return
+	#for child in plants_root.get_children():
+		#child.queue_free()
+	#for data in game_data_resource.plants_data:
+		#if data.has("scene_path"):
+			#var scene = load(data["scene_path"])
+			#if scene:
+				#var plant = scene.instantiate()
+				#plant.position = data["position"]
+				#if plant.has_method("load_save_data") and data.has("extra_data"):
+					#plant.load_save_data(data["extra_data"])
+				#plants_root.add_child(plant)
+
 func save_plants() -> void:
 	if not game_data_resource: return
 	var plants_root = get_tree().root.find_child("PlantsRoot", true, false)
@@ -141,21 +169,61 @@ func save_plants() -> void:
 			var data = plant.get_save_data()
 			if data:
 				game_data_resource.plants_data.append(data)
+	print("💾 Đã lưu ", game_data_resource.plants_data.size(), " cây trồng")
 
 func load_plants() -> void:
 	var plants_root = get_tree().root.find_child("PlantsRoot", true, false)
 	if not plants_root or not game_data_resource: return
+	# Xóa cây cũ
 	for child in plants_root.get_children():
 		child.queue_free()
+	await get_tree().process_frame
 	for data in game_data_resource.plants_data:
-		if data.has("scene_path"):
-			var scene = load(data["scene_path"])
-			if scene:
-				var plant = scene.instantiate()
-				plant.position = data["position"]
-				if plant.has_method("load_save_data") and data.has("extra_data"):
-					plant.load_save_data(data["extra_data"])
-				plants_root.add_child(plant)
+		if not data.has("scene_path"):
+			continue
+		var scene = load(data["scene_path"])
+		if not scene:
+			continue
+		var plant = scene.instantiate()
+		plants_root.add_child(plant)
+		# Gọi load_save_data với toàn bộ data thay vì data["extra_data"]
+		if plant.has_method("load_save_data"):
+			plant.load_save_data(data)
+	print("✅ Đã load ", game_data_resource.plants_data.size(), " cây trồng")
+
+# ================== SẢN PHẨM TỪ CÂY TRỒNG ==================
+func save_harvests() -> void:
+	if not game_data_resource: return
+	# Harvest items nằm ở HarvestRoot hoặc cùng parent với cây
+	var harvests = get_tree().get_nodes_in_group("harvest_item")
+	game_data_resource.harvests_data.clear()
+	for harvest in harvests:
+		if harvest.has_method("get_save_data"):
+			game_data_resource.harvests_data.append(harvest.get_save_data())
+		else:
+			# Lưu tối thiểu scene_path và position
+			game_data_resource.harvests_data.append({
+				"scene_path": harvest.scene_file_path,
+				"position": harvest.global_position
+			})
+	print("💾 Đã lưu ", game_data_resource.harvests_data.size(), " harvest items")
+
+func load_harvests() -> void:
+	if not game_data_resource or game_data_resource.harvests_data.is_empty():
+		return
+	var plants_root = get_tree().root.find_child("PlantsRoot", true, false)
+	if not plants_root: return
+	await get_tree().process_frame
+	for data in game_data_resource.harvests_data:
+		if not data.has("scene_path"):
+			continue
+		var scene = load(data["scene_path"])
+		if not scene:
+			continue
+		var harvest = scene.instantiate()
+		harvest.global_position = data["position"]
+		plants_root.add_child(harvest)
+	print("✅ Đã load ", game_data_resource.harvests_data.size(), " harvest items")
 
 # ================== Ô ĐẤT ĐÃ CUỐC ==================
 func save_tilled_tiles() -> void:

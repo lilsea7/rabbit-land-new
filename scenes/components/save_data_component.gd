@@ -18,4 +18,7 @@ func _save_data() -> Resource:
 		
 	save_data_resource._save_data(parent_node)
 	
+	if parent_node is Node2D and parent_node.has_method("_save_data"):
+		parent_node._save_data(save_data_resource)
+	
 	return save_data_resource

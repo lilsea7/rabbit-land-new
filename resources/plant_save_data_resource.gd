@@ -5,6 +5,7 @@ extends Resource
 @export var position: Vector2 = Vector2.ZERO
 @export var extra_data: Dictionary = {}
 
+
 func _save_data(plant_node: Node2D) -> void:
 	scene_path = plant_node.scene_file_path
 	position = plant_node.position

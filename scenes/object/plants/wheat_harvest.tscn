@@ -5,7 +5,7 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hryko"]
 
-[node name="WheatHarvest" type="Sprite2D"]
+[node name="WheatHarvest" type="Sprite2D" groups=["harvest_item"]]
 texture = ExtResource("1_j5tkf")
 hframes = 5
 vframes = 14

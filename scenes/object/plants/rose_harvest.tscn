@@ -5,7 +5,7 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r4h2o"]
 
-[node name="RoseHarvest" type="Sprite2D"]
+[node name="RoseHarvest" type="Sprite2D" groups=["harvest_item"]]
 texture = ExtResource("1_mmmpg")
 hframes = 5
 vframes = 14

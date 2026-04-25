@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://dq0pukdhm23rr"]
 
 [ext_resource type="Script" uid="uid://dtnleq60pkih6" path="res://scenes/manager/sound_manager.gd" id="1_yi7ou"]
-[ext_resource type="PackedScene" uid="uid://cyqtsmm6de6kv" path="res://audio/music/on_the_farm_music.tscn" id="2_6rrk0"]
+[ext_resource type="AudioStream" uid="uid://cbdphroxyykly" path="res://assets/audio/music/on_the_farm_music.ogg" id="2_4fgff"]
 [ext_resource type="PackedScene" uid="uid://cxy0hp3sfauns" path="res://audio/sfx/chicken_cluck_1sfx.tscn" id="3_ij1g2"]
 [ext_resource type="PackedScene" uid="uid://c3rt5odtgody8" path="res://audio/sfx/chicken_cluck_2sfx.tscn" id="4_4fgff"]
 [ext_resource type="PackedScene" uid="uid://dvo6vj2bdf0ub" path="res://audio/sfx/chicken_cluck_3sfx.tscn" id="5_utxtf"]
@@ -15,7 +15,9 @@ script = ExtResource("1_yi7ou")
 
 [node name="BGM" type="Node" parent="."]
 
-[node name="OnTheFarmMusic" parent="BGM" instance=ExtResource("2_6rrk0")]
+[node name="OnTheFarmMusic" type="AudioStreamPlayer" parent="BGM"]
+stream = ExtResource("2_4fgff")
+bus = &"Music"
 
 [node name="SFX" type="Node" parent="."]
 
@@ -35,5 +37,7 @@ max_distance = 200.0
 max_distance = 200.0
 
 [node name="ButtonClick" parent="SFX" instance=ExtResource("8_4fgff")]
+bus = &"SFX"
 
 [node name="HurtSfx" parent="SFX" instance=ExtResource("9_utxtf")]
+bus = &"SFX"
