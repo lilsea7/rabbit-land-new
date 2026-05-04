@@ -1,42 +1,37 @@
-extends Node2D
+# corn.gd
+extends PlantBase
 
 # ================== CONFIG ==================
 const HARVEST_DAYS: int = 4
 const EXP_PLANT: int = 6
 const EXP_HARVEST: int = 7
 
+var corn_harvest_scene = preload("res://scenes/object/plants/corn_harvest.tscn")
+
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var watering_particles: GPUParticles2D = $WateringParticles
 @onready var flowering_particles: GPUParticles2D = $FloweringParticles
-@onready var growth_cycle_component: GrowthCycleComponent = $GrowthCycleComponent
 @onready var hurt_component: HurtComponent = $HurtComponent
-var corn_harvest_scene = preload("res://scenes/object/plants/corn_harvest.tscn")
+
 var has_harvested: bool = false
-@onready var save_data_component: SaveDataComponent = $SaveDataComponent
 
 func _ready() -> void:
 	growth_cycle_component.days_until_harvest = HARVEST_DAYS
-
 	watering_particles.emitting = false
 	flowering_particles.emitting = false
-
 	if hurt_component:
 		hurt_component.hurt.connect(on_hurt)
 	if growth_cycle_component:
 		growth_cycle_component.crop_maturity.connect(on_crop_maturity)
 		growth_cycle_component.crop_harvesting.connect(on_crop_harvesting)
 		growth_cycle_component.crop_ready_harvest.connect(on_crop_ready_harvest)
-
 	if animated_sprite:
 		animated_sprite.frame = 0
-
-	if save_data_component:
-		save_data_component.save_data_resource = PlantSaveDataResource.new()
-
 
 func _process(delta: float) -> void:
 	if growth_cycle_component and animated_sprite:
 		var current_state = growth_cycle_component.get_current_growth_state()
+		growth_state = current_state
 		animated_sprite.frame = current_state
 		if current_state == DataTypes.GrowthStates.Maturity:
 			flowering_particles.emitting = true
@@ -67,21 +62,20 @@ func on_crop_harvesting() -> void:
 func on_crop_ready_harvest() -> void:
 	LevelManager.add_exp(EXP_HARVEST, "harvest_crop")
 
-# ================== SAVE & LOAD ==================
-func get_save_data() -> Dictionary:
-	return {
-		"scene_path": scene_file_path,
-		"position": global_position,
-		"growth_state": growth_cycle_component.get_current_growth_state(),
-		"is_watered": growth_cycle_component.is_watered
-	}
-
+# Override load_save_data để dùng animated_sprite thay vì sprite_2d
 func load_save_data(data: Dictionary) -> void:
 	if data.has("position"):
 		global_position = data["position"]
 	if data.has("growth_state") and growth_cycle_component:
-		growth_cycle_component.current_growth_state = data["growth_state"] as DataTypes.GrowthStates
+		growth_state = data["growth_state"] as DataTypes.GrowthStates
+		growth_cycle_component.current_growth_state = growth_state
 	if data.has("is_watered") and growth_cycle_component:
 		growth_cycle_component.is_watered = data["is_watered"]
-	if animated_sprite and growth_cycle_component:
-		animated_sprite.frame = growth_cycle_component.get_current_growth_state()
+	if data.has("starting_day") and growth_cycle_component:
+		growth_cycle_component.starting_day = data["starting_day"]
+	if data.has("has_emitted_maturity") and growth_cycle_component:
+		growth_cycle_component.has_emitted_maturity = data["has_emitted_maturity"]
+	if data.has("has_emitted_harvesting") and growth_cycle_component:
+		growth_cycle_component.has_emitted_harvesting = data["has_emitted_harvesting"]
+	if animated_sprite:
+		animated_sprite.frame = growth_state

@@ -31,6 +31,7 @@ func save_game() -> void:
 	save_removed_trees() 
 	save_tools()
 	save_time()
+	save_coin()
 	
 	var path = save_game_data_path + save_file_name
 	var result = ResourceSaver.save(game_data_resource, path)
@@ -63,6 +64,7 @@ func load_game() -> void:
 	load_removed_trees()
 	load_tools()
 	load_time()
+	load_coin()
 	
 	# Khôi phục removed_positions từ file save
 	if game_data_resource.removed_objects:
@@ -133,32 +135,6 @@ func load_time() -> void:
 	print("✅ Đã load thời gian: ", DayAndNightCycleManager.time)
 
 # ================== CÂY TRỒNG ==================
-#func save_plants() -> void:
-	#if not game_data_resource: return
-	#var plants_root = get_tree().root.find_child("PlantsRoot", true, false)
-	#if not plants_root: return
-	#game_data_resource.plants_data.clear()
-	#for plant in plants_root.get_children():
-		#if plant.has_method("get_save_data"):
-			#var data = plant.get_save_data()
-			#if data:
-				#game_data_resource.plants_data.append(data)
-#
-#func load_plants() -> void:
-	#var plants_root = get_tree().root.find_child("PlantsRoot", true, false)
-	#if not plants_root or not game_data_resource: return
-	#for child in plants_root.get_children():
-		#child.queue_free()
-	#for data in game_data_resource.plants_data:
-		#if data.has("scene_path"):
-			#var scene = load(data["scene_path"])
-			#if scene:
-				#var plant = scene.instantiate()
-				#plant.position = data["position"]
-				#if plant.has_method("load_save_data") and data.has("extra_data"):
-					#plant.load_save_data(data["extra_data"])
-				#plants_root.add_child(plant)
-
 func save_plants() -> void:
 	if not game_data_resource: return
 	var plants_root = get_tree().root.find_child("PlantsRoot", true, false)
@@ -351,3 +327,15 @@ func _do_remove_trees() -> void:
 				#print("🗑️ Xóa large tree tại: ", tree.global_position)
 				tree.queue_free()
 				break
+				
+# ================== COIN ==================
+func save_coin() -> void:
+	if not game_data_resource: return
+	game_data_resource.coin = ShopManager.player_money
+	print("💾 Đã lưu coin: ", ShopManager.player_money)
+
+func load_coin() -> void:
+	if not game_data_resource: return
+	ShopManager.player_money = game_data_resource.coin
+	ShopManager.money_changed.emit(ShopManager.player_money)
+	print("✅ Đã load coin: ", ShopManager.player_money)

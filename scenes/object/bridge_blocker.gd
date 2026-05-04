@@ -1,7 +1,7 @@
 extends Node2D
 
-@export var required_log: int = 1
-@export var required_stone: int = 1
+@export var required_log: int = 50
+@export var required_stone: int = 50
 
 @onready var interactable: InteractableComponent = $InteractableComponent
 @onready var interact_label = $InteractableLabelComponent

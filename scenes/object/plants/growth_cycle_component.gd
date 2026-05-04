@@ -6,7 +6,7 @@ extends Node
 
 signal crop_maturity
 signal crop_harvesting
-signal crop_ready_harvest  
+signal crop_ready_harvest
 
 var is_watered: bool = false
 var starting_day: int = 0
@@ -19,10 +19,18 @@ func _ready() -> void:
 
 func on_time_tick_day(day: int) -> void:
 	current_day = day
-	if is_watered and starting_day == 0:
+
+	if not is_watered:
+		print("🌵 Cây chưa được tưới hôm nay, không phát triển")
+		return
+
+	# Ghi nhận ngày bắt đầu lần đầu tiên được tưới
+	if starting_day == 0:
 		starting_day = day
+
 	growth_states(starting_day, current_day)
 	harvest_state(starting_day, current_day)
+
 
 func growth_states(starting_day: int, current_day: int) -> void:
 	if current_growth_state == DataTypes.GrowthStates.Maturity or has_emitted_maturity:
@@ -44,7 +52,7 @@ func harvest_state(starting_day: int, current_day: int) -> void:
 		current_growth_state = DataTypes.GrowthStates.Harvesting
 		print("🌾 Cây sẵn sàng thu hoạch!")
 		crop_harvesting.emit()
-		crop_ready_harvest.emit()  
+		crop_ready_harvest.emit()
 		has_emitted_harvesting = true
 
 func get_current_growth_state() -> DataTypes.GrowthStates:

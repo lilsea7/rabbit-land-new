@@ -25,9 +25,10 @@ var exp_rewards = {
 }
 
 var unlock_features = {
+	2: ["shop_market"],
 	3: ["plant_wheat", "plant_tomato", "plant_carrot"],
-	4: ["chicken"],
-	5: ["shop_market"],
+	4: ["shop_market"],
+	5: ["chicken"],
 	6: ["plant_corn", "plant_rose", "plant_broccoli"],
 	8: ["cow"],
 	10: ["new_areas"]
@@ -122,9 +123,9 @@ func unlock_features_for_level(level: int) -> bool:
 				print("🛒 Market đã được mở khóa tại Level 5!")
 
 	if level == 3 and not has_given_starter_seeds:
-		InventoryManager.add_collectable("wheat_seed", 5)
-		InventoryManager.add_collectable("tomato_seed", 5)
-		InventoryManager.add_collectable("carrot_seed", 5)
+		InventoryManager.add_collectable("wheat_seed", 10)
+		InventoryManager.add_collectable("tomato_seed", 10)
+		InventoryManager.add_collectable("carrot_seed", 10)
 		has_given_starter_seeds = true
 		print("🌱 Đã cấp 5 hạt giống ban đầu: Lúa mì, Cà chua, Cà rốt")
 
@@ -148,8 +149,8 @@ func get_progress_percent() -> float:
 func get_unlock_text(level: int) -> String:
 	match level:
 		3: return "Hạt giống lúa mì, cà chua, cà rốt"
-		4: return "Vật nuôi (Gà)"
-		5: return "Mở chợ mua bán hàng hóa"
+		4: return "Mở chợ mua bán hàng hóa"
+		5: return "Vật nuôi (Gà)"
 		6: return "Hạt giống ngô, hoa hồng, bông cải xanh"
 		8: return "Vật nuôi (Bò)"
 		10: return "Vùng đất mới"

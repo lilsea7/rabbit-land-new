@@ -375,19 +375,19 @@ horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="HelpPopup/Control/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "MOVE  WADS"
+text = "Di chuyển WADS "
 
 [node name="Label" type="Label" parent="HelpPopup/Control/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "INTERACT E"
+text = "Tương tác E "
 
 [node name="Label3" type="Label" parent="HelpPopup/Control/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "PAUSE ESC"
+text = "Pause ESC"
 
 [node name="Label4" type="Label" parent="HelpPopup/Control/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "CLICK MOUSE LEFT"
+text = "Hủy chọn công cụ MOUSE LEFT "
 
 [node name="CloseHelp" type="Button" parent="HelpPopup/Control"]
 custom_minimum_size = Vector2(30, 30)
